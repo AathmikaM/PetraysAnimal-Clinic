@@ -83,3 +83,16 @@ Route::get('/Client_List', function () {
 
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/addstock', function () {
+//     return view('addstock.addstock');
+// });
+
+//This Route Will be Provide addstock Routes
+Route::resource('addstock', 'addstockController');
+
+
+Route::resource('viewstock', 'viewstockController');
