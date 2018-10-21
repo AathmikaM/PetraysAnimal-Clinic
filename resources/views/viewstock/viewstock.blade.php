@@ -15,8 +15,7 @@
 
 
 @section('content')
- 
-@section('content')
+
 <div class="container">
     <!-- Breadcrumbs-->
  <ol class="breadcrumb">

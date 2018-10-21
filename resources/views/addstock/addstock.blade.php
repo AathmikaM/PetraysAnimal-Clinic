@@ -56,7 +56,7 @@
 
 
             <div class="form-group">
-              <label for="name" class="col-md-4 col-form-label text-md-left">Name </label>
+              <label for="name" class="col-md-4 col-form-label text-md-left">Medicine Name </label>
               <div class="col-md-6">
                   <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                   @if ($errors->has('name'))
@@ -136,7 +136,7 @@
     </div>
 
 
-    {{-- <div class="card mb-3">
+    <div class="card mb-3">
         <div class="card-header">
              <li class="breadcrumb-item active">Add Medicine</li>
         </div>
@@ -150,7 +150,7 @@
             <form class="form-horizontal" action="/action_page.php">
 
             <div class="form-group">
-              <label class="control-label col-sm-2" for="name">Name:</label>
+              <label class="control-label col-sm-2" for="name">Medicine Name:</label>
               <div class="col-sm-6">
                 <input type="name" class="form-control" id="name" placeholder="Enter Name">
               </div>
@@ -190,7 +190,7 @@
 
             </div>
         </div>
-    </div>  --}}
+    </div>  
   
 </div>
 
