@@ -96,8 +96,10 @@
                          <li>
                             <a href="Candidate" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Clients Profile</a>
                         </li>
-                        <li>
-                            <a href="Candidate_List" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Analyse
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Analyse</span></a>
                                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                                     <a class="dropdown-item" href="/incomeAnalysis">Income</a>
                                     <a class="dropdown-item" href="/viewstock">View Stock</a>

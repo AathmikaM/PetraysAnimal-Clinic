@@ -18,9 +18,7 @@
  
 <div class="container">
     <!-- Breadcrumbs-->
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item active">ADD STOCK</li>
-  </ol>
+    <h2>ADD MEDICINE</h2>
 
     <div class="card mb-3">
         <div class ="card-header">
@@ -58,7 +56,7 @@
             <div class="form-group">
               <label for="name" class="col-md-4 col-form-label text-md-left">Medicine Name </label>
               <div class="col-md-6">
-                  <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                  <input id="name"  placeholder="Enter Medicine Name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                   @if ($errors->has('name'))
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $errors->first('name') }}</strong>
@@ -71,7 +69,7 @@
             <div class="form-group">
               <label for="quantity" class="col-md-4 col-form-label text-md-left">Quantity</label>
               <div class="col-md-6">
-                  <input id="quantity" type="text" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
+                  <input id="quantity"  placeholder="Enter Quantity" type="text" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
                   @if ($errors->has('quantity'))
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $errors->first('quantity') }}</strong>
@@ -84,7 +82,7 @@
                <div class="form-group">
                 <label for="unit_price" class="col-md-4 col-form-label text-md-left">Unit price</label>
                 <div class="col-md-6">
-                    <input id="unit_price" type="text" class="form-control{{ $errors->has('unit_price') ? ' is-invalid' : '' }}" name="unit_price" value="{{ old('unit_price') }}" required autofocus>
+                    <input id="unit_price"  placeholder="Enter Unit Prize" type="text" class="form-control{{ $errors->has('unit_price') ? ' is-invalid' : '' }}" name="unit_price" value="{{ old('unit_price') }}" required autofocus>
                     @if ($errors->has('unit_price'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('unit_price') }}</strong>
@@ -97,7 +95,7 @@
               <div class="form-group">
                 <label for="expire_date" class="col-md-4 col-form-label text-md-left">Expire Date</label>
                 <div class="col-md-6">
-                    <input id="expire_date" type="date" class="form-control{{ $errors->has('expire_date') ? ' is-invalid' : '' }}" name="expire_date"  value="{{ old('expire_date') }}" required autofocus >
+                    <input id="expire_date"  placeholder="Enter Expire Date" type="date" class="form-control{{ $errors->has('expire_date') ? ' is-invalid' : '' }}" name="expire_date"  value="{{ old('expire_date') }}" required autofocus >
                     @if ($errors->has('expire_date'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('expire_date') }}</strong>
@@ -105,6 +103,19 @@
                     @endif
                 </div>
              </div>
+
+             
+             <div class="form-group">
+              <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4">Medicine Type</label>
+              <div class="col-md-6">
+                <form method="post">
+                <p><input type="checkbox" name= "language[]" value="new medicine"/>new medicine</p>
+                <p><input type="checkbox" name= "language[]" value="old medicine"/>old medicine</p>
+                </form>
+              </div>
+           </div>
+
+
 
 
                <div class="form-group">
@@ -135,7 +146,7 @@
         </div>
     </div>
 
-
+{{-- 
     <div class="card mb-3">
         <div class="card-header">
              <li class="breadcrumb-item active">Add Medicine</li>
@@ -190,8 +201,63 @@
 
             </div>
         </div>
-    </div>  
+    </div>   --}}
   
+
+
+
+    <h2>Example of creating Modals with Twitter Bootstrap</h2>
+
+    <!-- Button trigger modal -->
+    <button class = "btn btn-primary btn-lg" data-toggle = "modal" data-target = "#myModal">
+       Launch demo modal
+    </button>
+    
+    <!-- Modal -->
+    <div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog" 
+       aria-labelledby = "myModalLabel" aria-hidden = "true">
+       
+       <div class = "modal-dialog">
+          <div class = "modal-content">
+             
+             <div class = "modal-header">
+                <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
+                      &times;
+                </button>
+                
+                <h4 class = "modal-title" id = "myModalLabel">
+                   This Modal title
+                </h4>
+             </div>
+             
+             <div class = "modal-body">
+                Add some text here
+             </div>
+             
+             <div class = "modal-footer">
+                <button type = "button" class = "btn btn-default" data-dismiss = "modal">
+                   Close
+                </button>
+                
+                <button type = "button" class = "btn btn-primary">
+                   Submit changes
+                </button>
+             </div>
+             
+          </div><!-- /.modal-content -->
+       </div><!-- /.modal-dialog -->
+      
+    </div><!-- /.modal -->
+    
+    
+
+
+
+
+
+
+
+
 </div>
 
 @endsection
