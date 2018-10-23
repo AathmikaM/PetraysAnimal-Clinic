@@ -105,7 +105,7 @@
              </div>
 
              
-             <div class="form-group">
+             {{-- <div class="form-group">
               <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4">Medicine Type</label>
               <div class="col-md-6">
                 <form method="post">
@@ -113,8 +113,8 @@
                 <p><input type="checkbox" name= "language[]" value="old medicine"/>old medicine</p>
                 </form>
               </div>
-           </div>
-
+           </div> --}}
+ 
 
 
 
@@ -206,7 +206,7 @@
 
 
 
-    <h2>Example of creating Modals with Twitter Bootstrap</h2>
+    <h2>Recently Added Medicines</h2>
 
     <!-- Button trigger modal -->
     <button class = "btn btn-primary btn-lg" data-toggle = "modal" data-target = "#myModal">
@@ -239,9 +239,9 @@
                    Close
                 </button>
                 
-                <button type = "button" class = "btn btn-primary">
+                {{-- <button type = "button" class = "btn btn-primary">
                    Submit changes
-                </button>
+                </button> --}}
              </div>
              
           </div><!-- /.modal-content -->

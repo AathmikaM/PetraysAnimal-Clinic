@@ -18,9 +18,9 @@
 
 <div class="container">
     <!-- Breadcrumbs-->
- <ol class="breadcrumb">
-    <li class="breadcrumb-item active">VIEW STOCK</li>
-  </ol>
+  <div>
+      <h2>VIEW MEDICINE</h2>
+  </div>
 
  
   <div class="panel-body">

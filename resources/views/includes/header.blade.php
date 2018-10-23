@@ -90,9 +90,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li>
-                            <a href="index" class="waves-effect"><i class="fa fa-clock-o m-r-10" aria-hidden="true"></i>Dashboard</a>
-                        </li>
+                       
                          <li>
                             <a href="Candidate" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Clients Profile</a>
                         </li>
@@ -102,8 +100,8 @@
                                 <span>Analyse</span></a>
                                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                                     <a class="dropdown-item" href="/incomeAnalysis">Income</a>
-                                    <a class="dropdown-item" href="/viewstock">View Stock</a>
-                                    <a class="dropdown-item" href="/updatestock">Update Stock</a>
+                                    <a class="dropdown-item" href="/viewstock">Clientbase</a>
+                                    <a class="dropdown-item" href="/updatestock">Diseases</a>
                                     <div class="dropdown-divider"></div>
                                 </div>
                             </a>
@@ -111,19 +109,18 @@
                         <li>
                             <a href="Client" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Appointments</a>
                         </li>
-                        <li>
-                            <a href="Client_List" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Stock Management
-
-                                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                                    <a class="dropdown-item" href="/addstock">Add Stock</a>
-                                    <a class="dropdown-item" href="/viewstock">View Stock</a>
-                                    <a class="dropdown-item" href="/updatestock">Update Stock</a>
-                                    <div class="dropdown-divider"></div>
-                                </div>
-
-                            </a>
-                        </li>
-
+                        <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Stock Management</span></a>
+                                    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                                        <a class="dropdown-item" href="/addstock">Add Stock</a>
+                                        <a class="dropdown-item" href="/viewstock">View Stock</a>
+                                        <a class="dropdown-item" href="/charts">Charts</a>
+                                        <div class="dropdown-divider"></div>
+                                    </div>
+                                </a>
+                            </li>
                     </ul>
 
                 </nav>
