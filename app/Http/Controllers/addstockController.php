@@ -39,7 +39,7 @@ class addstockController extends Controller
         $this->validate($request,[
             'name'        => 'required',
             'quantity'    => 'required',
-            'unit_price'    => 'required',
+            'unit_price'  => 'required',
             'expire_date' => 'required'
         ]);
         $addstock = new Addstock([
@@ -73,7 +73,8 @@ class addstockController extends Controller
      */
     public function edit($id)
     {
-        //
+        $addstock = Addstock::find($id);
+        return view('updatestock.updatestock ',compact('addstock','id'));
     }
 
     /**
@@ -85,7 +86,25 @@ class addstockController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->  validate($request,[
+            'name'        => 'required',
+            'quantity'    => 'required',
+            'unit_price'    => 'required',
+            'expire_date' => 'required'
+        ]); 
+
+        $addstock = Student::find($id);
+        $addstock->name = $request->get('name');
+        $addstock->quantity = $request->get('quantity');
+        $addstock->unit_price = $request->get('unit_price');
+        $addstock->expire_date = $request->get('expire_date');
+        $addstock->relevent_species = $request->get('relevent_species');
+
+        $student -> save();
+        return redirect() ->route('addstock.addstock')->with('success','Data Updated');
+
+        
+         
     }
 
     /**
