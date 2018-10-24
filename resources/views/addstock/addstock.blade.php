@@ -105,7 +105,7 @@
              </div>
 
              
-             {{-- <div class="form-group">
+               <div class="form-group">
               <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4">Medicine Type</label>
               <div class="col-md-6">
                 <form method="post">
@@ -113,8 +113,8 @@
                 <p><input type="checkbox" name= "language[]" value="old medicine"/>old medicine</p>
                 </form>
               </div>
-           </div> --}}
- 
+           </div> 
+  
 
 
 
@@ -206,11 +206,11 @@
 
 
 
-    <h2>Recently Added Medicines</h2>
+    <h2>Recently Added Stock Details</h2>
 
     <!-- Button trigger modal -->
-    <button class = "btn btn-primary btn-lg" data-toggle = "modal" data-target = "#myModal">
-       Launch demo modal
+    <button class = "btn btn-primary btn-lg" data-toggle = "modal" data-target = "#myModal" text-align: center>
+       Medicine 
     </button>
     
     <!-- Modal -->
@@ -226,16 +226,22 @@
                 </button>
                 
                 <h4 class = "modal-title" id = "myModalLabel">
-                   This Modal title
+                    Recently Addded Stock
                 </h4>
              </div>
              
              <div class = "modal-body">
-                Add some text here
+                <h2>Recently Added Stock Details</h2>
+                <h2>Recently Added Stock Details</h2>
+                <h2>Recently Added Stock Details</h2>
+                <h2>Recently Added Stock Details</h2>
+                <h2>Recently Added Stock Details</h2>
+
+                
              </div>
              
              <div class = "modal-footer">
-                <button type = "button" class = "btn btn-default" data-dismiss = "modal">
+                <button type = "button" class = "btn btn-default" data-dismiss = "modal" >
                    Close
                 </button>
                 
@@ -248,7 +254,7 @@
        </div><!-- /.modal-dialog -->
       
     </div><!-- /.modal -->
-    
+     
     
 
 

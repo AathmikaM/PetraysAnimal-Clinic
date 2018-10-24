@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+ @extends('layouts.layouts')
 
 
 @section('title', 'Client List')
@@ -18,39 +18,40 @@
 
 <div class="container">
     <!-- Breadcrumbs-->
-  <div>
-      <h2>VIEW MEDICINE</h2>
-  </div>
-
  
-  <div class="panel-body">
-    <div class ="table-responsive">
-      <table class= "table table-striped table-bordered">
-        <thead>
+ 
+  <div class="row">
+    <div class ="col-md-12">
+        <br />
+            <h3 align="center">VIEW MEDICINE</h3>
+        <br />
+      
+      <table class= "table table-bordered">
           <tr>
             <th>Name</th>
             <th>Quantity</th>
             <th>Unit Price</th>
             <th>Expire Date</th>
             <th>Relevent Species</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
-        </thead>
-        <tbody>
           @foreach($allstock as $key => $add)
-            <tr>
-              <td>{{$add->name}}</td>
-              <td>{{$add->quantity}}</td>
-              <td>{{$add->unit_price}}</td>
-              <td>{{$add->expire_date}}</td>
-              <td>{{$add->relevent_species}}</td>
-            </tr>
+              <tr>
+                <td>{{$add->name}}</td>
+                <td>{{$add->quantity}}</td>
+                <td>{{$add->unit_price}}</td>
+                <td>{{$add->expire_date}}</td>
+                <td>{{$add->relevent_species}}</td>
+                <td><a href="{{action('addstockController@edit',$add['id'])}}" class="btn btn-warning">Edit</td>
+                <td></td>
+              </tr>
 
           
           @endforeach
           
          
 
-          </tbody>
       </table>
     </div>
   </div> 

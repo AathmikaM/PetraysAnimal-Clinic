@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link href="/css/bootstrapcore.css" rel="stylesheet">
+        <link href="/css/customstyles.css" rel="stylesheet">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -87,6 +89,10 @@
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="{{ asset('assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
+
+
+
+   
     @yield('scripts')
 </body>
 
