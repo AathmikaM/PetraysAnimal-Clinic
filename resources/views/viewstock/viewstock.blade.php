@@ -51,7 +51,13 @@
                 <td>{{$add->expire_date}}</td>
                 <td>{{$add->relevent_species}}</td>
                 <td><a href="{{action('addstockController@edit',$add['id'])}}" class="btn btn-warning">Edit</td>
-                <td></td>
+                <td>
+                  <form method="post" class="delete_form" action="{{action('addstockController@destroy',$add['id'])}}">
+                      {{csrf_field()}}
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
+                </td>
               </tr>
 
           
@@ -130,6 +136,18 @@
    
 </div>
 
+<script>
+  $(document).ready(function(){
+    $('.delete_form').on('submit',function(){
+      if(confirm("Are You Sure Want To Delete It? "))
+      {
+        return true;
+      }
+        return false;
+      }
+    });
+  });  
+</script>
 
 @endsection
 

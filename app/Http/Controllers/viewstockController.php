@@ -16,6 +16,7 @@ class viewstockController extends Controller
     {
         $allstock = Addstock::all();    //get data from database
         return view('viewstock.viewstock',compact('allstock')); //send the allstock variable to the view
+             
     }
 
     /**
@@ -70,7 +71,7 @@ class viewstockController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
     }
 
     /**

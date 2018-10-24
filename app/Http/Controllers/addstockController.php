@@ -14,8 +14,8 @@ class addstockController extends Controller
      */
     public function index()
     {
-        
-        return view('addstock.addstock');        
+        return view('addstock.addstock');  
+       
     }
 
     /**
@@ -25,7 +25,7 @@ class addstockController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -115,6 +115,8 @@ class addstockController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $addstock = AddStock::find($id);
+        $addstock->delete();
+        return redirect() ->route('viewstock.viewstock')->with('success','Data Deleted');
     }
 }
