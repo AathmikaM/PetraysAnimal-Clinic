@@ -12,6 +12,8 @@
 
 @endsection
 
+
+@section('content')
 <div class="row">
         <div class="col-md-12">
             <br />
@@ -49,7 +51,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="relevent_species" class="form-control" value=">{{$addstock->relevent_species }}" placeholder="Enter Relevent Species " />
+                        <input type="text" name="relevent_species" class="form-control" value="{{$addstock->relevent_species }}" placeholder="Enter Relevent Species " />
                     </div>
 
                     <div class="form-group">
@@ -60,8 +62,6 @@
         </div>
 </div>
 
-@section('content')
- 
 
 @endsection
 

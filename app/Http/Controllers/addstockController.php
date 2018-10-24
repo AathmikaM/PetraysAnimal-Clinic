@@ -93,15 +93,15 @@ class addstockController extends Controller
             'expire_date' => 'required'
         ]); 
 
-        $addstock = Student::find($id);
+        $addstock = AddStock::find($id);
         $addstock->name = $request->get('name');
         $addstock->quantity = $request->get('quantity');
         $addstock->unit_price = $request->get('unit_price');
         $addstock->expire_date = $request->get('expire_date');
         $addstock->relevent_species = $request->get('relevent_species');
 
-        $student -> save();
-        return redirect() ->route('addstock.addstock')->with('success','Data Updated');
+        $addstock -> save();
+        return redirect() ->route('viewstock.viewstock')->with('success','Data Updated');
 
         
          

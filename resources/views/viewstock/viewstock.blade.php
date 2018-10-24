@@ -8,7 +8,7 @@
 @section('style')
 
 
-<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" id="theme" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.10.19/css/dataTabl es.bootstrap.min.css" id="theme" rel="stylesheet">
 
 @endsection
 
@@ -19,13 +19,20 @@
 <div class="container">
     <!-- Breadcrumbs-->
  
- 
+
   <div class="row">
     <div class ="col-md-12">
         <br />
             <h3 align="center">VIEW MEDICINE</h3>
         <br />
       
+        @if($message = Session::get('success'))
+          <div class = "alert alert-success">
+            <p>{{$message}}</p>
+          </div>
+        @endif 
+
+
       <table class= "table table-bordered">
           <tr>
             <th>Name</th>

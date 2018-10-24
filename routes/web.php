@@ -100,3 +100,5 @@ Route::resource('viewstock', 'viewstockController');
 
 // Route::get('charts', 'ChartController@index')->name('chart');
 Route::resource('charts', 'ChartController');
+
+

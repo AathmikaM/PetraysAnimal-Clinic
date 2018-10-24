@@ -104,7 +104,7 @@
                 </div>
              </div>
 
-             
+{{--              
                <div class="form-group">
               <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4">Medicine Type</label>
               <div class="col-md-6">
@@ -114,7 +114,7 @@
                 </form>
               </div>
            </div> 
-  
+   --}}
 
 
 
