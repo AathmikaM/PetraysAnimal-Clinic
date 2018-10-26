@@ -204,7 +204,7 @@
     </div>   --}}
   
 
-
+{{-- 
 
     <h2>Recently Added Stock Details</h2>
 
@@ -254,7 +254,7 @@
        </div><!-- /.modal-dialog -->
       
     </div><!-- /.modal -->
-     
+      --}}
     
 
 
