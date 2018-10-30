@@ -93,7 +93,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //This Route Will be Provide addstock Routes
 Route::resource('addstock', 'addstockController');
-
+ 
 
 Route::resource('viewstock', 'viewstockController');
 

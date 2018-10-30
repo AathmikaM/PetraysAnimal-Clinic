@@ -121,7 +121,7 @@
                <div class="form-group">
                 <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4">Relevent Species</label>
                 <div class="col-md-6">
-                  <textarea id="relevent_species" type="text" class="form-control{{ $errors->has('relevent_species') ? ' is-invalid' : '' }}" name="relevent_species" value="{{ old('relevent_species') }}" required autofocus></textarea> 
+                  <input id="relevent_species" placeholder="Enter Relevent Species" type="text" class="form-control{{ $errors->has('relevent_species') ? ' is-invalid' : '' }}" name="relevent_species" value="{{ old('relevent_species') }}" required autofocus>
                     @if ($errors->has('relevent_species'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('relevent_species') }}</strong>
@@ -204,7 +204,7 @@
     </div>   --}}
   
 
-{{-- 
+
 
     <h2>Recently Added Stock Details</h2>
 
@@ -254,14 +254,8 @@
        </div><!-- /.modal-dialog -->
       
     </div><!-- /.modal -->
-      --}}
+      
     
-
-
-
-
-
-
 
 
 </div>

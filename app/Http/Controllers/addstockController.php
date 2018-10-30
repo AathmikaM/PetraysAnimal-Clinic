@@ -15,7 +15,6 @@ class addstockController extends Controller
     public function index()
     {
         return view('addstock.addstock');  
-       
     }
 
     /**
@@ -25,6 +24,7 @@ class addstockController extends Controller
      */
     public function create()
     {
+        
        
     }
 
@@ -101,7 +101,7 @@ class addstockController extends Controller
         $addstock->relevent_species = $request->get('relevent_species');
 
         $addstock -> save();
-        return redirect() ->route('viewstock.viewstock')->with('success','Data Updated');
+        return redirect('/viewstock')->with('success','Data Updated');
 
         
          
@@ -117,6 +117,6 @@ class addstockController extends Controller
     {
         $addstock = AddStock::find($id);
         $addstock->delete();
-        return redirect() ->route('viewstock.viewstock')->with('success','Data Deleted');
+        return redirect('/viewstock')->with('success','Data Deleted');
     }
 }
