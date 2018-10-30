@@ -47,7 +47,7 @@ class addstockController extends Controller
             'quantity'    => $request->get('quantity'),
             'unit_price'  => $request->get('unit_price'),
             'expire_date' => $request->get('expire_date'),
-            'relevent_species' => $request->get('relevent_species')  
+            'relevent_species' => $request->get('relevent_species')
         ]);
 
         $addstock -> save();

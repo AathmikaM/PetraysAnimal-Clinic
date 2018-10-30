@@ -10,6 +10,12 @@
 
 <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" id="theme" rel="stylesheet">
 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
+
+
+
 @endsection
 
 
@@ -56,7 +62,7 @@
 
                     <div class="form-group">
                         <div class="col-md-6">
-                        <input type="text" name="expire_date" class="form-control" value="{{$addstock->expire_date}}" placeholder="Enter Expire Date " />
+                        <input type="date" name="expire_date" class="form-control" value="{{$addstock->expire_date}}" placeholder="Enter Expire Date " />
                         </div>
                     </div>
 
@@ -75,8 +81,22 @@
             </form>
         </div>
 </div>
-
 </div>
-@endsection
 
+
+
+@endsection
+<script>
+    $(document).ready(function(){
+
+            $('#relevent_species').tokenfield({
+                autocomplete:{
+                    source:['Cat','Dog','Cow','Pigs','Snakes',],
+                    delay:100
+                },
+                showAutocompleteOnFocus: true
+            });
+    });
+
+</script>
 

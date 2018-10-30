@@ -8,7 +8,11 @@
 @section('style')
 
 
-<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" id="theme" rel="stylesheet">
+{{-- <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" id="theme" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script> --}}
 
 @endsection
 
@@ -249,17 +253,62 @@
                    Submit changes
                 </button> --}}
              </div>
+
+
+             
+<script>
+        $(document).ready(function(){
+    
+                $('#relevent_species').tokenfield({
+                    autocomplete:{
+                        source:['Cat','Dog','Cow','Pigs','Snakes',],
+                        delay:100
+                    },
+                    showAutocompleteOnFocus: true
+                });
+        });
+    
+    </script>
+
+
              
           </div><!-- /.modal-content -->
        </div><!-- /.modal-dialog -->
       
     </div><!-- /.modal -->
-      
-    
+
+<script>
+    $(document).ready(function(){
+
+            $('#relevent_species').tokenfield({
+                autocomplete:{
+                    source:['Cat','Dog','Cow','Pigs','Snakes',],
+                    delay:100
+                },
+                showAutocompleteOnFocus: true
+            });
+    });
+
+</script>
 
 
 </div>
 
+
+
+
 @endsection
 
-
+<script>
+        $(document).ready(function(){
+    
+                $('#relevent_species').tokenfield({
+                    autocomplete:{
+                        source:['Cat','Dog','Cow','Pigs','Snakes',],
+                        delay:100
+                    },
+                    showAutocompleteOnFocus: true
+                });
+        });
+    
+</script>
