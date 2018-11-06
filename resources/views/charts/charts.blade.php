@@ -16,7 +16,7 @@
 
 @section('content')
 
-
+<div>
 <div class="container">
     <div class="panel panel-primary">
             <div class="panel-heading">STOCK</div>
@@ -25,7 +25,7 @@
         </div>
     </div>
 </div>
-
+</div>
 {!! Charts::scripts() !!}
 {!! $chart->script() !!}
 

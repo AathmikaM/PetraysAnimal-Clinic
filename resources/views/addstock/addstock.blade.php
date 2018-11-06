@@ -249,9 +249,9 @@
                    Close
                 </button>
                 
-                {{-- <button type = "button" class = "btn btn-primary">
+                 <button type = "button" class = "btn btn-primary">
                    Submit changes
-                </button> --}}
+                </button> 
              </div>
 
 
@@ -277,22 +277,9 @@
       
     </div><!-- /.modal -->
 
-<script>
-    $(document).ready(function(){
-
-            $('#relevent_species').tokenfield({
-                autocomplete:{
-                    source:['Cat','Dog','Cow','Pigs','Snakes',],
-                    delay:100
-                },
-                showAutocompleteOnFocus: true
-            });
-    });
-
-</script>
 
 
-</div>
+</div> 
 
 
 
