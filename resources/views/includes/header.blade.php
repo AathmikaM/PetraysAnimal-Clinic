@@ -54,7 +54,7 @@
                         @foreach(Auth()->User()->notifications as $notification)
                             <li style="border: 0.5px solid lightblue;padding: 5px">
                                 @if ($notification->type == 'App\Notifications\RepliedToThread')
-                                    <a class="" href="{{ url('/profile/'.$notification->id) }}">
+                                    <a class="" href="{{ url('/Client') }}">
                                         @include('layouts.partials.notification.'.snake_case(class_basename($notification->type)))
                                         @if ($notification->read_at == null)
                                             <p>
@@ -66,7 +66,7 @@
                                         @endif
                                     </a>
                                 @elseif($notification->type == 'App\Notifications\RepliedToThreadMy')
-                                    <a class="" href="{{ url('/profilemyadd/'.$notification->id) }}">
+                                    <a class="" href="{{ url('/Client') }}">
                                         @include('layouts.partials.notification.'.snake_case(class_basename($notification->type)))
                                         @if ($notification->read_at == null)
                                             <p>
@@ -78,7 +78,7 @@
                                         @endif
                                     </a>
                                 @else
-                                    <a class="" href="{{ url('/profileaccept/'.$notification->id) }}">
+                                    <a class="" href="{{ url('/Client') }}">
                                         @include('layouts.partials.notification.'.snake_case(class_basename($notification->type)))
                                         @if ($notification->read_at == null)
                                             <p>

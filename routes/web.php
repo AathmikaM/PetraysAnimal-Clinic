@@ -44,6 +44,8 @@ Route::group(['middleware' => ['auth']], function()
     Route::get('Client/{id}', 'AppointmentController@accept');
     Route::get('Client/cancel/{id}', 'AppointmentController@cancel');
 
+    Route::get('calendar', 'AppointmentController@calendar');
+
     /*Route::get('/Client', function () {
         return view('appoinments');
     });*/
