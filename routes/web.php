@@ -20,61 +20,71 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function()
 {
 
-Route::get('/', function () {
-    return view('index');
-});
+    Route::get('/', function () {
+        return view('index');
+    });
 
-Route::get('/index', function () {
-    return view('index');
-});
+    Route::get('/profile', function () {
+        return view('profile');
+    });
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+    Route::get('/index', function () {
+        return view('index');
+    });
 
-Route::get('/Candidate', function () {
-    return view('Candidate');
-});
+    Route::get('/welcome', function () {
+        return view('welcome');
+    });
 
-Route::get('/Client', function () {
-    return view('Client');
-});
+    Route::get('/Candidate', function () {
+        return view('Candidate');
+    });
 
-Route::get('/Candidate_call', function () {
-    return view('Candidate_call');
-});
+    Route::get('Client', 'AppointmentController@index');
+    Route::get('Client/{id}', 'AppointmentController@accept');
+    Route::get('Client/cancel/{id}', 'AppointmentController@cancel');
 
-Route::get('/Candidate_history', function () {
-    return view('Candidate_history');
-});
+    Route::get('calendar', 'AppointmentController@calendar');
 
-Route::get('/Candidate_other', function () {
-    return view('Candidate_other');
-});
+    /*Route::get('/Client', function () {
+        return view('appoinments');
+    });*/
 
-Route::get('/Candidate_Reference', function () {
-    return view('Candidate_Reference');
-});
+    Route::get('/Candidate_call', function () {
+        return view('Candidate_call');
+    });
 
-Route::get('/Client_call', function () {
-    return view('Client_call');
-});
+    Route::get('/Candidate_history', function () {
+        return view('Candidate_history');
+    });
 
-Route::get('/Client_contacts', function () {
-    return view('Client_contacts');
-});
+    Route::get('/Candidate_other', function () {
+        return view('Candidate_other');
+    });
 
-Route::get('/settings', function () {
-    return view('settings');
-});
+    Route::get('/Candidate_Reference', function () {
+        return view('Candidate_Reference');
+    });
 
-Route::get('/Candidate_List', function () {
-    return view('Candidate_List');
-});
+    Route::get('/Client_call', function () {
+        return view('Client_call');
+    });
 
-Route::get('/Client_List', function () {
-    return view('Client_List');
-});
+    Route::get('/Client_contacts', function () {
+        return view('Client_contacts');
+    });
+
+    Route::get('/settings', function () {
+        return view('settings');
+    });
+
+    Route::get('/Candidate_List', function () {
+        return view('Candidate_List');
+    });
+
+    Route::get('/Client_List', function () {
+        return view('Client_List');
+    });
 
 
     Route::get('/cal', function () {
@@ -93,7 +103,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //This Route Will be Provide addstock Routes
 Route::resource('addstock', 'addstockController');
- 
+
 
 Route::resource('viewstock', 'viewstockController');
 
