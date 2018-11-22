@@ -73,7 +73,7 @@
             <div class="form-group">
               <label for="quantity" class="col-md-4 col-form-label text-md-left">Quantity</label>
               <div class="col-md-6">
-                  <input id="quantity"  placeholder="Enter Quantity" type="text" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
+                  <input id="quantity"  placeholder="Enter Quantity" type="double" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
                   @if ($errors->has('quantity'))
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $errors->first('quantity') }}</strong>
@@ -81,6 +81,17 @@
                   @endif
               </div>
            </div>
+
+           <div class="form-group">
+            <div class="col-md-6">
+                <input id="quantity"  placeholder="Enter Quantity" type="text" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
+                @if ($errors->has('quantity'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('quantity') }}</strong>
+                    </span>
+                @endif
+            </div>
+         </div>
           
               
                <div class="form-group">
@@ -210,7 +221,7 @@
 
 
 
-    <h2>Recently Added Stock Details</h2>
+    {{-- <h2>Recently Added Stock Details</h2>
 
     <!-- Button trigger modal -->
     <button class = "btn btn-primary btn-lg" data-toggle = "modal" data-target = "#myModal" text-align: center>
@@ -276,7 +287,7 @@
        </div><!-- /.modal-dialog -->
       
     </div><!-- /.modal -->
-
+ --}}
 
 
 </div> 
