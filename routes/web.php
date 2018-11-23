@@ -102,7 +102,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // });
 
 //This Route Will be Provide addstock Routes
-Route::resource('addstock', 'addstockController');
+//Route::resource('addstock', 'addstockController');
 
 
 Route::resource('viewstock', 'viewstockController');
@@ -111,4 +111,8 @@ Route::resource('viewstock', 'viewstockController');
 // Route::get('charts', 'ChartController@index')->name('chart');
 Route::resource('charts', 'ChartController');
 
+
+Route::get('addstock','addstockController@index');
+
+Route::post('/addstock/fetch','addstockController@fetch')->name('addstock.fetch');
 

@@ -88,7 +88,7 @@ class addstockController extends Controller
     {
         $this->  validate($request,[
             'name'        => 'required',
-            'quantity'    => 'required',
+            'quantity'    => 'requir ed',
             'unit_price'    => 'required',
             'expire_date' => 'required'
         ]); 
@@ -119,4 +119,8 @@ class addstockController extends Controller
         $addstock->delete();
         return redirect('/viewstock')->with('success','Data Deleted');
     }
+
+
+
+    
 }
