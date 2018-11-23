@@ -92,6 +92,7 @@ Route::group(['middleware' => ['auth']], function()
     });
 
 
+
 });
 Auth::routes();
 
@@ -112,3 +113,11 @@ Route::resource('viewstock', 'viewstockController');
 Route::resource('charts', 'ChartController');
 
 
+//Begining of Clients Part
+
+Route::get('/Test', function () {
+    return view('Clients.test');
+});
+
+
+//End Of Clients Part
