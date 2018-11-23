@@ -24,8 +24,8 @@
                 events : [
                         @foreach($tasks as $task)
                     {
-                        title : '{{ $task->user }}',
-                        start : '{{ $task->date }}'
+                        title : '{{ $task->petOwnerName }}',
+                        start : '{{ $task->dateAndTime }}'
                     },
                     @endforeach
                 ]

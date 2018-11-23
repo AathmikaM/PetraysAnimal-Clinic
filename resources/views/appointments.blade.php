@@ -28,8 +28,8 @@
             <div class="container" style="width: 100%">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="register"> Appintments</h2>
-                        @if($appoinments->isEmpty())
+                        <h2 class="register"> Appointments</h2>
+                        @if($appointments->isEmpty())
                             <p style="color: darkgray"> - There is no Appintments - </p>
                         @endif
                     </div>
@@ -37,25 +37,25 @@
                 <div class="fb-profile">
                     <div class="container-fluid">
                         <div class="row">
-                            @foreach($appoinments as $appoinments1)
+                            @foreach($appointments as $appointments1)
 
                                 <div class="col-sm-6 col-md-4 col-lg-4 mt-4">
                                     <div class="card">
                                         <div class="card-block" style="height: 120px;">
                                             <div class="card-text" align="left" style="height: 90px;">
-                                                {{ $appoinments1->date }}<br><br>
-                                                {{ $appoinments1->user }}
+                                                {{ $appointments1->date }}<br><br>
+                                                {{ $appointments1->user }}
                                             </div>
                                         </div>
                                         <div class="card-action small" style="height: 50px;">
-                                            @if($appoinments1->status=="pending")
-                                                <a href="{{ url('/Client/'.$appoinments1->id) }}" type="button" class="button">Accept</a>
-                                                <a href="{{ url('/Client/cancel/'.$appoinments1->id) }}" type="button" class="button">Cancel</a>
+                                            @if($appointments1->status=="pending")
+                                                <a href="{{ url('/Client/'.$appointments1->id) }}" type="button" class="button">Accept</a>
+                                                <a href="{{ url('/Client/cancel/'.$appointments1->id) }}" type="button" class="button">Cancel</a>
                                             @endif
-                                            @if($appoinments1->status=="accepted")
+                                            @if($appointments1->status=="accepted")
                                                 <span style="padding: 10px;background-color: cornflowerblue;color: white;margin:15px;">Accepted</span>
                                             @endif
-                                            @if($appoinments1->status=="cancelled")
+                                            @if($appointments1->status=="cancelled")
                                                 <span style="padding: 10px;background-color: orangered;color: white;margin:15px;">Cancelled</span>
                                             @endif
                                         </div>

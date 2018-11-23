@@ -151,6 +151,9 @@
                 <li>
                     <a href="Client" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Appointments</a>
                 </li>
+                <li>
+                    <a href="{{url('/calendar')}}" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Calemdar</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-chart-line"></i>

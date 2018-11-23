@@ -45,10 +45,14 @@ Route::group(['middleware' => ['auth']], function()
     Route::get('Client/cancel/{id}', 'AppointmentController@cancel');
 
     Route::get('calendar', 'AppointmentController@calendar');
-
-    /*Route::get('/Client', function () {
-        return view('appoinments');
+    /*Route::get('/calendar', function () {
+        return view('appointment.fullcalendar');
     });*/
+
+
+    Route::get('/appointments', function () {
+        return view('appointments');
+    });
 
     Route::get('/Candidate_call', function () {
         return view('Candidate_call');
