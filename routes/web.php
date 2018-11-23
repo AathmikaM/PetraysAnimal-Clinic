@@ -116,7 +116,7 @@ Route::resource('charts', 'ChartController');
 //Begining of Clients Part
 
 Route::get('/Test', function () {
-    return view('Clients.test');
+    return view('Clients/test');
 });
 
 
