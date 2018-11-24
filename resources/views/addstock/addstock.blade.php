@@ -61,6 +61,8 @@
               <label for="name" class="col-md-4 col-form-label text-md-left">Medicine Name </label>
               <div class="col-md-6">
                   <input id="name"  placeholder="Enter Medicine Name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                  <div id="medicineList"></div>  
+
                   @if ($errors->has('name'))
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $errors->first('name') }}</strong>
@@ -68,31 +70,32 @@
                   @endif
               </div>
             </div>
-        
+                {{ csrf_field()}}
 
-            <div class="form-group">
-              <label for="quantity" class="col-md-4 col-form-label text-md-left">Quantity</label>
-              <div class="col-md-6">
-                  <input id="quantity"  placeholder="Enter Quantity" type="double" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
-                  @if ($errors->has('quantity'))
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $errors->first('quantity') }}</strong>
-                      </span>
-                  @endif
-              </div>
-           </div>
+            <form class="form-inline"  action="/action_page.php">
+                <div class="form-group">
+                    <label for="quantity" class="col-md-4 col-form-label text-md-left">Quantity</label>
+                    <div class="col-md-6">
+                        <input id="quantity"  placeholder="Enter Quantity" type="double" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
+                        @if ($errors->has('quantity'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('quantity') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
 
-           <div class="form-group">
-            <div class="col-md-6">
-                <input id="quantity"  placeholder="Enter Quantity" type="text" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
-                @if ($errors->has('quantity'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('quantity') }}</strong>
-                    </span>
-                @endif
-            </div>
-         </div>
-          
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input id="quantity"  placeholder="Enter Quantity" type="text" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
+                        @if ($errors->has('quantity'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('quantity') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div> 
+            </form>
               
                <div class="form-group">
                 <label for="unit_price" class="col-md-4 col-form-label text-md-left">Unit price</label>
@@ -310,3 +313,27 @@
         });
     
 </script>
+
+  <script>
+    $(document).ready(function(){
+
+                $('#name').keyup(function(){
+                    var query = $(this).val();
+                    if(query != '')
+                    {
+                        var _token = $('input[name= "_token"]').val();
+                        $.ajax({
+                            url:"{{route('addstock.fetch')}}"
+                            method:"POST",
+                            data:{query:query, _token:_token},
+                            success:function(data)
+                            {
+                                $('#medicineList').fadeIn();
+                                $('#medicineList').html(data);
+                            }
+                        })
+                    }
+                });
+    });
+
+</script>  
