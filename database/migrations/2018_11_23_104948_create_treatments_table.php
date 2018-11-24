@@ -20,7 +20,6 @@ class CreateTreatmentsTable extends Migration
             $table->integer('issued_medicines_id');
             $table->string('description');
             $table->string('flag');
-            $table->integer('title');
             $table->timestamps();
         });
     }

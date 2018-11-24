@@ -112,19 +112,4 @@ Route::resource('viewstock', 'viewstockController');
 // Route::get('charts', 'ChartController@index')->name('chart');
 Route::resource('charts', 'ChartController');
 
-
-<<<<<<< HEAD
-//Begining of Clients Part
-
-Route::get('/Test', function () {
-    return view('Clients/test');
-});
-
-
-//End Of Clients Part
-=======
-Route::get('addstock','addstockController@index');
-
-Route::post('/addstock/fetch','addstockController@fetch')->name('addstock.fetch');
-
->>>>>>> 9436e4f1f1c3d4c05c34f413969fec39b72ac327
+Route::get('/clients', 'PostToPetOwners@index');
