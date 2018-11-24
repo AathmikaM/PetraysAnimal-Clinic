@@ -45,3 +45,20 @@
             @endsection
 
 
+
+<div class="container">
+    
+    @if(count($pet)>0)
+
+        <ul class="list-goup">
+        <h1>Clients</h1>
+        @foreach($pet as $post)
+            <h2>
+            <li class="list-group-item"><a href="/client/{{$post->id}}">{{$post->name}}</a> <h2>
+            <small>{{$post->mob_no}}</small>
+            </li>
+        @endforeach
+        </ul>
+
+    @endif
+</div>

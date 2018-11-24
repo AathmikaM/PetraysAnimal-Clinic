@@ -108,7 +108,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // });
 
 //This Route Will be Provide addstock Routes
-Route::resource('addstock', 'addstockController');
+//Route::resource('addstock', 'addstockController');
 
 
 Route::resource('viewstock', 'viewstockController');
@@ -117,12 +117,4 @@ Route::resource('viewstock', 'viewstockController');
 // Route::get('charts', 'ChartController@index')->name('chart');
 Route::resource('charts', 'ChartController');
 
-
-//Begining of Clients Part
-
-Route::get('/Test', function () {
-    return view('Clients/test');
-});
-
-
-//End Of Clients Part
+Route::get('/clients', 'PostToPetOwners@index');
