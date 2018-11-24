@@ -43,7 +43,7 @@
                                     <div class="card">
                                         <div class="card-block" style="height: 120px;">
                                             <div class="card-text" align="left" style="height: 90px;">
-                                                {{ $appointments1->petOwnerName }}<br>
+                                                <b>{{ $appointments1->petOwnerName }} </b><br>
                                                 {{ $appointments1->dateAndTime }}<br>
                                                 {{ $appointments1->ReasonForAppointment	 }}<br>
                                                 {{ $appointments1->address }}

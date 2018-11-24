@@ -28,21 +28,22 @@ Route::group(['middleware' => ['auth']], function()
         return view('profile');
     });
 
-    Route::get('/index', function () {
+
+    /*Route::get('/index', function () {
         return view('index');
-    });
+    });*/
 
     Route::get('/welcome', function () {
         return view('welcome');
     });
 
-    Route::get('/Candidate', function () {
-        return view('Candidate');
+    Route::get('/client_profile', function () {
+        return view('client_profile');
     });
 
-    Route::get('Client', 'AppointmentController@index');
-    Route::get('Client/{id}', 'AppointmentController@accept');
-    Route::get('Client/cancel/{id}', 'AppointmentController@cancel');
+    Route::get('Appointments', 'AppointmentController@index');
+    Route::get('Appointments/{id}', 'AppointmentController@accept');
+    Route::get('Appointments/cancel/{id}', 'AppointmentController@cancel');
 
     Route::get('calendar', 'AppointmentController@calendar');
     /*Route::get('/calendar', function () {

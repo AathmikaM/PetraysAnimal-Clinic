@@ -46,7 +46,7 @@
                             @if (count(Auth()->user()->notifications)==0)
                                 <a href="#">
                                     <h6>
-                                        <center> Der er ingen anmeldelser</center>
+                                        <center> Appointment Request</center>
                                     </h6>
                                 </a>
                             @endif
@@ -54,7 +54,7 @@
                         @foreach(Auth()->User()->notifications as $notification)
                             <li style="border: 0.5px solid lightblue;padding: 5px">
                                 @if ($notification->type == 'App\Notifications\RepliedToThread')
-                                    <a class="" href="{{ url('/Client') }}">
+                                    <a class="" href="{{ url('/Appointments') }}">
                                         @include('layouts.partials.notification.'.snake_case(class_basename($notification->type)))
                                         @if ($notification->read_at == null)
                                             <p>
@@ -66,7 +66,7 @@
                                         @endif
                                     </a>
                                 @elseif($notification->type == 'App\Notifications\RepliedToThreadMy')
-                                    <a class="" href="{{ url('/Client') }}">
+                                    <a class="" href="{{ url('/Appointments') }}">
                                         @include('layouts.partials.notification.'.snake_case(class_basename($notification->type)))
                                         @if ($notification->read_at == null)
                                             <p>
@@ -78,7 +78,7 @@
                                         @endif
                                     </a>
                                 @else
-                                    <a class="" href="{{ url('/Client') }}">
+                                    <a class="" href="{{ url('/Appointments') }}">
                                         @include('layouts.partials.notification.'.snake_case(class_basename($notification->type)))
                                         @if ($notification->read_at == null)
                                             <p>
@@ -134,7 +134,7 @@
             <ul id="sidebarnav">
 
                 <li>
-                    <a href="Candidate" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Clients Profile</a>
+                    <a href="client_profile" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Clients Profile</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -149,10 +149,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Client" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Appointments</a>
+                    <a href="Appointments" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Appointments</a>
                 </li>
                 <li>
-                    <a href="{{url('/calendar')}}" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Calemdar</a>
+                    <a href="{{url('/calendar')}}" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Calendar</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
