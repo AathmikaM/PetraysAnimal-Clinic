@@ -22,7 +22,7 @@
         <div class="row page-titles">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                <li class="breadcrumb-item active">Appintments</li>
+                <li class="breadcrumb-item active">Appointments</li>
             </ol>
 
             <div class="container" style="width: 100%">
@@ -43,8 +43,10 @@
                                     <div class="card">
                                         <div class="card-block" style="height: 120px;">
                                             <div class="card-text" align="left" style="height: 90px;">
-                                                {{ $appointments1->date }}<br><br>
-                                                {{ $appointments1->user }}
+                                                {{ $appointments1->petOwnerName }}<br>
+                                                {{ $appointments1->dateAndTime }}<br>
+                                                {{ $appointments1->ReasonForAppointment	 }}<br>
+                                                {{ $appointments1->address }}
                                             </div>
                                         </div>
                                         <div class="card-action small" style="height: 50px;">
