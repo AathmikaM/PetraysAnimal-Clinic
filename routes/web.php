@@ -124,3 +124,7 @@ Route::get('/addstock', 'addstockController@index');
 
 
 Route::post('/addstock/fetch', 'addstockController@fetch')->name('addstock.fetch');
+
+//Client list loading controller
+//prefects routes
+Route::resource('/petowners', 'postToPetOwnersList');
