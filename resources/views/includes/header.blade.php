@@ -142,7 +142,7 @@
                         <span>Analyse</span></a>
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                         <a class="dropdown-item" href="/incomeAnalysis">Income</a>
-                        <a class="dropdown-item" href="/viewstock">Clientbase</a>
+                        <a class="dropdown-item" href="/Analyse/clientbase">Clientbase</a>
                         <a class="dropdown-item" href="/updatestock">Diseases</a>
                         <div class="dropdown-divider"></div>
                     </div>
