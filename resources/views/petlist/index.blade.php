@@ -14,43 +14,50 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script> --}}
 
+
 @endsection
 
 
 
 @section('content')
-
-
+<div class="container">
     
+<div class="py-5 text-center">
+            
+             <img class="rounded-circle" src="data:image/jpg;charset=utf8;base64,{{base64_encode($petowner->image)}}"  width="140" height="140"/>
+            <h2 > {{$petowner->ename}}</h2>
+            <p>{{$petowner->mail}}</p>
+            <p>{{$petowner->mobile}}</p>
+          </div>
 
-   
-@if(count($petowners)>0)
+
+@if(count($pets)>0)
 
 <ul class="list-goup">
-<h1>Clients</h1>
-<div class="row">
-<div class="col-sm-12 ">
-@foreach($petowners as $petowner)
-    <h2>
-    
+<h1 class="text-center">{{$petowner->name}}'S Pets</h1>
+<hr>
+<hr>
+<div class="row justify-content-center">
+<div class="col-sm-3 ">
+@foreach($pets as $pet)
 
-<div class="card">
-<div class="card-body">
-<div class="col-sm-6 ">
-<div class="float-left mb-6"><a href="/pets/{{$petowner->id}}">{{$petowner->name}} </a></div>  
-</div>
-<div class="col-sm-6">
-<div class="text-centerS mb-6">
 
-<small text-center>{{$petowner->mob_no}}</small>
+<div class="card border-light mb-3" style="max-width: 18rem;">
+  <div class="card-header"><a href="/client/{{$petowner->id}}/{{$pet->id}}" style="color:black">{{$pet->name}} </a></div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <img class="rounded-circle" src="data:image/jpg;charset=utf8;base64,{{base64_encode($pet->image)}}"  width="140" height="140"/>
+  </div>
 </div>
-    </div>
-    
+</div>
+
 @endforeach
-
+</div>
+</div>
+</ul>
 
 @endif
-</div>
+
 
 @endsection
 
