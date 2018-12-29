@@ -17,9 +17,11 @@ class CreatePetOwnersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('username');
+            $table->string('password');
             $table->string('address');
             $table->integer('mob_no');
             $table->integer('home_visit_id');
+            $table->string('imageurl');
             $table->string('email');
             $table->timestamps();
         });
