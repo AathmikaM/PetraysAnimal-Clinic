@@ -3,6 +3,7 @@
 <link href="{{ asset('css/style1.css') }}" rel="stylesheet">--}}
 <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
 <header class="topbar">
     <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
@@ -135,6 +136,10 @@
             <ul id="sidebarnav">
 
                 <li>
+                    <a href="/" class="waves-effect"><i class="fa fa-dashboard m-r-10" aria-hidden="true"></i>Dashboard</a>
+                </li>
+
+                <li>
                     <a href="/petowners" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>MyClients</a>
                 </li>
 
@@ -169,7 +174,7 @@
 
 
                 <li>
-                    <a href="Appointments" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Appointments</a>
+                    <a href="Appointments" class="waves-effect"><i class="fa fa-calendar m-r-10" aria-hidden="true"></i>Appointments</a>
                 </li>
 
                 <li>
