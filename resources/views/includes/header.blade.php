@@ -9,7 +9,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="index">
                 <b>
-                    <img src="{{ URL::asset('assets/images/finallogo (2).png') }}" alt="homepage" class="dark-logo" />
+                    <img src="{{ URL::asset('assets/images/logo1.png') }}" alt="homepage" class="dark-logo" width="200" />
                 </b>
                 <span>
                         </span>
@@ -32,6 +32,7 @@
                      </li>
                  </ul> -->
             <ul class="navbar-nav my-lg-0">
+
                 <li class="drop" id="notify">
                     <a class="pad-non">
                         @if (count(Auth()->user()->notifications)==0)
@@ -136,36 +137,52 @@
                 <li>
                     <a href="/petowners" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>MyClients</a>
                 </li>
+
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Analyse</span></a>
-                    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                        <a class="dropdown-item" href="/incomeAnalysis">Income</a>
-                        <a class="dropdown-item" href="/viewstock">Clientbase</a>
-                        <a class="dropdown-item" href="/updatestock">Diseases</a>
-                        <div class="dropdown-divider"></div>
-                    </div>
-                    </a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Analyse</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a class="dropdown-item" href="/incomeAnalysis">&nbsp;&nbsp;Income</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/viewstock">&nbsp;&nbsp;Clientbase</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/updatestock">&nbsp;&nbsp;Diseases</a>
+                    </li>
+                </ul>
                 </li>
+
+
                 <li>
                     <a href="Appointments" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Appointments</a>
                 </li>
+
                 <li>
                     <a href="{{url('/calendar')}}" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Calendar</a>
                 </li>
+
+
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Stock Management</span></a>
-                    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                        <a class="dropdown-item" href="/addstock">Add Stock</a>
-                        <a class="dropdown-item" href="/viewstock">View Stock</a>
-                        <a class="dropdown-item" href="/charts">Charts</a>
-                        <div class="dropdown-divider"></div>
-                    </div>
-                    </a>
+                <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stock Management</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu1">
+                    <li>
+                        <a class="dropdown-item" href="/addstock">&nbsp;&nbsp;Add Stock</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/viewstock">&nbsp;&nbsp;View Stock</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/charts">&nbsp;&nbsp;Charts</a>
+                    </li>
+                </ul>
                 </li>
+
+
+
+
             </ul>
 
 
