@@ -136,7 +136,7 @@
             <ul id="sidebarnav">
 
                 <li>
-                    <a href="/" class="waves-effect"><i class="fa fa-dashboard m-r-10" aria-hidden="true"></i>Dashboard</a>
+                    <a href="/index" class="waves-effect"><i class="fa fa-dashboard m-r-10" aria-hidden="true"></i>Dashboard</a>
                 </li>
 
                 <li>
@@ -146,7 +146,7 @@
 
                 <li class="nav-item dropdown">
 
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Analyse</a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-list m-r-10" aria-hidden="true"></i>Analyse</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
                         <a class="dropdown-item" href="/incomeAnalysis">&nbsp;&nbsp;Income</a>
@@ -177,11 +177,6 @@
                     <a href="Appointments" class="waves-effect"><i class="fa fa-calendar m-r-10" aria-hidden="true"></i>Appointments</a>
                 </li>
 
-                <li>
-                    <a href="{{url('/calendar')}}" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Calendar</a>
-                </li>
-
-
 
                 <li class="nav-item dropdown">
                 <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stock Management</a>
@@ -193,7 +188,7 @@
                         <a class="dropdown-item" href="/viewstock">&nbsp;&nbsp;View Stock</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/charts">&nbsp;&nbsp;Charts</a>
+                        <a class="dropdown-item" href="/charts">&nbsp;&nbsp;Check Availability</a>
                     </li>
                 </ul>
                 </li>

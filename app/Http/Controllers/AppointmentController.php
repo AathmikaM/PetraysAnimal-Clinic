@@ -37,6 +37,6 @@ class AppointmentController extends Controller
     {
         //$tasks = Appointment::all();
         $tasks = Appointment::where('status','accepted')->get();
-        return view('appointment.fullcalendar', compact('tasks'));
+        return view('index', compact('tasks'));
     }
 }

@@ -20,9 +20,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function()
 {
 
-    Route::get('/', function () {
-        return view('index');
-    });
+    // Route::get('/', function () {
+    //     return view('index');
+    // });
 
     Route::get('/profile', function () {
         return view('profile');
@@ -41,7 +41,8 @@ Route::group(['middleware' => ['auth']], function()
         return view('client_profile');
     });
 
-    Route::get('Appointments', 'AppointmentController@index');
+    Route::get('/index', 'indexController@index');
+    // Route::get('Appointments', 'AppointmentController@index');
     Route::get('Appointments/{id}', 'AppointmentController@accept');
     Route::get('Appointments/cancel/{id}', 'AppointmentController@cancel');
 
