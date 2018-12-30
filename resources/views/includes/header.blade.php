@@ -154,7 +154,7 @@
                     </li>
                 </ul>
 
-                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<!--                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-chart-line"></i>
                         <span>Analyse</span></a>
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -163,7 +163,7 @@
                         <a class="dropdown-item" href="/updatestock">Diseases</a>
                         <div class="dropdown-divider"></div>
                     </div>
-                    </a>
+                    </a> -->
 
                 </li>
 
