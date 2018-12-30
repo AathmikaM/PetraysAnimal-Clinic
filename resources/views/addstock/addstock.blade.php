@@ -54,9 +54,8 @@
 
             <form method = "post" action="{{url('addstock')}}" > 
 
-            {{csrf_field()}}  
-
-
+            {{ csrf_field() }}  
+ 
             <div class="form-group">
               <label for="name" class="col-md-4 col-form-label text-md-left">Medicine Name </label>
               <div class="col-md-6">
@@ -72,7 +71,6 @@
             </div>
                 {{ csrf_field()}}
 
-            <form class="form-inline"  action="/action_page.php">
                 <div class="form-group">
                     <label for="quantity" class="col-md-4 col-form-label text-md-left">Quantity</label>
                     <div class="col-md-6">
@@ -85,17 +83,8 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <input id="quantity"  placeholder="Enter Quantity" type="text" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
-                        @if ($errors->has('quantity'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('quantity') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                </div> 
-            </form>
+               
+          
               
                <div class="form-group">
                 <label for="unit_price" class="col-md-4 col-form-label text-md-left">Unit price</label>
@@ -151,8 +140,8 @@
               
             <div class="form-group"> 
               <div class="col-sm-offset-7 col-sm-5">
-                {{-- <input type="submit"  class="btn btn-success"/> --}}
-                <button type="submit" class="btn btn-danger">PROCEED</button>
+                {{-- <input type="submit"  class="btn btn-success"/>  --}}
+                <button type="submit" class="btn btn-primary">PROCEED</button> 
               </div>
             </div>
                
@@ -300,7 +289,7 @@
 
 @endsection
 
-<script>
+{{-- <script>
         $(document).ready(function(){
     
                 $('#relevent_species').tokenfield({
@@ -312,9 +301,9 @@
                 });
         });
     
-</script>
+</script> --}}
 
-  <script>
+  {{-- <script>
     $(document).ready(function(){
 
                 $('#name').keyup(function(){
@@ -336,4 +325,4 @@
                 });
     });
 
-</script>  
+</script>   --}}
