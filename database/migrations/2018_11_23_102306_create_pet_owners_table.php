@@ -16,9 +16,12 @@ class CreatePetOwnersTable extends Migration
         Schema::create('pet_owners', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('username');
+            $table->string('password');
             $table->string('address');
             $table->integer('mob_no');
             $table->integer('home_visit_id');
+            $table->string('imageurl');
             $table->string('email');
             $table->timestamps();
         });

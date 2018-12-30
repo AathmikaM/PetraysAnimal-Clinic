@@ -140,6 +140,7 @@
 
 
                 <li class="nav-item dropdown">
+
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Analyse</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
@@ -152,6 +153,18 @@
                         <a class="dropdown-item" href="/updatestock">&nbsp;&nbsp;Diseases</a>
                     </li>
                 </ul>
+
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analyse</span></a>
+                    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                        <a class="dropdown-item" href="/incomeAnalysis">Income</a>
+                        <a class="dropdown-item" href="/Analyse/clientbase">Clientbase</a>
+                        <a class="dropdown-item" href="/updatestock">Diseases</a>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                    </a>
+
                 </li>
 
 

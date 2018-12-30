@@ -99,6 +99,7 @@ Route::group(['middleware' => ['auth']], function()
 
 
 });
+Route::get('Analyse/clientbase', 'clientbaseController@index')->name('chart.index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
