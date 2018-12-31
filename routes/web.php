@@ -20,18 +20,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function()
 {
 
-    // Route::get('/', function () {
-    //     return view('index');
-    // });
+    Route::get('/', function () {
+        return view('index');
+    });
 
     Route::get('/profile', function () {
         return view('profile');
     });
 
 
-    /*Route::get('/index', function () {
+    Route::get('/index', function () {
         return view('index');
-    });*/
+    });
 
     Route::get('/welcome', function () {
         return view('welcome');
@@ -41,8 +41,12 @@ Route::group(['middleware' => ['auth']], function()
         return view('client_profile');
     });
 
+
     Route::get('/', 'indexController@index');
     // Route::get('Appointments', 'AppointmentController@index');
+
+    Route::get('Appointments', 'AppointmentController@index');
+
     Route::get('Appointments/{id}', 'AppointmentController@accept');
     Route::get('Appointments/cancel/{id}', 'AppointmentController@cancel');
 
@@ -56,32 +60,50 @@ Route::group(['middleware' => ['auth']], function()
         return view('appointments');
     });
 
-     Route::get('/Candidate_call', function () {
-         return view('Candidate_call');
-     });
+    Route::get('/Candidate_call', function () {
+        return view('Candidate_call');
+    });
 
-     
-     Route::get('/settings', function () {
-         return view('settings');
-     });
+    Route::get('/Candidate_history', function () {
+        return view('Candidate_history');
+    });
 
-     // analyse
-     Route::get('/Candidate_List', function () {
-         return view('Candidate_List');
-     });
+    Route::get('/Candidate_other', function () {
+        return view('Candidate_other');
+    });
 
-     // stock
-     Route::get('/Client_List', function () {
-         return view('Client_List');
-     });
+    Route::get('/Candidate_Reference', function () {
+        return view('Candidate_Reference');
+    });
+
+    Route::get('/Client_call', function () {
+        return view('Client_call');
+    });
+
+    Route::get('/Client_contacts', function () {
+        return view('Client_contacts');
+    });
+
+    Route::get('/settings', function () {
+        return view('settings');
+    });
+
+    Route::get('/Candidate_List', function () {
+        return view('Candidate_List');
+    });
+
+    Route::get('/Client_List', function () {
+        return view('Client_List');
+    });
 
 
-
+    Route::get('/cal', function () {
+        return view('cal');
+    });
 
 
 
 });
-Route::get('Analyse/clientbase', 'clientbaseController@index')->name('chart.index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -100,7 +122,6 @@ Route::resource('viewstock', 'viewstockController');
 // Route::get('charts', 'ChartController@index')->name('chart');
 Route::resource('charts', 'ChartController');
 
-Route::get('/clients', 'PostToPetOwners@index');
 
 
 Route::get('/addstock', 'addstockController@index');
@@ -114,3 +135,8 @@ Route::resource('/petowners', 'postToPetOwnersList');
 
 //Pet list loading controller
 Route::resource('/pets', 'petList');
+
+
+//Add General treatment  controller
+Route::resource('/pets/{id}/{id}', 'petList');
+
