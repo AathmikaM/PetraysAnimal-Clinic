@@ -41,7 +41,7 @@ Route::group(['middleware' => ['auth']], function()
         return view('client_profile');
     });
 
-    Route::get('/index', 'indexController@index');
+    Route::get('/', 'indexController@index');
     // Route::get('Appointments', 'AppointmentController@index');
     Route::get('Appointments/{id}', 'AppointmentController@accept');
     Route::get('Appointments/cancel/{id}', 'AppointmentController@cancel');
