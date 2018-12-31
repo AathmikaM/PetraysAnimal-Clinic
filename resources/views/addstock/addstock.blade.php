@@ -22,11 +22,11 @@
  
 <div class="container">
     <!-- Breadcrumbs-->
-    <h2>ADD MEDICINE</h2>
+    
 
-    <div class="card mb-3">
+    <div class="card mb-4">
         <div class ="card-header">
-             <li class="breadcrumb-item active">Add New Medicine</li>
+             <h1 class="text-center" class="breadcrumb-item active">Add New Medicine</h1>
         </div>
     </div>
  
@@ -56,52 +56,67 @@
 
             {{ csrf_field() }}  
  
-            <div class="form-group">
-              <label for="name" class="col-md-4 col-form-label text-md-left">Medicine Name </label>
-              <div class="col-md-6">
-                  <input id="name"  placeholder="Enter Medicine Name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-                  <div id="medicineList"></div>  
-
-                  @if ($errors->has('name'))
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $errors->first('name') }}</strong>
-                      </span>
-                  @endif
-              </div>
-            </div>
-                {{ csrf_field()}}
-
                 <div class="form-group">
-                    <label for="quantity" class="col-md-4 col-form-label text-md-left">Quantity</label>
-                    <div class="col-md-6">
-                        <input id="quantity"  placeholder="Enter Quantity" type="double" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
-                        @if ($errors->has('quantity'))
+                    <label for="name" class="col-md-4 col-form-label text-md-left"><strong>Medicine Name </strong></label>
+                    <div class="col-md-8">
+                        <input id="name"  placeholder="Enter Medicine Name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                        <div id="medicineList"></div>  
+
+                        @if ($errors->has('name'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('quantity') }}</strong>
+                                <strong>{{ $errors->first('name') }}</strong>
                             </span>
                         @endif
                     </div>
                 </div>
 
+                {{ csrf_field()}}
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="module" class="col-md-4 col-form-label text-md-left"><strong>Modules</strong></label>
+                        <div class="col-md-8">
+                            <input id="module"  placeholder="Enter Type Of Module" type="double" class="form-control{{ $errors->has('module') ? ' is-invalid' : '' }}" name="module" value="{{ old('module') }}" required autofocus>
+                            @if ($errors->has('module'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('module') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                
+
                
-          
+                    <div class="col-md-6">
+                        <label for="quantity" class="col-md-4 col-form-label text-md-left"><strong>Quantity</strong></label>
+                        <div class="col-md-8">
+                            <input id="quantity"  placeholder="Enter Quantity" type="double" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" value="{{ old('quantity') }}" required autofocus>
+                            @if ($errors->has('quantity'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('quantity') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                
               
                <div class="form-group">
-                <label for="unit_price" class="col-md-4 col-form-label text-md-left">Unit price</label>
-                <div class="col-md-6">
-                    <input id="unit_price"  placeholder="Enter Unit Prize" type="text" class="form-control{{ $errors->has('unit_price') ? ' is-invalid' : '' }}" name="unit_price" value="{{ old('unit_price') }}" required autofocus>
-                    @if ($errors->has('unit_price'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('unit_price') }}</strong>
-                        </span>
-                    @endif
-                </div>
-             </div>
+                    <label for="unit_price" class="col-md-4 col-form-label text-md-left"><strong>Unit price</strong></label>
+                    <div class="col-md-8">
+                        <input id="unit_price"  placeholder="Enter Unit Prize" type="text" class="form-control{{ $errors->has('unit_price') ? ' is-invalid' : '' }}" name="unit_price" value="{{ old('unit_price') }}" required autofocus>
+                        @if ($errors->has('unit_price'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('unit_price') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+               </div>
               
 
               <div class="form-group">
-                <label for="expire_date" class="col-md-4 col-form-label text-md-left">Expire Date</label>
-                <div class="col-md-6">
+                <label for="expire_date" class="col-md-4 col-form-label text-md-left"><strong>Expire Date</strong></label>
+                <div class="col-md-8">
                     <input id="expire_date"  placeholder="Enter Expire Date" type="date" class="form-control{{ $errors->has('expire_date') ? ' is-invalid' : '' }}" name="expire_date"  value="{{ old('expire_date') }}" required autofocus >
                     @if ($errors->has('expire_date'))
                         <span class="invalid-feedback" role="alert">
@@ -111,9 +126,9 @@
                 </div>
              </div>
 
-{{--              
+            
                <div class="form-group">
-              <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4">Medicine Type</label>
+              <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4"><strong>Medicine Type</strong></label>
               <div class="col-md-6">
                 <form method="post">
                 <p><input type="checkbox" name= "language[]" value="new medicine"/>new medicine</p>
@@ -121,13 +136,13 @@
                 </form>
               </div>
            </div> 
-   --}}
+   
 
 
 
                <div class="form-group">
-                <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4">Relevent Species</label>
-                <div class="col-md-6">
+                <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4"><strong>Relevent Species</strong></label>
+                <div class="col-md-8">
                   <input id="relevent_species" placeholder="Enter Relevent Species" type="text" class="form-control{{ $errors->has('relevent_species') ? ' is-invalid' : '' }}" name="relevent_species" value="{{ old('relevent_species') }}" required autofocus>
                     @if ($errors->has('relevent_species'))
                         <span class="invalid-feedback" role="alert">
@@ -289,19 +304,19 @@
 
 @endsection
 
-{{-- <script>
+<script>
         $(document).ready(function(){
     
                 $('#relevent_species').tokenfield({
                     autocomplete:{
-                        source:['Cat','Dog','Cow','Pigs','Snakes',],
+                        source:['Cat','Dog','Cow','Pigs','Snakes'],
                         delay:100
                     },
                     showAutocompleteOnFocus: true
                 });
         });
     
-</script> --}}
+</script> 
 
   {{-- <script>
     $(document).ready(function(){
