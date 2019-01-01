@@ -11,7 +11,7 @@ class Pet extends Model
         return $this->belongsTo('App\PetOwner');
     }
 
-    public function pets(){
+    public function treatments(){
         return $this->hasMany('App\Treatment');
     }
 }
