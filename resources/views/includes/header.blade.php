@@ -113,7 +113,7 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="settings"><i class="ti-settings"></i> Account Settings</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                            <li><a href="/abc"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
 
                     </div>

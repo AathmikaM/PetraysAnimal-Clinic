@@ -19,6 +19,8 @@
 
 
 @section('content')
+
+ 
  
 <div class="container">
     <!-- Breadcrumbs-->
@@ -297,26 +299,28 @@
  --}}
 
 
+ <script>
+    $(document).ready(function(){
+
+            $('#relevent_species').tokenfield({
+                autocomplete:{
+                    source:['Cat','Dog','Cow','Pigs','Snakes',''],
+                    delay:100
+                },
+                showAutocompleteOnFocus: true
+            });
+    });
+
+</script>  
 </div> 
 
+ 
 
 
 
 @endsection
 
-<script>
-        $(document).ready(function(){
-    
-                $('#relevent_species').tokenfield({
-                    autocomplete:{
-                        source:['Cat','Dog','Cow','Pigs','Snakes'],
-                        delay:100
-                    },
-                    showAutocompleteOnFocus: true
-                });
-        });
-    
-</script> 
+
 
   {{-- <script>
     $(document).ready(function(){
