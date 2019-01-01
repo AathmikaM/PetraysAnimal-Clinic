@@ -128,7 +128,7 @@ Route::resource('charts', 'ChartController');
 
 
 
-Route::get('/addstock', 'addstockController@index');
+Route::get('/viewstock', 'viewstockController@index');
 
 
 Route::post('/addstock/fetch', 'addstockController@fetch')->name('addstock.fetch');

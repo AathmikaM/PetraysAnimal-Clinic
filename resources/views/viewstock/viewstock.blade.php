@@ -36,9 +36,11 @@
       <table class= "table table-bordered">
           <tr>
             <th>Name</th>
+			 <th>Module</th>
             <th>Quantity</th>
             <th>Unit Price</th>
             <th>Expire Date</th>
+			 <th>Medicine Type</th>
             <th>Relevent Species</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -46,9 +48,11 @@
           @foreach($allstock as $key => $add)
               <tr>
                 <td>{{$add->name}}</td>
+				<td>{{$add->module}}</td>
                 <td>{{$add->quantity}}</td>
                 <td>{{$add->unit_price}}</td>
                 <td>{{$add->expire_date}}</td>
+				<td>{{$add->medcine_type}}</td>
                 <td>{{$add->relevent_species}}</td>
                 <td><a href="{{action('addstockController@edit',$add['id'])}}" class="btn btn-warning">Edit</td>
                 <td>

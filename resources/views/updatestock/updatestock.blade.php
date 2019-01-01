@@ -43,30 +43,53 @@
                 <input type="hidden" name="_method" value="PATCH" />
 
                     <div class="form-group">
-                        <div class="col-md-6">
-                        <input type="text" name="name" class="form-control" value="{{$addstock->name}}" placeholder="Enter Medicine Name " />
+                         <label class="control-label col-sm-2" for="name">Medicine Name:</label>
+						<div class="col-md-6">
+                        <input type="text" name="name" class="form-control" value="{{$addstock->name}}"  />
+                        </div>
+                    </div>
+					
+					<div class="form-group">
+                         <label class="control-label col-sm-2" for="name">Module:</label>
+						<div class="col-md-6">
+                        <input type="text" name="module" class="form-control" value="{{$addstock->module}}" />
                         </div>
                     </div>
 
                     <div class="form-group">
+					<label class="control-label col-sm-2" for="name">Quantity:</label>
                         <div class="col-md-6">
                         <input type="text" name="quantity" class="form-control" value="{{$addstock->quantity}}" placeholder="Enter Quantity " />
                         </div>
                     </div>
 
                     <div class="form-group">
+					<label class="control-label col-sm-2" for="name">Unit Price:</label>
                          <div class="col-md-6">
                         <input type="text" name="unit_price" class="form-control" value="{{$addstock->unit_price}}" placeholder="Enter Unit Prize " />
                          </div>
                     </div>
 
                     <div class="form-group">
+					<label class="control-label col-sm-2" for="name">Expiry Date:</label>
                         <div class="col-md-6">
                         <input type="date" name="expire_date" class="form-control" value="{{$addstock->expire_date}}" placeholder="Enter Expire Date " />
                         </div>
                     </div>
+					
+					<div class="form-group">
+					
+             			 <label for="medcine_type" class="col-md-4 col-form-label text-md-left"  rows="4"><strong>Medicine Type</strong></label>
+              				<div class="col-md-6">
+             <!--   <form method="post">-->
+				                <p><input type="checkbox" name= "medcine_type" id= "medcine_type" value="{{$addstock->expire_date}}"/>new medicine</p>
+				                <p><input type="checkbox" name= "medcine_type"  id= "medcine_type" value="{{$addstock->expire_date}}"/>old medicine</p>
+                <!--</form>-->
+              		</div>
+           		</div> 
 
                     <div class="form-group">
+					<label class="control-label col-sm-2" for="name">Relevent Species:</label>
                         <div class="col-md-6">
                         <input type="text" name="relevent_species" class="form-control" value=" {{$addstock->relevent_species }}" placeholder="Enter Relevent Species " />
                         </div>

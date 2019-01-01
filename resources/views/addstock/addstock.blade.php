@@ -132,10 +132,10 @@
                <div class="form-group">
               <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4"><strong>Medicine Type</strong></label>
               <div class="col-md-6">
-                <form method="post">
-                <p><input type="checkbox" name= "language[]" value="new medicine"/>new medicine</p>
-                <p><input type="checkbox" name= "language[]" value="old medicine"/>old medicine</p>
-                </form>
+             <!--   <form method="post">-->
+                <p><input type="checkbox" name= "medcine_type" id= "medcine_type" value="new medicine"/>new medicine</p>
+                <p><input type="checkbox" name= "medcine_type"  id= "medcine_type" value="old medicine"/>old medicine</p>
+                <!--</form>-->
               </div>
            </div> 
    
