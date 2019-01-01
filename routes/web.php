@@ -24,6 +24,10 @@ Route::group(['middleware' => ['auth']], function()
         return view('index');
     });
 
+    Route::get('/abc', function () {
+        return view('auth.login');
+    });
+
     Route::get('/profile', function () {
         return view('profile');
     });
@@ -96,7 +100,7 @@ Route::group(['middleware' => ['auth']], function()
         return view('cal');
     });
 
-
+   
 
 });
 Auth::routes();
