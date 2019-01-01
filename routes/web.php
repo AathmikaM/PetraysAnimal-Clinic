@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth']], function()
 
 
     Route::get('/', 'indexController@index');
+	Route::get('/index', 'indexController@index');
     // Route::get('Appointments', 'AppointmentController@index');
 
     Route::get('Appointments', 'AppointmentController@index');
