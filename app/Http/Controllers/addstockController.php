@@ -47,7 +47,9 @@ class addstockController extends Controller
             'quantity'    => $request->get('quantity'),
             'unit_price'  => $request->get('unit_price'),
             'expire_date' => $request->get('expire_date'),
-            'relevent_species' => $request->get('relevent_species') 
+            'relevent_species' => $request->get('relevent_species'),
+            'medcine_type' => $request->get('medcine_type'),
+            'module' => $request->get('module') 
         ]);
 
         $addstock -> save();
@@ -99,6 +101,9 @@ class addstockController extends Controller
         $addstock->unit_price = $request->get('unit_price');
         $addstock->expire_date = $request->get('expire_date');
         $addstock->relevent_species = $request->get('relevent_species');
+		 $addstock->medcine_type = $request->get('medcine_type');
+		 $addstock->module = $request->get('module');
+	
 
         $addstock -> save();
         return redirect('/viewstock')->with('success','Data Updated');

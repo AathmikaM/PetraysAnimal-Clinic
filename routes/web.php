@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth']], function()
 
 
     Route::get('/', 'indexController@index');
+	Route::get('/index', 'indexController@index');
     // Route::get('Appointments', 'AppointmentController@index');
 
     Route::get('Appointments', 'AppointmentController@index');
@@ -128,7 +129,7 @@ Route::resource('charts', 'ChartController');
 
 
 
-Route::get('/addstock', 'addstockController@index');
+Route::get('/viewstock', 'viewstockController@index');
 
 
 Route::post('/addstock/fetch', 'addstockController@fetch')->name('addstock.fetch');
