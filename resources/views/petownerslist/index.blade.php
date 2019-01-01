@@ -8,7 +8,7 @@
 @section('style')
 
 
-{{-- <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" id="theme" rel="stylesheet">
+ <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" id="theme" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
 
@@ -42,7 +42,7 @@
 <div class="col-sm-6">
 <div class="text-centerS mb-6">
 
-<small text-center>{{$petowner->mob_no}}</small>
+<small>{{$petowner->mob_no}}</small>
 </div>
     </div>
     

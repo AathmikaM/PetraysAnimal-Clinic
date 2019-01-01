@@ -8,11 +8,11 @@
 @section('style')
 
 
-{{-- <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" id="theme" rel="stylesheet">
+ <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" id="theme" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script> 
 
 
 @endsection
@@ -25,9 +25,10 @@
 <div class="py-5 text-center">
             
              <img class="rounded-circle" src="data:image/jpg;charset=utf8;base64,{{base64_encode($petowner->image)}}"  width="140" height="140"/>
-            <h2 > {{$petowner->ename}}</h2>
-            <p>{{$petowner->mail}}</p>
-            <p>{{$petowner->mobile}}</p>
+             <h2 > {{$petowner->name}}</h2>
+            <h3>{{$petowner->email}}</h3>
+            <h5>{{$petowner->address}}</h5>
+            <h4>{{$petowner->mob_no}}</h4>
           </div>
 
 
@@ -40,9 +41,7 @@
 <div class="row justify-content-center">
 <div class="col-sm-3 ">
 @foreach($pets as $pet)
-
-
-<div class="card border-light mb-3" style="max-width: 18rem;">
+<div class="card text-white bg-dark mb-4" style="max-width: 18rem;">
   <div class="card-header"><a href="/pets/{{$petowner->id}}/{{$pet->id}}" style="color:black">{{$pet->name}} </a></div>
   <div class="card-body">
     <h5 class="card-title"></h5>
