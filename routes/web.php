@@ -138,5 +138,5 @@ Route::resource('/pets', 'petList');
 
 
 //Add General treatment  controller
-Route::resource('/pets/{id}/{id}', 'petList');
-
+Route::get('/pets/{id}/{pid}', 'postToPets@show');
+// Route::get('/client/{id}/{pid}/general', 'PostToPets@create1');

@@ -9,7 +9,8 @@
         "consoletvs/charts": "5.*",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "laravelcollective/html": "5.4.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -36,6 +37,7 @@
     "extra": {
         "laravel": {
             "dont-discover": [
+                
             ]
         }
     },
@@ -56,6 +58,10 @@
         "sort-packages": true,
         "optimize-autoloader": true
     },
+
+
     "minimum-stability": "dev",
     "prefer-stable": true
+
+  
 }
