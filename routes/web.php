@@ -45,7 +45,12 @@ Route::group(['middleware' => ['auth']], function()
         return view('client_profile');
     });
 
+
+    Route::get('/', 'indexController@index');
+    // Route::get('Appointments', 'AppointmentController@index');
+
     Route::get('Appointments', 'AppointmentController@index');
+
     Route::get('Appointments/{id}', 'AppointmentController@accept');
     Route::get('Appointments/cancel/{id}', 'AppointmentController@cancel');
 
@@ -137,5 +142,5 @@ Route::resource('/pets', 'petList');
 
 
 //Add General treatment  controller
-Route::resource('/pets/{id}/{id}', 'petList');
-
+Route::get('/pets/{id}/{pid}', 'postToPets@show');
+// Route::get('/client/{id}/{pid}/general', 'PostToPets@create1');

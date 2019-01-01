@@ -152,10 +152,10 @@
                         <a class="dropdown-item" href="/incomeAnalysis">&nbsp;&nbsp;Income</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/viewstock">&nbsp;&nbsp;Clientbase</a>
+                        <a class="dropdown-item" href="/clientbase">&nbsp;&nbsp;Clientbase</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/updatestock">&nbsp;&nbsp;Diseases</a>
+                        <a class="dropdown-item" href="/diseases">&nbsp;&nbsp;Diseases</a>
                     </li>
                 </ul>
 

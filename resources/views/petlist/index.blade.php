@@ -43,7 +43,7 @@
 
 
 <div class="card border-light mb-3" style="max-width: 18rem;">
-  <div class="card-header"><a href="/client/{{$petowner->id}}/{{$pet->id}}" style="color:black">{{$pet->name}} </a></div>
+  <div class="card-header"><a href="/pets/{{$petowner->id}}/{{$pet->id}}" style="color:black">{{$pet->name}} </a></div>
   <div class="card-body">
     <h5 class="card-title"></h5>
     <img class="rounded-circle" src="data:image/jpg;charset=utf8;base64,{{base64_encode($pet->image)}}"  width="140" height="140"/>
