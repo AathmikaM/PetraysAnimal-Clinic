@@ -36,7 +36,7 @@
       <table class= "table table-bordered">
           <tr>
             <th>Name</th>
-			 <th>Module</th>
+			     <th>Module</th>
             <th>Quantity</th>
             <th>Availability</th>
             <th>Unit Price</th>
