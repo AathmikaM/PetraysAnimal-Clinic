@@ -136,7 +136,7 @@
             <ul id="sidebarnav">
 
                 <li>
-                    <a href="/index" class="waves-effect"><i class="fa fa-dashboard m-r-10" aria-hidden="true"></i>Dashboard</a>
+                    <a href="/index" class="waves-effect"><i class="fa fa-bars m-r-10" aria-hidden="true"></i>Dashboard</a>
                 </li>
 
                 <li>
@@ -187,9 +187,7 @@
                     <li>
                         <a class="dropdown-item" href="/viewstock">&nbsp;&nbsp;View Stock</a>
                     </li>
-                    <li>
-                        <!--<a class="dropdown-item" href="/charts">&nbsp;&nbsp;Check Availability</a>-->
-                    </li>
+                    
                 </ul>
                 </li>
 
