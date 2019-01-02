@@ -23,8 +23,8 @@
             <img class="rounded-circle" src="data:image/jpg;charset=utf8;base64,{{base64_encode($pet->image)}}"  alt="Generic placeholder image" width="140" height="140">
             <h2 >Pet Name:{{$pet->name}} </h2>
             <h3>Species:{{$pet->species}}</h3>
-            <h4>Weight of The Pet:{{$pet->weight}}</h4>
-            <h5>Age Of The Pet:{{$pet->age}}</h5>
+            <h4>Weight of The Pet:{{$pet->weight}} Kg</h4>
+            <h5>Age Of The Pet:{{$pet->age}} Yrs</h5>
               
             </div>
           </div>
@@ -34,11 +34,11 @@
 
 <div class="col-6"> 
   <div class="form-group">
-  
+  <h3>Special Note</h3> 
     <textarea class="form-control" type="text" id="special_note" name="special_note" rows="27">{{$pet->special_note}}</textarea>
     <div class="row">
     <div class="orm-control col-lg-2">
-      <button type="submit" class="btn btn-success">Save</button>
+      <button type="submit" class="btn btn-danger">Save</button>
     </div>
   </div>
   </div>
@@ -48,26 +48,12 @@
   
   <div class="row">
     <div class="col-6">
-    <a class="nav-link" class="btn btn-danger btn-lg btn-block"  href="/client/{$petowner->id}/{$pet->id}/periodic" >Periodic-Treatments</a>
-    <a><button type="button" href="/index" >General Treatment</button></a> 
+    <a class="btn btn-primary btn-lg btn-block"  href="/client/{$petowner->id}/{$pet->id}/general" >General-Treatments</a>
     </div>
     <div class="col-6">
-    <button type="button" class="btn btn-danger btn-lg btn-block">Periodic Treatment</button> 
+    <a class="btn btn-primary btn-lg btn-block"  href="/client/{$petowner->id}/{$pet->id}/periodic" >Periodic-Treatments</a>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

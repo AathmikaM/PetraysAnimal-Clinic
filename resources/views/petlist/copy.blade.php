@@ -38,39 +38,19 @@
 <h1 class="text-center">{{$petowner->name}}'S Pets</h1>
 <hr>
 <hr>
-<div class="fb-profile">
-                    <div class="container-fluid">
-                        <div class="row">
+<div class="row justify-content-center">
+<div class="col-sm-3 ">
 @foreach($pets as $pet)
-<div class="col-sm-6 col-md-4 col-lg-4 mt-4">
-                                    <div class="card">
-                                        <div class="card-block" style="height: 260px;">
-                                        <div class="card-text" align="center" style="height: 90px;">
-
-                                        <div class="card-header"><a href="/pets/{{$petowner->id}}/{{$pet->id}}" style="color:black">{{$pet->name}} </a></div>
-                                        <br>
-                                    
-                                        <img class="rounded-circle" src="data:image/jpg;charset=utf8;base64,{{base64_encode($pet->image)}}"  width="140" height="140"/>
-                                        
-
-
-
- </div>
-</div>
-</div>
-</div>
-
-<!-- <div class="card text-white bg-dark mb-4" style="max-width: 18rem;">
+<div class="card text-white bg-dark mb-4" style="max-width: 18rem;">
   <div class="card-header"><a href="/pets/{{$petowner->id}}/{{$pet->id}}" style="color:black">{{$pet->name}} </a></div>
   <div class="card-body">
     <h5 class="card-title"></h5>
     <img class="rounded-circle" src="data:image/jpg;charset=utf8;base64,{{base64_encode($pet->image)}}"  width="140" height="140"/>
   </div>
 </div>
-</div> -->
+</div>
 
 @endforeach
-</div>
 </div>
 </div>
 </ul>

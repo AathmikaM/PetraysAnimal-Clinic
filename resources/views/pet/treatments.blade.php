@@ -4,34 +4,7 @@
 
 
  @section('content')
-
-{!! Form::open(['action' => 'postToPets@store','method'=>'post']) !!}
-
-
  
- <div class="card-header">
-    <ul class="nav nav-pills card-header-pills">
-      <li class="nav-item">
-        <a class="nav-link active" href="/petowners/{id}/{id}">Genaral-Treatments</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/petowners/{id}/{id}/periodic">Periodic-Treatments</a>
-      </li>
-      
-    </ul>
-  
- <div class="container">
-      <div class="py-5 text-center">
-            <!-- add the href to get image -->
-            <img class="rounded-circle" src="data:image/jpg;charset=utf8;base64,{{base64_encode($pet->image)}}"  alt="Generic placeholder image" width="140" height="140">
-            <h2 >{{$pet->name}} </h2>
-            <p>{{$pet->species}}</p>
-            <p>{{$pet->weight}}</p>
-            <p>{{$pet->age}}</p>
-            
-          </div>
-          </div>
-
   <div class="form-group">
     {{Form::label('specialNote','Special Discription about pet')}}
     {{Form::textarea('specialNote','',['class'=>'form-control','placeholder'=>'Note-Down Here '])}}
@@ -139,5 +112,5 @@
 </ul>
 
 @endif
-</div>
+
 @endsection 
