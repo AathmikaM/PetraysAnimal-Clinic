@@ -12,45 +12,49 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script> 
 
 @endsection
 
 
 
 @section('content')
+<h3> Clients</h3>
+<div class="form-group row">
+    <label for="mobile" class="col-sm-4 col-form-label text-md-right">{{ __('Mobile Number') }}</label>
 
-
+    <div class="col-md-6">
+        <input id="mobile" type="number" class="form-control" name="mobile"  required autofocus>
+    </div>
+</div>
     
 
    
 @if(count($petowners)>0)
 
-<ul class="list-goup">
-<h1>Clients</h1>
+
+
 <div class="row">
-<div class="col-sm-12 ">
-@foreach($petowners as $petowner)
-    <h2>
-    
+<div class="col-lg-12">
+@foreach($petowners as $petowner)    
 
-<div class="card">
-<div class="card-body">
-<div class="col-sm-6 ">
-<div class="float-left mb-6"><a href="/pets/{{$petowner->id}}">{{$petowner->name}} </a></div>  
-</div>
-<div class="col-sm-6">
-<div class="text-centerS mb-6">
-
-<small>{{$petowner->mob_no}}</small>
-</div>
+<div class="col-lg-6">
+    <div class="panel-primary">
+        <div class="panel-heading">
+            <a href="/pets/{{$petowner->id}}"><h5>{{$petowner->name}}</h5> </a>  
+        </div>
+        <div class="panel-body">
+            {{$petowner->mob_no}}
+        </div>
     </div>
-    
+</div>
+   
 @endforeach
-
+</div>
+</div>
 
 @endif
-</div>
+
 
 @endsection
 
