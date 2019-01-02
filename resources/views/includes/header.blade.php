@@ -1,6 +1,6 @@
-{{--<link href="{{ asset('css/materialize.css') }}" rel="stylesheet">
+<link href="{{ asset('css/materialize.css') }}" rel="stylesheet">
 <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-<link href="{{ asset('css/style1.css') }}" rel="stylesheet">--}}
+<link href="{{ asset('css/style1.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">

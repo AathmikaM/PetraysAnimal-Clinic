@@ -38,7 +38,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             @foreach($appointments as $appointments1)
-
+                                @if($appointments1->status!="cancelled")
                                 <div class="col-sm-6 col-md-4 col-lg-4 mt-4">
                                     <div class="card">
                                         <div class="card-block" style="height: 120px;">
@@ -51,8 +51,9 @@
 
                                             </div>
                                         </div>
+                                        
                                         <div class="card-action small" style="height: 50px;">
-                                            @if($appointments1->status=="pending")
+                                            @if($appointments1->status=="pending" && $appointments1->dateAndTime>=date("Y-m-d"))
                                                 <a href="{{ url('/Client/'.$appointments1->id) }}" type="button" class="button">Accept</a>
                                                 <a href="{{ url('/Client/cancel/'.$appointments1->id) }}" type="button" class="button">Cancel</a>
                                             @endif
@@ -63,8 +64,10 @@
                                                 <span style="padding: 10px;background-color: orangered;color: white;margin:15px;">Cancelled</span>
                                             @endif
                                         </div>
+                                        
                                     </div>
                                 </div>
+                                @endif
                             @endforeach
                         </div>
                     </div>
