@@ -125,7 +125,7 @@ Route::resource('viewstock', 'viewstockController');
 
 
 // Route::get('charts', 'ChartController@index')->name('chart');
-//Route::resource('charts', 'ChartController');
+Route::resource('charts', 'ChartController');
 
 
 
@@ -145,3 +145,5 @@ Route::resource('/pets', 'petList');
 //Add General treatment  controller
 Route::get('/pets/{id}/{pid}', 'postToPets@show');
 // Route::get('/client/{id}/{pid}/general', 'PostToPets@create1');
+
+Route::put('/pets/{id}/{pid}/save','postToPets@store');

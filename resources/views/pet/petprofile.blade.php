@@ -11,8 +11,9 @@
  
  <div class="card-header">
     
-
-<form action="" >
+ <form id="main" method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/save" novalidate>
+    @method('PUT')
+    @csrf
  <div class="row">
     <div class="col-6"> 
     <div class="card mb-5 ">
@@ -33,29 +34,27 @@
 
 <div class="col-6"> 
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Special Notes</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="27"></textarea>
+  
+    <textarea class="form-control" type="text" id="special_note" name="special_note" rows="27">{{$pet->special_note}}</textarea>
     <div class="row">
     <div class="orm-control col-lg-2">
       <button type="submit" class="btn btn-success">Save</button>
     </div>
-    <div class="orm-control col-lg-0">
-      <button type="submit" class="btn btn-success">Edit</button>
-    </div>
   </div>
   </div>
   </div>
-  
-
   </div>
+  </form>
   
   <div class="row">
     <div class="col-6">
-    <button type="button" class="btn btn-danger btn-lg btn-block">General Treatment</button> 
+    <a class="nav-link" class="btn btn-danger btn-lg btn-block"  href="/client/{$petowner->id}/{$pet->id}/periodic" >Periodic-Treatments</a>
+    <a><button type="button" href="/index" >General Treatment</button></a> 
     </div>
     <div class="col-6">
     <button type="button" class="btn btn-danger btn-lg btn-block">Periodic Treatment</button> 
     </div>
+  </div>
 
 
 
