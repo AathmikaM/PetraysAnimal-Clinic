@@ -15,7 +15,7 @@
 <form action="" >
  <div class="row">
     <div class="col-6"> 
-    <div class="card mb-5">
+    <div class="card mb-5 ">
         <div class ="card-header">
       <div class="py-5 text-center">
             <!-- add the href to get image -->
@@ -37,10 +37,10 @@
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="27"></textarea>
     <div class="row">
     <div class="orm-control col-lg-2">
-      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="submit" class="btn btn-success">Save</button>
     </div>
     <div class="orm-control col-lg-0">
-      <button type="submit" class="btn btn-primary">Edit</button>
+      <button type="submit" class="btn btn-success">Edit</button>
     </div>
   </div>
   </div>
@@ -51,10 +51,10 @@
   
   <div class="row">
     <div class="col-6">
-    <button type="button" class="btn btn-primary btn-lg btn-block">General Treatment</button> 
+    <button type="button" class="btn btn-danger btn-lg btn-block">General Treatment</button> 
     </div>
     <div class="col-6">
-    <button type="button" class="btn btn-primary btn-lg btn-block">Periodic Treatment</button> 
+    <button type="button" class="btn btn-danger btn-lg btn-block">Periodic Treatment</button> 
     </div>
 
 
