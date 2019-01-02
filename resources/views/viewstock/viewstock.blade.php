@@ -38,6 +38,7 @@
             <th>Name</th>
 			 <th>Module</th>
             <th>Quantity</th>
+            <th>Availability</th>
             <th>Unit Price</th>
             <th>Expire Date</th>
 			 <th>Medicine Type</th>
@@ -48,8 +49,17 @@
           @foreach($allstock as $key => $add)
               <tr>
                 <td>{{$add->name}}</td>
-				<td>{{$add->module}}</td>
+				        <td>{{$add->module}}</td>
                 <td>{{$add->quantity}}</td>
+                
+                  @if(($add->module =="Bottle" and $add->quantity <= 100) or ($add->module =="vaccine" and $add->quantity <= 80) or ($add->module =="tablet" and $add->quantity <= 500))
+                    <td bgcolor="red"></td>
+                  @else
+                    <td bgcolor="green"></td>
+                  
+                  @endif
+                  
+               
                 <td>{{$add->unit_price}}</td>
                 <td>{{$add->expire_date}}</td>
 				<td>{{$add->medcine_type}}</td>

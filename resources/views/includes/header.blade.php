@@ -188,7 +188,7 @@
                         <a class="dropdown-item" href="/viewstock">&nbsp;&nbsp;View Stock</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/charts">&nbsp;&nbsp;Check Availability</a>
+                        <!--<a class="dropdown-item" href="/charts">&nbsp;&nbsp;Check Availability</a>-->
                     </li>
                 </ul>
                 </li>
