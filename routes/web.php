@@ -146,4 +146,15 @@ Route::resource('/pets', 'petList');
 Route::get('/pets/{id}/{pid}', 'postToPets@show');
 // Route::get('/client/{id}/{pid}/general', 'PostToPets@create1');
 
+
+//Pet profile controller
 Route::put('/pets/{id}/{pid}/save','postToPets@store');
+
+
+//General treatment
+Route::get('/pets/{id}/{pid}/general','treatments@show');
+
+//Periodic treatment
+Route::post('/pets/{id}/{pid}/periodic','postToPets@store');
+
+

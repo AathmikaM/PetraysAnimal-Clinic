@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pet;
+use App\PetOwner;
+use App\Treatment;
 
 class treatments extends Controller
 {
@@ -57,9 +60,11 @@ class treatments extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id,$pid)
     {
-        //
+        $pet=Pet::find($pid);
+        $petowner=PetOwner::find($id);
+        return view('pet.treatments',['pet'=>$pet,'petowner'=>$petowner]);
     }
 
     /**
