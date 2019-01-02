@@ -9,11 +9,12 @@
 
  
  
- <div class="card-header">
     
  <form id="main" method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/save" novalidate>
     @method('PUT')
     @csrf
+ <div class="card-header">
+
  <div class="row">
     <div class="col-6"> 
     <div class="card mb-5 ">
@@ -51,7 +52,7 @@
     <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}S/general" >General-Treatments</a>
     </div>
     <div class="col-6">
-    <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}S/general" >Periodic-Treatments</a>
+    <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}S/periodic" >Periodic-Treatments</a>
     </div>
   </div>
 

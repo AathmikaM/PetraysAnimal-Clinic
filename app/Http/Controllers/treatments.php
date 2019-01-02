@@ -64,7 +64,7 @@ class treatments extends Controller
     {
         $pet=Pet::find($pid);
         $petowner=PetOwner::find($id);
-        return view('pet.treatments',['pet'=>$pet,'petowner'=>$petowner]);
+        return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner]);
     }
 
     /**
