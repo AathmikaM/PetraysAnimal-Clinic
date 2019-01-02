@@ -20,6 +20,7 @@
       
     </ul>
 
+<form>
  <div class="row">
     <div class="col-6"> 
       <div class="py-5 text-center">
@@ -35,11 +36,10 @@
           </div>
 
 
-<form id="main" method="post" action="{{route('pet/{id}/{pid}',$pet->id)}}">
 <div class="col-6"> 
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Special Notes</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" value="{{$pet->specialnote}}"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20"></textarea>
     <div class="row">
     <div class="orm-control col-lg-2">
       <button type="submit" class="btn btn-primary">Save</button>
