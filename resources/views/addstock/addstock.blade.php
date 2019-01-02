@@ -78,7 +78,7 @@
                     <div class="col-md-6">
                         <label for="module" class="col-md-4 col-form-label text-md-left"><strong>Modules</strong></label>
                         <div class="col-md-8">
-                            <input id="module"  placeholder="Enter Type Of Module" type="double" class="form-control{{ $errors->has('module') ? ' is-invalid' : '' }}" name="module" value="{{ old('module') }}" required autofocus>
+                            <input id="module" name="module"  placeholder="Enter Type Of Module" type="text" class="form-control{{ $errors->has('module') ? ' is-invalid' : '' }}" name="module" value="{{ old('module') }}" required autofocus>
                             @if ($errors->has('module'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('module') }}</strong>
