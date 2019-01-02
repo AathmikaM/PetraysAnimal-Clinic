@@ -90,7 +90,7 @@ class addstockController extends Controller
     {
         $this->  validate($request,[
             'name'        => 'required',
-            'quantity'    => 'requir ed',
+            'quantity'    => 'required',
             'unit_price'    => 'required',
             'expire_date' => 'required'
         ]); 
@@ -101,8 +101,8 @@ class addstockController extends Controller
         $addstock->unit_price = $request->get('unit_price');
         $addstock->expire_date = $request->get('expire_date');
         $addstock->relevent_species = $request->get('relevent_species');
-		 $addstock->medcine_type = $request->get('medcine_type');
-		 $addstock->module = $request->get('module');
+		$addstock->medcine_type = $request->get('medcine_type');
+		$addstock->module = $request->get('module');
 	
 
         $addstock -> save();

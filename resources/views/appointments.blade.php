@@ -46,7 +46,9 @@
                                                 <b>{{ $appointments1->petOwnerName }} </b><br>
                                                 {{ $appointments1->dateAndTime }}<br>
                                                 {{ $appointments1->ReasonForAppointment	 }}<br>
-                                                {{ $appointments1->address }}
+                                                {{ $appointments1->address }}<br>
+                                                {{ $appointments1->mobile_num }}<br>
+
                                             </div>
                                         </div>
                                         <div class="card-action small" style="height: 50px;">

@@ -19,6 +19,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('ReasonForAppointment');
             $table->dateTime('dateAndTime');
             $table->string('address');
+            $table->integer('mobile_num');
             $table->timestamps();
         });
     }
