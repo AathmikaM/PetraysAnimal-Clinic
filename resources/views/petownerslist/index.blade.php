@@ -1,7 +1,7 @@
 @extends('layouts.layouts')
 
 
-@section('title', 'Client List')
+@section('title', 'Pet Owner list')
 
 
 
