@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Pet;
 use App\PetOwner;
 use App\Treatment;
+use App\AddStock;
 
 class treatments extends Controller
 {
@@ -63,8 +64,9 @@ class treatments extends Controller
     public function show($id,$pid)
     {
         $pet=Pet::find($pid);
+        $medicine=AddStock::all();
         $petowner=PetOwner::find($id);
-        return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner]);
+        return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner,'medicine'=>$medicine]);
     }
 
     /**

@@ -4,10 +4,7 @@
 
 
  @section('content')
- <div class="container">
- <div class="card mb-3">
-        <div class="card-header">
-            <div class="card-body">
+ 
  <form>
   <div class="form-group">
     <label for="title">Title Of The Treatment</label>

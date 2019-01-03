@@ -23,7 +23,7 @@
                     <div class="dropdown-menu mailbox animated bounceInDown"></div>
 
                     <form class="app-search p-l-20">
-                        <input type="text" class="form-control" placeholder="Search for..."> <a class="srh-btn"><i class="ti-search"></i></a>
+                        <input type="text" name="search" id="search" class="form-control" placeholder="Search for..."> <a class="srh-btn"><i class="ti-search"></i></a>
                     </form>
                 </li>
             </ul>

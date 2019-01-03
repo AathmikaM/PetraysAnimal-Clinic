@@ -8,7 +8,7 @@
  <div class="container">
  <div class="card mb-4">
         <div class ="card-header">
-             <h1 class="text-center" class="breadcrumb-item active">General Treatments</h1>
+             <h1 class="text-center" class="breadcrumb-item active">Periodic Treatments</h1>
         </div>
     </div>
 
@@ -62,7 +62,7 @@
 
 
 
-  <button  class="btn btn-primary" action="">Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 
