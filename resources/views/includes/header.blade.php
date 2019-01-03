@@ -179,7 +179,7 @@
 
 
                 <li class="nav-item dropdown">
-                <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stock Management</a>
+                <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-shopping-cart m-r-10" aria-hidden="true"></i>Stock Management</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu1">
                     <li>
                         <a class="dropdown-item" href="/addstock">&nbsp;&nbsp;Add Stock</a>
