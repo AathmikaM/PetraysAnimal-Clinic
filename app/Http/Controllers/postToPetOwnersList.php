@@ -26,7 +26,50 @@ class postToPetOwnersList extends Controller
      */
     public function create()
     {
-        //
+        
+        // $this->validate($request,[
+        //     'name'          => 'required',
+        //     'address'       => 'required',
+        //     'mob_no'        => 'required',
+        //     'home_visit_id' => 'required',
+        //     'email'         => 'required',
+        //     'visitdate'     => 'required'
+        // ]); 
+        // $addstock = new PetOwner([
+        //     'name'          => $request->get('name'),
+        //     'address'       => $request->get('quantity'),
+        //     'mob_no'        => $request->get('unit_price'),
+        //     'home_visit_id' => $request->get('expire_date'),
+        //     'email'         => $request->get('relevent_species'),
+        //     'visitdate'     => $request->get('medcine_type') 
+        // ]);
+
+        // $addstock -> save();
+        // return redirect()->route('petowners')->with('success','Data Added');
+
+
+    }
+
+
+    public function addnewowner(Request $request){
+      //  dd($request->name)
+
+        $this->validate($request,[
+            'name'          => 'required',
+            'address'       => 'required',
+            'mob_no'       => 'required',
+            'email'         => 'required',
+            
+        ]); 
+        $petowners = new PetOwner([
+            'name'          => $request->post('name'),
+            'address'       => $request->post('address'),
+            'mob_no'       => $request->post('mob_no'),
+            'email'         => $request->post('email'),
+
+        ]);
+        $petowners -> save();
+        return redirect()->route('petowners')->with('success','Data Added');
     }
 
     /**
