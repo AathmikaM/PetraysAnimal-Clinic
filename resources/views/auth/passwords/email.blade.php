@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card border-primary" >
-                <div class="card-header text-white bg-primary mb-3">{{ __('RESET PASSWORD') }}</div>
+                <div class="card-header text-white bg-primary mb-3" style='text-align:center' ><font size="40"><b>{{ __('RESET PASSWORD') }}</b></font></div>
 
                 <div class="card-body">
                     @if (session('status'))
