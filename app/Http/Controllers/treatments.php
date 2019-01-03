@@ -7,6 +7,7 @@ use App\Pet;
 use App\PetOwner;
 use App\Treatment;
 use App\AddStock;
+use App\TemporyMed;
 
 class treatments extends Controller
 {
@@ -80,6 +81,26 @@ class treatments extends Controller
         //
     }
 
+
+    public function save(Request $request){
+
+        $temp= new TemporyMed;
+        $id=$request->input('medicine');
+        $med=AddStock::find($id);   
+        $price=$med->selling_unit_price;
+        $quantity=$request->input('quantity');
+        $temp->type=$request->input('medicine');
+        $temp->quantity=$request->input('quantity');
+        $temp->price=$quantity*$price;
+        $temp->save();
+
+        $gettemp=TemporyMed::all();
+
+        return back()->with('gettemp',$gettemp);
+      
+
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -100,6 +121,8 @@ class treatments extends Controller
      */
     public function destroy($id)
     {
-        //
+        $row=TemporyMed::find($id);
+        $row->delete();
+        return back();
     }
 }
