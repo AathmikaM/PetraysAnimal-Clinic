@@ -1,7 +1,7 @@
 @extends('layouts.layouts')
 
 
-@section('title', 'Client List')
+@section('title', 'Stock Management')
 
 
 
@@ -117,7 +117,7 @@
 
 
                <div class="form-group">
-                    <label for="selling_unit_price" class="col-md-4 col-form-label text-md-left"><strong>selling_unit_price</strong></label>
+                    <label for="selling_unit_price" class="col-md-4 col-form-label text-md-left"><strong>Selling_unit_price</strong></label>
                     <div class="col-md-10">
                         <input id="selling_unit_price"  placeholder="Enter selling_unit_price" type="text" class="form-control{{ $errors->has('selling_unit_price') ? ' is-invalid' : '' }}" name="selling_unit_price" value="{{ old('selling_unit_price') }}" required autofocus>
                         @if ($errors->has('selling_unit_price'))
@@ -146,8 +146,8 @@
               <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4"><strong>Medicine Type</strong></label>
               <div class="col-md-6">
              <!--   <form method="post">-->
-                <p><input type="checkbox" name= "medcine_type" id= "medcine_type" value="new medicine"/>new medicine</p>
-                <p><input type="checkbox" name= "medcine_type"  id= "medcine_type" value="old medicine"/>old medicine</p>
+                <p><input type="checkbox" name= "medcine_type" id= "medcine_type" value="1"/>new medicine</p>
+                <p><input type="checkbox" name= "medcine_type"  id= "medcine_type" value="0"/>old medicine</p>
                 <!--</form>-->
               </div>
            </div> 

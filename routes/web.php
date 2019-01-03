@@ -130,8 +130,12 @@ Route::resource('charts', 'ChartController');
 
 
 Route::get('/viewstock', 'viewstockController@index');
+Route::get('/insertdata', 'inserdataController@index');
+Route::get('/Client/{id}', 'AppointmentController@accept');
+Route::get('/Client/cancel/{id}', 'AppointmentController@cancel');
 
 
+Route::post('/petowners/addnewowner', 'postToPetOwnersList@addnewowner');
 Route::post('/addstock/fetch', 'addstockController@fetch')->name('addstock.fetch');
 
 //Client list loading controller
@@ -141,11 +145,14 @@ Route::resource('/petowners', 'postToPetOwnersList');
 //Pet list loading controller
 Route::resource('/pets', 'petList');
 
-
+Route::post('/pets/addnewpet', 'postToPets@addnewpet');
 //Add General treatment  controller
 Route::get('/pets/{id}/{pid}', 'postToPets@show');
 // Route::get('/client/{id}/{pid}/general', 'PostToPets@create1');
 
+
+
+Route::put('/pets/{id}/{pid}/save','postToPets@store');
 
 //Pet profile controller
 Route::put('/pets/{id}/{pid}/save','postToPets@store');
@@ -161,6 +168,9 @@ Route::post('/pets/{id}/{pid}/periodic','postToPets@store');
 //  Route::get('/addstock','AutoCompleteController@index');
 //  Route::post('/addstock/fetch','AutoCompleteControlller@fetch')->name('addstock.fetch');
 
+<<<<<<< HEAD
 //generating report
 
 Route::post('/pets/{id}/{pid}/general/save','treatments@save');
+=======
+>>>>>>> d3dfc437bc6965f9b30253653d96458d09928f67

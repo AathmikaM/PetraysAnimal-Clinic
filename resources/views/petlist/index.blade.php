@@ -1,7 +1,7 @@
 @extends('layouts.layouts')
 
 
-@section('title', 'Client List')
+@section('title', 'Pet Owner')
 
 
 
@@ -31,6 +31,54 @@
             <h4>{{$petowner->mob_no}}</h4>
           </div>
 
+        <div class="modal fade" id="modalPet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h3 class="modal-title w-100 font-weight-bold">Add New Pet</h3>
+      </div>
+
+       <form method="post" action="/pets/addnewpet/">
+         @csrf
+
+      <div class="modal-body mx-3">
+        <input type="hidden" id="pname" name ="pid" value="{{ Request::segment(2) }}">
+        <div class="md-form mb-5">
+            <input type="text" id="pname" name ="name" class="form-control validate" placeholder="Pet Name">
+        </div>
+
+        <div class="md-form mb-4">
+          <input type="text" id="age" name="age" class="form-control validate" placeholder="Age">
+        </div>
+
+        <div class="md-form mb-4">
+          <input type="number" id="weight" name="weight" class="form-control validate" placeholder="Weight ">
+        </div>
+
+        <div class="md-form mb-4">
+          <input type="text" id="species" name="species" class="form-control validate" placeholder=" Species">
+        </div>
+
+        <div class="md-form mb-4">
+          <input type="text" id="colour" name="colour" class="form-control validate" placeholder=" Colour">
+        </div>
+
+        <div class="md-form mb-4">
+            <textarea id="colour" name="special_note" class="form-control validate" placeholder="Special Note"></textarea>
+        </div>
+      </div>
+
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="submit" class="btn btn-default">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalPet">Add New Pet </a>
+</div>
 
 @if(count($pets)>0)
 
