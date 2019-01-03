@@ -46,6 +46,7 @@ class GeneralTreatment extends Controller
     public function show($id)
     {
         $pet=Pet::find($id);
+        $medicine=AddStock::all();
         return view('pet.index',['pet'=>$pet]);
     }
 
