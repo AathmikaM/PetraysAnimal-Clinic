@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddMedicineTypeToAddStocks extends Migration
+class AddMedcineTypeToAddStocks extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddMedicineTypeToAddStocks extends Migration
     public function up()
     {
         Schema::table('add_stocks', function (Blueprint $table) {
-            $table->string('medicine_type'); //varchar (50)
+            //
         });
     }
 
@@ -26,7 +26,7 @@ class AddMedicineTypeToAddStocks extends Migration
     public function down()
     {
         Schema::table('add_stocks', function (Blueprint $table) {
-            //
+            $table->string('medcine_type'); //varchar (50)
         });
     }
 }
