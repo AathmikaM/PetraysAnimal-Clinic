@@ -40,7 +40,8 @@ class addstockController extends Controller
             'name'        => 'required',
             'quantity'    => 'required',
             'unit_price'  => 'required',
-            'expire_date' => 'required'
+            'expire_date' => 'required',
+            'selling_unit_price' => 'required'
         ]); 
         $addstock = new Addstock([
             'name'        => $request->get('name'),
@@ -49,7 +50,8 @@ class addstockController extends Controller
             'expire_date' => $request->get('expire_date'),
             'relevent_species' => $request->get('relevent_species'),
             'medcine_type' => $request->get('medcine_type'),
-            'module' => $request->get('module') 
+            'module' => $request->get('module'),
+            'selling_unit_price' => $request->get('selling_unit_price') 
         ]);
 
         $addstock -> save();
@@ -92,7 +94,8 @@ class addstockController extends Controller
             'name'        => 'required',
             'quantity'    => 'required',
             'unit_price'    => 'required',
-            'expire_date' => 'required'
+            'expire_date' => 'required',
+            'selling_unit_price' => 'required'
         ]); 
 
         $addstock = AddStock::find($id);
@@ -102,7 +105,8 @@ class addstockController extends Controller
         $addstock->expire_date = $request->get('expire_date');
         $addstock->relevent_species = $request->get('relevent_species');
 		$addstock->medcine_type = $request->get('medcine_type');
-		$addstock->module = $request->get('module');
+        $addstock->module = $request->get('module');
+        $addstock->module = $request->get('selling_unit_price');
 	
 
         $addstock -> save();

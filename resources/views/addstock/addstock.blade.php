@@ -60,8 +60,8 @@
  
                 <div class="form-group">
                     <label for="name" class="col-md-4 col-form-label text-md-left"><strong>Medicine Name </strong></label>
-                    <div class="col-md-8">
-                        <input id="name"  placeholder="Enter Medicine Name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                    <div class="col-md-10">
+                        <input id="name"  placeholder="Enter Medicine Name" autocomplete="off" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                         <div id="medicineList"></div>  
 
                         @if ($errors->has('name'))
@@ -105,7 +105,7 @@
               
                <div class="form-group">
                     <label for="unit_price" class="col-md-4 col-form-label text-md-left"><strong>Unit price</strong></label>
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <input id="unit_price"  placeholder="Enter Unit Prize" type="text" class="form-control{{ $errors->has('unit_price') ? ' is-invalid' : '' }}" name="unit_price" value="{{ old('unit_price') }}" required autofocus>
                         @if ($errors->has('unit_price'))
                             <span class="invalid-feedback" role="alert">
@@ -114,11 +114,24 @@
                         @endif
                     </div>
                </div>
+
+
+               <div class="form-group">
+                    <label for="selling_unit_price" class="col-md-4 col-form-label text-md-left"><strong>Selling_unit_price</strong></label>
+                    <div class="col-md-10">
+                        <input id="selling_unit_price"  placeholder="Enter selling_unit_price" type="text" class="form-control{{ $errors->has('selling_unit_price') ? ' is-invalid' : '' }}" name="selling_unit_price" value="{{ old('selling_unit_price') }}" required autofocus>
+                        @if ($errors->has('selling_unit_price'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('selling_unit_price') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+               </div>
               
 
               <div class="form-group">
                 <label for="expire_date" class="col-md-4 col-form-label text-md-left"><strong>Expire Date</strong></label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <input id="expire_date"  placeholder="Enter Expire Date" type="date" class="form-control{{ $errors->has('expire_date') ? ' is-invalid' : '' }}" name="expire_date"  value="{{ old('expire_date') }}" required autofocus >
                     @if ($errors->has('expire_date'))
                         <span class="invalid-feedback" role="alert">
@@ -133,8 +146,8 @@
               <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4"><strong>Medicine Type</strong></label>
               <div class="col-md-6">
              <!--   <form method="post">-->
-                <p><input type="checkbox" name= "medcine_type" id= "medcine_type" value="new medicine"/>new medicine</p>
-                <p><input type="checkbox" name= "medcine_type"  id= "medcine_type" value="old medicine"/>old medicine</p>
+                <p><input type="checkbox" name= "medcine_type" id= "medcine_type" value="1"/>new medicine</p>
+                <p><input type="checkbox" name= "medcine_type"  id= "medcine_type" value="0"/>old medicine</p>
                 <!--</form>-->
               </div>
            </div> 
@@ -144,7 +157,7 @@
 
                <div class="form-group">
                 <label for="expire_date" class="col-md-4 col-form-label text-md-left"  rows="4"><strong>Relevent Species</strong></label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                   <input id="relevent_species" placeholder="Enter Relevent Species" type="text" class="form-control{{ $errors->has('relevent_species') ? ' is-invalid' : '' }}" name="relevent_species" value="{{ old('relevent_species') }}" required autofocus>
                     @if ($errors->has('relevent_species'))
                         <span class="invalid-feedback" role="alert">
@@ -299,39 +312,28 @@
  --}}
 
 
- <script>
-    $(document).ready(function(){
-
-            $('#relevent_species').tokenfield({
-                autocomplete:{
-                    source:['Cat','Dog','Cow','Pigs','Snakes',''],
-                    delay:100
-                },
-                showAutocompleteOnFocus: true
-            });
-    });
-
-</script>  
 </div> 
 
- 
 
 
 
 @endsection
 
 
+@push('js')
+<script>
+            
 
-  {{-- <script>
     $(document).ready(function(){
-
+        
                 $('#name').keyup(function(){
                     var query = $(this).val();
+                    
                     if(query != '')
                     {
                         var _token = $('input[name= "_token"]').val();
                         $.ajax({
-                            url:"{{route('addstock.fetch')}}"
+                            url:"{{route('addstock.fetch')}}",
                             method:"POST",
                             data:{query:query, _token:_token},
                             success:function(data)
@@ -344,4 +346,5 @@
                 });
     });
 
-</script>   --}}
+</script>  
+@endpush 

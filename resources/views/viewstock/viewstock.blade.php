@@ -40,6 +40,7 @@
             <th>Quantity</th>
             <th>Availability</th>
             <th>Unit Price</th>
+            <th>Selling Unit Price</th>
             <th>Expire Date</th>
 			 <th>Medicine Type</th>
             <th>Relevent Species</th>
@@ -61,6 +62,7 @@
                   
                
                 <td>{{$add->unit_price}}</td>
+                <td>{{$add->selling_unit_price}}</td>
                 <td>{{$add->expire_date}}</td>
 				<td>{{$add->medcine_type}}</td>
                 <td>{{$add->relevent_species}}</td>

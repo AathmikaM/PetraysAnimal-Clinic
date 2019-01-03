@@ -154,3 +154,17 @@ Route::get('/pets/{id}/{pid}', 'postToPets@show');
 
 Route::put('/pets/{id}/{pid}/save','postToPets@store');
 
+//Pet profile controller
+Route::put('/pets/{id}/{pid}/save','postToPets@store');
+
+
+//General treatment
+Route::get('/pets/{id}/{pid}/general','treatments@show');
+
+//Periodic treatment
+Route::post('/pets/{id}/{pid}/periodic','postToPets@store');
+
+//medicine name suggessions in add stock
+//  Route::get('/addstock','AutoCompleteController@index');
+//  Route::post('/addstock/fetch','AutoCompleteControlller@fetch')->name('addstock.fetch');
+
