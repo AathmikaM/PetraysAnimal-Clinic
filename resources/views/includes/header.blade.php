@@ -1,7 +1,7 @@
 <link href="{{ asset('css/materialize.css') }}" rel="stylesheet">
 <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 <link href="{{ asset('css/style1.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+<!-- <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css"> -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
@@ -21,6 +21,10 @@
                 <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                 <li class="nav-item hidden-sm-down">
                     <div class="dropdown-menu mailbox animated bounceInDown"></div>
+
+                    <!--<form class="app-search p-l-20">
+                        <input type="text" class="form-control" placeholder="Search for..."> <a class="srh-btn"><i class="ti-search"></i></a>
+                    </form>-->
 
                     <form class="app-search p-l-20">
                         <input type="text" name="search" id="search" class="form-control" placeholder="Search for..."> <a class="srh-btn"><i class="ti-search"></i></a>
@@ -179,7 +183,11 @@
 
 
                 <li class="nav-item dropdown">
+ 
+                <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-product m-r-10" aria-hidden="true"></i>Stock Management</a>
+
                 <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-shopping-cart m-r-10" aria-hidden="true"></i>Stock Management</a>
+
                 <ul class="collapse list-unstyled" id="pageSubmenu1">
                     <li>
                         <a class="dropdown-item" href="/addstock">&nbsp;&nbsp;Add Stock</a>
