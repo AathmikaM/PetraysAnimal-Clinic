@@ -36,11 +36,11 @@
   <div class="form-group">
     <label for="exampleFormControlSelect1">Select Medicine</label>
     <select class="form-control" id="exampleFormControlSelect1">
-      <option>Panadol</option>
-      <option>Disprene</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+    @if(count($medicines)>0)
+      @foreach($medicines as $medicine)
+      <option value="{{medicine-id}}}">{{medicine-name}}</option>
+      @endforeach
+     @endif 
     </select>
   </div>
 </div>

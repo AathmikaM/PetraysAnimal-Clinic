@@ -64,9 +64,9 @@ class treatments extends Controller
     public function show($id,$pid)
     {
         $pet=Pet::find($pid);
-        $medicine=AddStock::all();
+        $medicines=AddStock::all();
         $petowner=PetOwner::find($id);
-        return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner,'medicine'=>$medicine]);
+        return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines]);
     }
 
     /**
