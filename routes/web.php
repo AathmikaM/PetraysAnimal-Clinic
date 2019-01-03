@@ -158,5 +158,5 @@ Route::get('/pets/{id}/{pid}/general','treatments@show');
 Route::post('/pets/{id}/{pid}/periodic','postToPets@store');
 
 //medicine name suggessions in add stock
- Route::get('/addstock','AutoCompleteController@index');
- Route::post('/addstock/fetch','AutoCompleteControlller@fetch')->name('addstock.fetch');
+//  Route::get('/addstock','AutoCompleteController@index');
+//  Route::post('/addstock/fetch','AutoCompleteControlller@fetch')->name('addstock.fetch');

@@ -114,6 +114,19 @@
                         @endif
                     </div>
                </div>
+
+
+               <div class="form-group">
+                    <label for="selling_unit_price" class="col-md-4 col-form-label text-md-left"><strong>selling_unit_price</strong></label>
+                    <div class="col-md-10">
+                        <input id="selling_unit_price"  placeholder="Enter selling_unit_price" type="text" class="form-control{{ $errors->has('selling_unit_price') ? ' is-invalid' : '' }}" name="selling_unit_price" value="{{ old('selling_unit_price') }}" required autofocus>
+                        @if ($errors->has('selling_unit_price'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('selling_unit_price') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+               </div>
               
 
               <div class="form-group">

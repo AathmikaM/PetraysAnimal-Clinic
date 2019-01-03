@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class AddStock extends Model
 {
-    protected $fillable = ['name','quantity','unit_price','expire_date','relevent_species','medcine_type','module'];
+    protected $fillable = ['name','quantity','unit_price','expire_date','relevent_species','medcine_type','module','selling_unit_price'];
 }
