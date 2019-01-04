@@ -19,17 +19,17 @@
         <div class="navbar-collapse">
             <ul class="navbar-nav mr-auto mt-md-0 ">
                 <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
-                <li class="nav-item hidden-sm-down">
+                <!-- <li class="nav-item hidden-sm-down">
                     <div class="dropdown-menu mailbox animated bounceInDown"></div>
 
-                    <!--<form class="app-search p-l-20">
+                    <form class="app-search p-l-20">
                         <input type="text" class="form-control" placeholder="Search for..."> <a class="srh-btn"><i class="ti-search"></i></a>
-                    </form>-->
+                    </form>
 
                     <form class="app-search p-l-20">
                         <input type="text" name="search" id="search" class="form-control" placeholder="Search for..."> <a class="srh-btn"><i class="ti-search"></i></a>
                     </form>
-                </li>
+                </li> -->
             </ul>
             <!--<ul class="navbar-nav my-lg-0">
                      <li class="nav-item dropdown">
