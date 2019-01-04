@@ -35,6 +35,7 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 
+
 @yield('style')
 </head>
 
@@ -50,6 +51,8 @@
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <div id="main-wrapper">
+        
+
     @include('includes.header')
         <!-- ============================================================== -->
         <!-- Page wrapper  -->

@@ -18,6 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+    body {
+        background-color: #d24dff;
+    }
+    </style>
 </head>
 <body style="background: url('http://perfecthome.bg/wp-content/uploads/2015/12/blurry_blue_background_iii-wallpaper-1366x768.jpg');">
     <div id="app">
@@ -42,13 +47,13 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('') }}</a>
                             </li>
                             <li class="nav-item">
                                 @if (Route::has('register'))
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('') }}</a>
                                 @endif
-                            </li>
+                            </li> 
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -66,7 +71,7 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                            </li> 
                         @endguest
                     </ul>
                 </div>
