@@ -49,8 +49,15 @@
   
   <div class="row">
     <div class="col-6">
-    <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general" >General-Treatments</a>
+    <div class="row">
+      <div class="col-6">
+    <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general" >Add-General-Treatments</a>
     </div>
+    <div class="col-6">
+    <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general/view" >View-General-Treatments</a>
+    </div>
+    </div>
+  </div>
     <div class="col-6">
     <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/periodic" >Periodic-Treatments</a>
     </div>

@@ -104,19 +104,27 @@ class treatments extends Controller
         $temp->price=$quantity*$price;
         $temp->save();
 
-        // $treatment=new Treatment;
-        // // $treatment->title=
-        // $p=$request->input('title');
-        // return dd($p);
-        // $treatment->description=$request->input('description');
-        
-        // $treatment->pets_id=$pid;
-        // $treatment->save();
+         
         $gettemp=TemporyMed::all();
 
         return back()->with('gettemp',$gettemp);
       
 
+    }
+
+    public function savet(Request $request,$id,$pid){
+
+
+        $treatment=new Treatment;
+        $treatment->title=$request->input('title');
+        $treatment->description=$request->input('description');
+        $treatment->pets_id=$pid;
+        $treatment->save();
+        $passid=$treatment->id;
+
+        $treatdata=TemporyMed::find($passid);
+         
+        return back()->with('treatdata',$treatdata);
     }
 
     /**
@@ -139,7 +147,7 @@ class treatments extends Controller
      */
     public function destroy($id,$pid,$tid)
     {
-        $row=TemporyMed::find($tid);    
+        $row=TemporyMed::find($tid);   
         $row->delete();
         return back();
     }
