@@ -277,5 +277,6 @@
 @yield('space')
 
 @section('script')
+@stack('js')
 @endsection
 

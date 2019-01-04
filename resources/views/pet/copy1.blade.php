@@ -18,16 +18,14 @@
             <div class="card-body">
 
 
-<form method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/save">
-@csrf
   <div class="form-group">
     <label for="title">Title Of The Treatment</label>
-    <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp" placeholder="Enter Title Of Treatment">
+    <input type="email" class="form-control" value="" id="title" aria-describedby="emailHelp" placeholder="Enter Title Of Treatment">
   </div>
 
   <div class="form-group">
     <label for="description">Description</label>
-    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+    <textarea class="form-control" id="description" value="description" rows="3"></textarea>
   </div>
 
   <!-- *********************************** -->
@@ -67,7 +65,70 @@
    
 
 
+<!-- 
+*************************ADD MEd Start************* -->
+<div class="modal fade" id="modalPetowner" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h3 class="modal-title w-100 font-weight-bold">Select Medicine</h3>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <form method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/save">
+         @csrf
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+        <div class="form-group">
+    <label for="exampleFormControlSelect1">Select Medicine</label>
+    <select class="form-control" name="medicine" id="exampleFormControlSelect1">
+    @if(count($medicines)>0)
+      @foreach($medicines as $medicine)
 
+      @if(($medicine->medcine_type)==0)
+                  @if(($medicine->quantity)>0)
+      <option  value="{{$medicine->id}}">{{$medicine->name}}</option>
+                  @endif
+      @else
+        @if(($medicine->quantity)>0)
+      <option value="{{$medicine->id}}">{{$medicine->name}}</option>
+        @endif
+      @endif
+
+
+      @endforeach
+     @endif 
+    </select>
+  </div>
+        </div>
+
+        <div class="md-form mb-4">
+          <input type="text" id="address" name="address" class="form-control validate" placeholder="Your Address">
+        </div>
+
+        <div class="md-form mb-4">
+          <input type="number" id="mob_no" name="mob_no" class="form-control validate" placeholder="Your Mobile No">
+        </div>
+
+        <div class="md-form mb-4">
+          <input type="text" id="email" name="email" class="form-control validate" placeholder="Your Email">
+        </div>
+      </div>
+
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="submit" class="btn btn-default">Add</button>
+      </div>
+  </form>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalPetowner">Add New Pet Owner</a>
+</div>
+</div>
 
 <!-- 
 **************ADD Medicine********************** -->
