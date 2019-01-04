@@ -126,7 +126,7 @@ class addstockController extends Controller
     {
         $addstock = AddStock::find($id);
         $addstock->delete();
-        return redirect('/viewstock')->with('success','Data Deleted');
+        return redirect('/viewstock')->with('success',' Successfully Data Deleted');
     }
 
 
