@@ -22,9 +22,12 @@
 
   <div class="row">
     <div class ="col-md-12">
-        <br />
-            <h3 align="center">VIEW MEDICINE</h3>
-        <br />
+
+        <div class="card mb-4">
+            <div class ="card-header">
+                 <h1 class="text-center" class="breadcrumb-item active"><strong>View Stock</strong></h1>
+            </div>
+        </div>
       
         @if($message = Session::get('success'))
           <div class = "alert alert-success">
@@ -35,17 +38,17 @@
 
       <table class= "table table-bordered">
           <tr>
-            <th>Name</th>
-			     <th>Module</th>
-            <th>Quantity</th>
-            <th>Availability</th>
-            <th>Unit Price</th>
-            <th>Selling Unit Price</th>
-            <th>Expire Date</th>
-			      <th>Medicine Type</th>
-            <th>Relevent Species</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th><strong>Name</strong></th>
+			     <th><strong>Module</strong></th>
+            <th><strong>Quantity</strong></th>
+            <th><strong>Availability</strong></th>
+            <th><strong>Unit Price</strong></th>
+            <th><strong>Selling Unit Price</strong></th>
+            <th><strong>Expire Date</strong></th>
+			      <th><strong>Medicine Type</strong></th>
+            <th><strong>Relevent Species</strong></th>
+            <th><strong>Edit</strong></th>
+            <th><strong>Delete</strong></th>
           </tr>
           @foreach($allstock as $key => $add)
               <tr>
