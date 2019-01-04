@@ -37,7 +37,7 @@ class postToPets extends Controller
             'weight'       => 'required',
             'species'         => 'required',
             'colour'         => 'required',
-            'special_note'         => 'required'
+            'special_note'         => 'required',
             'pet_owner_id' => 'required'
             
         ]); 

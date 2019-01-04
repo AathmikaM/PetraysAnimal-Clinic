@@ -16,66 +16,68 @@
  <div class="card mb-3">
         <div class="card-header">
             <div class="card-body">
+ 
+ <form method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/save">
+ @csrf
 
-
-<form method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/save">
-@csrf
   <div class="form-group">
     <label for="title">Title Of The Treatment</label>
-    <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp" placeholder="Enter Title Of Treatment">
+    <input type="email" class="form-control" value="" id="title" aria-describedby="emailHelp" placeholder="Enter Title Of Treatment">
   </div>
 
   <div class="form-group">
     <label for="description">Description</label>
-    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+    <textarea class="form-control" id="description" value="description" rows="3"></textarea>
   </div>
 
   <!-- *********************************** -->
   
-<div class="container">
+  <div class="container">
 <div class="card">
-
-      <!-- <div class="card border-primary" >
-      <div class="card-body"> -->
-      @if(count($temps)>0)
+@if(count($temps)>0)
     @foreach($temps as $temp)
+
+      <div class="card border-primary" >
+      <div class="card-body">
          <div class="row">
             <div class="col-md-4">
               {{$temp->type}}
             </div>
             <div class="col-md-3">
-              {{$temp->selling_unit_price}}*{{$temp->quantity}}
+              {{$temp->selling_unit_price}}+ * + {{$temp->quantity}}
               </div>
             <div class="col-md-3 text-left">
-            {{$temp->price}}
+            {{$temp->selling_unit_price}}*{{$temp->quantity}}
             </div>
       
               <div class="col-md-1">
-              <form method="POST" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/delete/{{$temp->id}}">
+              <form method="POST" action="/pets/{{$petowner->id}}/{$pet->id}/general/delete/{{$temp->id}}">
                 @method('DELETE')
                 @csrf
-                <button type="submit" class="close" aria-label="Close">  <span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" aria-label="Close">  <span aria-hidden="true">&times;</span></button>
                 </form>
                 </div>
             </div> 
-          
-      
-      @endforeach
-   @endif
+          </div> 
+        </div>
+      </div>
     </div>
    </div> 
-   
-
-
+   @endforeach
+   @endif
+</div>
+</div>
 
 
 <!-- 
-**************ADD Medicine********************** -->
+************************************** -->
+
 
 
 <div class="row">
     <div class="col-md-7">
-    <div class="form-group">
+
+  <div class="form-group">
     <label for="exampleFormControlSelect1">Select Medicine</label>
     <select class="form-control" name="medicine" id="exampleFormControlSelect1">
     @if(count($medicines)>0)
