@@ -118,6 +118,11 @@
                             <li><a href="settings"><i class="ti-settings"></i> Account Settings</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="/abc"><i class="fa fa-power-off"></i> Logout</a></li>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                            
                         </ul>
 
                     </div>

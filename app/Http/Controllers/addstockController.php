@@ -106,7 +106,7 @@ class addstockController extends Controller
         $addstock->relevent_species = $request->get('relevent_species');
 		$addstock->medcine_type = $request->get('medcine_type');
         $addstock->module = $request->get('module');
-        $addstock->module = $request->get('selling_unit_price');
+        $addstock->selling_unit_price = $request->get('selling_unit_price');
 	
 
         $addstock -> save();

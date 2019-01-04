@@ -42,7 +42,7 @@
             <th>Unit Price</th>
             <th>Selling Unit Price</th>
             <th>Expire Date</th>
-			 <th>Medicine Type</th>
+			      <th>Medicine Type</th>
             <th>Relevent Species</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -64,7 +64,7 @@
                 <td>{{$add->unit_price}}</td>
                 <td>{{$add->selling_unit_price}}</td>
                 <td>{{$add->expire_date}}</td>
-				<td>{{$add->medcine_type}}</td>
+			       	  <td>{{$add->medcine_type}}</td>
                 <td>{{$add->relevent_species}}</td>
                 <td><a href="{{action('addstockController@edit',$add['id'])}}" class="btn btn-warning">Edit</td>
                 <td>

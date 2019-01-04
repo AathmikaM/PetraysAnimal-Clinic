@@ -168,9 +168,8 @@ Route::post('/pets/{id}/{pid}/periodic','postToPets@store');
 //  Route::get('/addstock','AutoCompleteController@index');
 //  Route::post('/addstock/fetch','AutoCompleteControlller@fetch')->name('addstock.fetch');
 
-<<<<<<< HEAD
+
 //generating report
 
 Route::post('/pets/{id}/{pid}/general/save','treatments@save');
-=======
->>>>>>> d3dfc437bc6965f9b30253653d96458d09928f67
+

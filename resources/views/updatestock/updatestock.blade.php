@@ -71,6 +71,13 @@
                     </div>
 
                     <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Selling_unit_price:</label>
+                                 <div class="col-md-6">
+                                <input type="text" name="selling_unit_price" class="form-control" value="{{$addstock->selling_unit_price}}" placeholder="Enter Selling_Unit_Prize " />
+                                 </div>
+                    </div>
+
+                    <div class="form-group">
 					<label class="control-label col-sm-2" for="name">Expiry Date:</label>
                         <div class="col-md-6">
                         <input type="date" name="expire_date" class="form-control" value="{{$addstock->expire_date}}" placeholder="Enter Expire Date " />
@@ -82,8 +89,8 @@
              			 <label for="medcine_type" class="col-md-4 col-form-label text-md-left"  rows="4"><strong>Medicine Type</strong></label>
               				<div class="col-md-6">
              <!--   <form method="post">-->
-				                <p><input type="checkbox" name= "medcine_type" id= "medcine_type" value="{{$addstock->expire_date}}"/>new medicine</p>
-				                <p><input type="checkbox" name= "medcine_type"  id= "medcine_type" value="{{$addstock->expire_date}}"/>old medicine</p>
+				                <p><input type="checkbox" name= "medcine_type" id= "medcine_type" value="{{$addstock->medcine_type}}"/>new medicine</p>
+				                <p><input type="checkbox" name= "medcine_type"  id= "medcine_type" value="{{$addstock->medcine_type}}"/>old medicine</p>
                 <!--</form>-->
               		</div>
            		</div> 

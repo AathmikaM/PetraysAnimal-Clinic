@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card ">
                 <div class="card border-primary" >
-                <div class="card-header text-white bg-primary mb-3 " style='text-align:center'><font size="30"><b>{{ __('LOGIN') }}</b></font></div>
+                <div class="card-header text-white bg-primary mb-3 " style='text-align:center'><font size="30"><b>{{ __('PET-RAYS ANIMAL CLINIC') }}</b></font></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -70,4 +70,7 @@
         </div>
     </div>
 </div>
+
+
+
 @endsection
