@@ -1,9 +1,8 @@
- <?php
-
+<?php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\AddStock;
+use App\Appointment;
 use Charts;
 use DB;
 
@@ -12,35 +11,15 @@ class ChartController extends Controller
 {
     public function index()
     {
-        $addstock = AddStock::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))->get();
-        $chart = Charts::database($addstock,'bar','highcharts')
-                    ->title("STOCK DETAILS")
-                    ->elementLabel("STOCK")
+         $appointment = Appointment::where(DB::raw("DATE_FORMAT(dateAndTime,'%Y')"),date('Y'))->get();
+        $chart = Charts::database($appointment,'bar','highcharts')
+                    ->title("CLIENTS VISIT")
+                    ->elementLabel("CLIENTS")
                     ->dimensions(1000,500)
                     ->responsive(false)
                     ->groupByMonth(date('Y'),true);
-        return view('charts.charts',compact('chart'));
+        return view('charts.clientBasecharts',compact('chart'));
     }
-    public function index()
-    {
-        $addstock = AddStock::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))->get();
-        $chart = Charts::database($addstock,'bar','highcharts')
-                    ->title("STOCK DETAILS")
-                    ->elementLabel("STOCK")
-                    ->dimensions(1000,500)
-                    ->responsive(false)
-                    ->groupByMonth(date('Y'),true);
-        return view('charts.charts',compact('chart'));
-    }
-    public function index()
-    {
-        $addstock = AddStock::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))->get();
-        $chart = Charts::database($addstock,'bar','highcharts')
-                    ->title("STOCK DETAILS")
-                    ->elementLabel("STOCK")
-                    ->dimensions(1000,500)
-                    ->responsive(false)
-                    ->groupByMonth(date('Y'),true);
-        return view('charts.charts',compact('chart'));
-    }
+    
+    
 }

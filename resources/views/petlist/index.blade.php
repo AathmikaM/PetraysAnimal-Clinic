@@ -43,9 +43,9 @@
          @csrf
 
       <div class="modal-body mx-3">
-        <input type="hidden" id="pname" name ="pid" value="{{ Request::segment(2) }}">
+        <input type="hidden" id="pid" name ="pid" value="{{ Request::segment(2) }}">
         <div class="md-form mb-5">
-            <input type="text" id="pname" name ="name" class="form-control validate" placeholder="Pet Name">
+            <input type="text" id="name" name ="name" class="form-control validate" placeholder="Pet Name">
         </div>
 
         <div class="md-form mb-4">
