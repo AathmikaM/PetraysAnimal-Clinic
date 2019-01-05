@@ -96,22 +96,39 @@
             </div>
       
               <div class="col-md-1">
-              
-              <form method="POST" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/{{$treatdata->id}}/delete//{{$temp->id}}">
+              <form method="POST" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/{{$treatdata->id}}/delete/{{$temp->id}}">
                 @method('DELETE')
                 @csrf
                 <button type="submit" class="close" aria-label="Close">  <span aria-hidden="true">&times;</span></button>
                 </form>
                 </div>
             </div> 
-          
+            
       
       @endforeach
    @endif
     </div>
    </div> 
+   <hr>
+   <div class="container">
+<div class="card">
+   <div class="row">
+   <div class="col-md-4">
+   total:
+   </div>
+   <div class="col-md-3">
+   
+   </div>
 
-   <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general/savemed" >Save</a>
+   <div class="col-md-3 text-left">
+   {{$totalcost}}
+   </div>
+    
+   </div>
+   </div>
+   </div>
+
+   <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general/{{$treatdata->id}}/savemed" >Save</a>
 
 
 

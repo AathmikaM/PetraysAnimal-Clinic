@@ -149,6 +149,7 @@ Route::resource('/pets', 'petList');
 
 Route::post('/pets/addnewpet', 'postToPets@addnewpet');
 //Add General treatment  controller
+
 Route::get('/pets/{id}/{pid}', 'postToPets@show');
 // Route::get('/client/{id}/{pid}/general', 'PostToPets@create1');
 
@@ -156,7 +157,7 @@ Route::get('/pets/{id}/{pid}', 'postToPets@show');
 
 Route::put('/pets/{id}/{pid}/save','postToPets@store');
 
-//Pet profile controller
+//Pet profile controller form save
 Route::put('/pets/{id}/{pid}/save','postToPets@store');
 
 
@@ -170,14 +171,19 @@ Route::post('/pets/{id}/{pid}/periodic','postToPets@store');
 //  Route::get('/addstock','AutoCompleteController@index');
 //  Route::post('/addstock/fetch','AutoCompleteControlller@fetch')->name('addstock.fetch');
 
-//generating report
+///
 
 Route::post('/pets/{id}/{pid}/general/save/{tid}','generalTreatment@save');
 
-Route::delete('/pets/{id}/{pid}/general/delete/{tid}','generalTreatment@destroy');
+//medicine delete
 
+Route::delete('/pets/{id}/{pid}/general/{treatid}/delete/{tid}','generalTreatment@destroy');
+
+
+//generating bills
 Route::put('/pets/{id}/{pid}/general/savet/{tid}','generalTreatment@savet');
 
+//Save med
 Route::get('/pets/{id}/{pid}/general/{tid}/savemed','generalTreatment@savemed');
 
 

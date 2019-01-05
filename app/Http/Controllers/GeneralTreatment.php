@@ -44,20 +44,20 @@ class generalTreatment extends Controller
     public function store(Request $request)
     {
         
-    $treatment =new Treatment;
+    // $treatment =new Treatment;
    
-    $treatment->title=$request->input('title');
-    $treatment->discription=$request->input('description');
-    $treatment->quantity=$request->input('quantity');
-    $treatment->medicine=$request->input('inputGroupSelect01');
-    $treatment->save();
+    // $treatment->title=$request->input('title');
+    // $treatment->discription=$request->input('description');
+    // $treatment->quantity=$request->input('quantity');
+    // $treatment->medicine=$request->input('inputGroupSelect01');
+    // $treatment->save();
     
-    $issuedmedicine-=new IssuedMedicine;
-    $issuedmedicine->treatments_id->treatment->id;
+    // $issuedmedicine-=new IssuedMedicine;
+    // $issuedmedicine->treatments_id->treatment->id;
     
 
     
-    return redirect('/create');
+    // return redirect('/create');
     }
 
     /**
@@ -80,13 +80,25 @@ class generalTreatment extends Controller
         return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines,'temps'=>$temps,'treatdata'=>$treatdata]);
     }
 
-
-    public function treats($id,$pid)
+    public function show1($id,$pid)
     {
+
+
+        $treatdata=Treatment::find($treatid);      
         $pet=Pet::find($pid);
         $medicines=AddStock::all();
         $petowner=PetOwner::find($id);
-        return view('pet.copy1',['pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines]);
+        $temps=TemporyMed::all();
+        return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines,'temps'=>$temps,'treatdata'=>$treatdata]);
+    }
+
+
+    public function treats($id,$pid)
+    {
+    //     $pet=Pet::find($pid);
+    //     $medicines=AddStock::all();
+    //     $petowner=PetOwner::find($id);
+    //     return view('pet.copy1',['pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines]);
     }
     /**
      * Show the form for editing the specified resource.
@@ -99,9 +111,9 @@ class generalTreatment extends Controller
         //
     }
 
-
+//save treatment add button
     public function savet(Request $request,$id,$pid,$tid){
-        
+    
         $temp= new TemporyMed;
         $id=$request->input('medicine');
         $med=AddStock::find($id);   
@@ -116,13 +128,17 @@ class generalTreatment extends Controller
         $total=$quantity*$price;
 
 
-        static $totalcost;
-        $totalcost=$totalcost+$total;
+        $totalcost=TemporyMed::sum('price');
+        
         
 
-        $gettemp=TemporyMed::all();
+        //$gettemp=TemporyMed::all();
 
-        
+        $petowner=PetOwner::find($id);
+        $pet=Pet::find($pid);
+        $medicines=AddStock::all();
+        $temps=TemporyMed::all();
+
 
         $description=Treatment::find($tid);
         $description->title=$request->input('title');
@@ -131,7 +147,8 @@ class generalTreatment extends Controller
         $description->save();
 
         $treatdata=Treatment::find($tid); 
-        return back()->with(array('gettemp'=>$gettemp, 'treatdata'=>$treatdata));
+    //'gettemp'=>$gettemp,
+        return view('pet.add')->with(array('treatdata'=>$treatdata,'pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines,'temps'=>$temps,'totalcost'=>$totalcost));
 
 
       
@@ -150,7 +167,7 @@ class generalTreatment extends Controller
         return back()->with('treatdata',$treatdata);
     }
 
-
+//save the report
     public function savemed($id,$pid,$tid){
         $meds=TemporyMed::all();
 
@@ -165,10 +182,17 @@ class generalTreatment extends Controller
 
         
      }
+     $petowner=PetOwner::find($id);
+     $pet=Pet::find($pid);
+     $medicines=AddStock::all();
+     $temps=TemporyMed::all();
+     $treatdata=Treatment::find($tid); 
+     $gettemp=TemporyMed::all();
+
    
      DB::table('tempory_meds')->delete();
 
-     return back();
+     return redirect('/pets/'.$id.'/'.$pid);
 
     }
 
@@ -179,6 +203,8 @@ class generalTreatment extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function update(Request $request, $id)
     {
         //
@@ -190,34 +216,54 @@ class generalTreatment extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id,$pid,$tid)
+    public function destroy($id,$pid,$treatid,$tid)
     {
+        
         $row=TemporyMed::find($tid);   
         $row->delete();
-        return back();
+        $totalcost=TemporyMed::sum('price'); 
+     $petowner=PetOwner::find($id);
+     $pet=Pet::find($pid);
+     $medicines=AddStock::all();
+     $temps=TemporyMed::all();
+     $treatdata=Treatment::find($treatid); 
+    //  $gettemp=TemporyMed::all();
+//'gettemp'=>$gettemp,
+     return view('pet.add')->with(array( 'treatdata'=>$treatdata,'pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines,'temps'=>$temps,'totalcost'=>$totalcost));
+
+        
     }
 
     public function realtreatment(Request $request,$id,$pid){
 
-        $treatment= new Treatment;
+        // $treatment= new Treatment;
 
-        $pet=Pet::find($pid);   
-        $treatment->pets_id=$pet->name;
-        $price=$med->selling_unit_price;
-        $quantity=$request->input('quantity');
-        $temp->type=$med->name;
-        $temp->selling_unit_price=$med->selling_unit_price;
-        $temp->quantity=$request->input('quantity');
-        $temp->price=$quantity*$price;
-        $temp->save();
+        // $pet=Pet::find($pid);   
+        // $treatment->pets_id=$pet->name;
+        // $price=$med->selling_unit_price;
+        // $quantity=$request->input('quantity');
+        // $temp->type=$med->name;
+        // $temp->selling_unit_price=$med->selling_unit_price;
+        // $temp->quantity=$request->input('quantity');
+        // $temp->price=$quantity*$price;
+        // $temp->save();
 
-        $gettemp=TemporyMed::all();
+        // $gettemp=TemporyMed::all();
 
 
         
-        return back()->with(array('treatdata'=>$treatdata, 'treatdata'=>$treatdata));
+        // return back()->with(array('treatdata'=>$treatdata, 'treatdata'=>$treatdata));
        
       
+
+    }
+
+    public function view($id,$pid){
+
+        $pet=Pet::find($id);
+
+        $treatments=Treatment::all();
+
 
     }
 
