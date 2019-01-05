@@ -14,7 +14,7 @@ class AddTotalCostToTreatments extends Migration
     public function up()
     {
         Schema::table('treatments', function (Blueprint $table) {
-            $table->float('total_cost');
+            $table->float('total_cost')->defualt(0);
         });
     }
 

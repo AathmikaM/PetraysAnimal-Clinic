@@ -176,6 +176,8 @@ Route::post('/pets/{id}/{pid}/general/save/{tid}','generalTreatment@save');
 
 Route::delete('/pets/{id}/{pid}/general/delete/{tid}','generalTreatment@destroy');
 
-Route::post('/pets/{id}/{pid}/general/savet','generalTreatment@savet');
+Route::put('/pets/{id}/{pid}/general/savet/{tid}','generalTreatment@savet');
+
+Route::get('/pets/{id}/{pid}/general/{tid}/savemed','generalTreatment@savemed');
 
 
