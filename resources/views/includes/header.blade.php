@@ -114,14 +114,18 @@
                                     </div>
                                 </div>
                             </li>
-                            <li role="separator" class="divider"></li>
+                            {{-- <li role="separator" class="divider"></li>
                             <li><a href="settings"><i class="ti-settings"></i> Account Settings</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/abc"><i class="fa fa-power-off"></i> Logout</a></li>
+                            <li role="separator" class="divider"></li> --}}
+                            <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                 {{ __('Logout') }}
+                             </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                 @csrf
+                             </form>
                             
                         </ul>
 
@@ -145,26 +149,26 @@
             <ul id="sidebarnav">
 
                 <li>
-                    <a href="/index" class="waves-effect"><i class="fa fa-bars m-r-10" aria-hidden="true"></i>Dashboard</a>
+                    <a href="/index" class="waves-effect"><i class="fa fa-bars m-r-10" aria-hidden="true"></i><strong>Dashboard</strong></a>
                 </li>
 
                 <li>
-                    <a href="/petowners" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>MyClients</a>
+                    <a href="/petowners" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i><strong>MyClients</strong></a>
                 </li>
 
 
                 <li class="nav-item dropdown">
 
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-list m-r-10" aria-hidden="true"></i>Analyse</a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-list m-r-10" aria-hidden="true"></i><strong>Analyse</strong></a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a class="dropdown-item" href="/incomeAnalysis">&nbsp;&nbsp;Income</a>
+                        <a class="dropdown-item" href="/incomeAnalysis"><strong>Income</strong></a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/clientbase">&nbsp;&nbsp;Clientbase</a>
+                        <a class="dropdown-item" href="/clientbase"><strong>ClientBase</strong></a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/diseases">&nbsp;&nbsp;Diseases</a>
+                        <a class="dropdown-item" href="/diseases"><strong>Diseases</strong></a>
                     </li>
                 </ul>
 
@@ -183,21 +187,21 @@
 
 
                 <li>
-                    <a href="Appointments" class="waves-effect"><i class="fa fa-calendar m-r-10" aria-hidden="true"></i>Appointments</a>
+                    <a href="Appointments" class="waves-effect"><i class="fa fa-calendar m-r-10" aria-hidden="true"></i><strong>Appointments</strong></a>
                 </li>
 
 
                 <li class="nav-item dropdown">
  
             
-                <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-shopping-cart m-r-10" aria-hidden="true"></i>Stock Management</a>
+                <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-shopping-cart m-r-10" aria-hidden="true"></i><strong>Stock Management</strong></a>
 
                 <ul class="collapse list-unstyled" id="pageSubmenu1">
                     <li>
-                        <a class="dropdown-item" href="/addstock">&nbsp;&nbsp;Add Stock</a>
+                        <a class="dropdown-item" href="/addstock"><strong>Add Stock</strong></a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/viewstock">&nbsp;&nbsp;View Stock</a>
+                        <a class="dropdown-item" href="/viewstock"><strong>View Stock</strong></a>
                     </li>
                     
                 </ul>

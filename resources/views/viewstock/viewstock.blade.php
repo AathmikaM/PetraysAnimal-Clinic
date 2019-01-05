@@ -7,7 +7,6 @@
 
 @section('style')
 
-
 <link href="https://cdn.datatables.net/1.10.19/css/dataTabl es.bootstrap.min.css" id="theme" rel="stylesheet">
 
 @endsection
@@ -39,7 +38,7 @@
       <table class= "table table-bordered">
           <tr>
             <th><strong>Name</strong></th>
-			     <th><strong>Module</strong></th>
+			      <th><strong>Module</strong></th>
             <th><strong>Quantity</strong></th>
             <th><strong>Availability</strong></th>
             <th><strong>Unit Price</strong></th>

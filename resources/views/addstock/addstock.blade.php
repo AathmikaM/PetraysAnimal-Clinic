@@ -28,7 +28,7 @@
 
     <div class="card mb-4">
         <div class ="card-header">
-             <h1 class="text-center" class="breadcrumb-item active"><strong>Add New Medicine</strong></h1>
+             <h1 class="text-center" class="breadcrumb-item active"><strong>Add Stock</strong></h1>
         </div>
     </div>
  
