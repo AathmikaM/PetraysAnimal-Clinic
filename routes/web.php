@@ -160,8 +160,8 @@ Route::put('/pets/{id}/{pid}/save','postToPets@store');
 Route::put('/pets/{id}/{pid}/save','postToPets@store');
 
 
-//General treatment
-Route::get('/pets/{id}/{pid}/general','treatments@show');
+//General treatment add new
+Route::get('/pets/{id}/{pid}/general','generalTreatment@show');
 
 //Periodic treatment
 Route::post('/pets/{id}/{pid}/periodic','postToPets@store');
@@ -170,8 +170,12 @@ Route::post('/pets/{id}/{pid}/periodic','postToPets@store');
 //  Route::get('/addstock','AutoCompleteController@index');
 //  Route::post('/addstock/fetch','AutoCompleteControlller@fetch')->name('addstock.fetch');
 
-
 //generating report
 
-Route::post('/pets/{id}/{pid}/general/save','treatments@save');
+Route::post('/pets/{id}/{pid}/general/save/{tid}','generalTreatment@save');
+
+Route::delete('/pets/{id}/{pid}/general/delete/{tid}','generalTreatment@destroy');
+
+Route::post('/pets/{id}/{pid}/general/savet','generalTreatment@savet');
+
 

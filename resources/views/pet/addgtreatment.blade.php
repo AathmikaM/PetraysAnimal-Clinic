@@ -8,7 +8,7 @@
  <div class="container">
  <div class="card mb-4">
         <div class ="card-header">
-             <h1 class="text-center" class="breadcrumb-item active">Add General Treatments</h1>
+             <h1 class="text-center" class="breadcrumb-item active">General Treatments</h1>
         </div>
     </div>
 
@@ -27,51 +27,11 @@
     <label for="description">Description</label>
     <textarea class="form-control" id="description" name="description" rows="3">{{$treatdata->description}}</textarea>
   </div>
-  
+  <button  class="btn btn-primary" action="">Submit</button>
+  </form>
   </div>
   <!-- **************Up Form********************* -->
-
-
-  <div class="row">
-    <div class="col-md-7">
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Select Medicine</label>
-    <select class="form-control" name="medicine" id="exampleFormControlSelect1">
-    @if(count($medicines)>0)
-      @foreach($medicines as $medicine)
-
-      @if(($medicine->medcine_type)==0)
-                  @if(($medicine->quantity)>0)
-      <option  value="{{$medicine->id}}">{{$medicine->name}}</option>
-                  @endif
-      @else
-        @if(($medicine->quantity)>0)
-      <option value="{{$medicine->id}}">{{$medicine->name}}</option>
-        @endif
-      @endif
-
-
-      @endforeach
-     @endif 
-    </select>
-  </div>
-</div>
- 
- <div class="col-md-3">
- 
- <label for="title">Quantity</label>
-    <input type="text" class="form-control" value="" id="title" aria-describedby="title" name="quantity" placeholder="Quantity">
- </div>
- <div class="col-md-2">
-  <div class="col-md-2">
- <label for="title">add</label>
- </div>
-    <button type="submit" value="add" class="btn btn-success">Add+</button>
- </div>
-</form>
-
-  <!-- ################################ -->
-
+  
 <div class="container">
 <div class="card">
 
@@ -117,9 +77,60 @@
 <form method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/save ">
 @csrf
 
+<div class="row">
+    <div class="col-md-7">
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Select Medicine</label>
+    <select class="form-control" name="medicine" id="exampleFormControlSelect1">
+    @if(count($medicines)>0)
+      @foreach($medicines as $medicine)
 
+      @if(($medicine->medcine_type)==0)
+                  @if(($medicine->quantity)>0)
+      <option  value="{{$medicine->id}}">{{$medicine->name}}</option>
+                  @endif
+      @else
+        @if(($medicine->quantity)>0)
+      <option value="{{$medicine->id}}">{{$medicine->name}}</option>
+        @endif
+      @endif
+
+
+      @endforeach
+     @endif 
+    </select>
+  </div>
+</div>
+ 
+ <div class="col-md-3">
+ 
+ <label for="title">Quantity</label>
+    <input type="text" class="form-control" value="" id="title" aria-describedby="title" name="quantity" placeholder="Quantity">
  </div>
+ <div class="col-md-2">
+  <div class="col-md-2">
+ <label for="title">add</label>
+ </div>
+    <button type="submit" value="add" class="btn btn-success">Add+</button>
+ </div>
+ </div>
+ 
+ 
 
+
+  
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+
+<h1>Recently Added</h1>
 
 </div>
 </div>

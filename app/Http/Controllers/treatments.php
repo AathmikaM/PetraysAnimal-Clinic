@@ -67,9 +67,18 @@ class treatments extends Controller
         $pet=Pet::find($pid);
         $medicines=AddStock::all();
         $petowner=PetOwner::find($id);
-        return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines]);
+        $temps=TemporyMed::all();
+        return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines,'temps'=>$temps]);
     }
 
+
+    public function treats($id,$pid)
+    {
+        $pet=Pet::find($pid);
+        $medicines=AddStock::all();
+        $petowner=PetOwner::find($id);
+        return view('pet.copy1',['pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines]);
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -82,23 +91,40 @@ class treatments extends Controller
     }
 
 
-    public function save(Request $request){
+    public function save(Request $request,$id,$pid){
 
         $temp= new TemporyMed;
         $id=$request->input('medicine');
         $med=AddStock::find($id);   
         $price=$med->selling_unit_price;
         $quantity=$request->input('quantity');
-        $temp->type=$request->input('medicine');
+        $temp->type=$med->name;
+        $temp->selling_unit_price=$med->selling_unit_price;
         $temp->quantity=$request->input('quantity');
         $temp->price=$quantity*$price;
         $temp->save();
 
+         
         $gettemp=TemporyMed::all();
 
         return back()->with('gettemp',$gettemp);
       
 
+    }
+
+    public function savet(Request $request,$id,$pid){
+
+
+        $treatment=new Treatment;
+        $treatment->title=$request->input('title');
+        $treatment->description=$request->input('description');
+        $treatment->pets_id=$pid;
+        $treatment->save();
+        $passid=$treatment->id;
+
+        $treatdata=TemporyMed::find($passid);
+         
+        return back()->with('treatdata',$treatdata);
     }
 
     /**
@@ -119,10 +145,33 @@ class treatments extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,$pid,$tid)
     {
-        $row=TemporyMed::find($id);
+        $row=TemporyMed::find($tid);   
         $row->delete();
         return back();
     }
+
+    public function realtreatment(Request $request,$id,$pid){
+
+        $treatment= new Treatment;
+
+        $pet=Pet::find($pid);   
+        $treatment->pets_id=$pet->name;
+        $price=$med->selling_unit_price;
+        $quantity=$request->input('quantity');
+        $temp->type=$med->name;
+        $temp->selling_unit_price=$med->selling_unit_price;
+        $temp->quantity=$request->input('quantity');
+        $temp->price=$quantity*$price;
+        $temp->save();
+
+        $gettemp=TemporyMed::all();
+
+        return back()->with('gettemp',$gettemp);
+      
+
+    }
+
+
 }
