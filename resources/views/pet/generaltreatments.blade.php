@@ -8,7 +8,7 @@
  <div class="container">
  <div class="card mb-4">
         <div class ="card-header">
-             <h1 class="text-center" class="breadcrumb-item active">Add General Treatments</h1>
+             <h1 class="text-center" class="breadcrumb-item active">General Treatments</h1>
         </div>
     </div>
 
@@ -16,8 +16,11 @@
  <div class="card mb-3">
         <div class="card-header">
             <div class="card-body">
-<form method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/savet/">
+<form method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/savet/{{$treatdata->id}}">
+@method('PUT')
 @csrf
+
+    
   <div class="form-group">
     <label for="title">Title Of The Treatment</label>
     <input type="text" class="form-control" name="title" id="title" value="{{$treatdata->title}}" placeholder="Enter Title Of Treatment">
@@ -27,12 +30,8 @@
     <label for="description">Description</label>
     <textarea class="form-control" id="description" name="description" rows="3">{{$treatdata->description}}</textarea>
   </div>
-  
-  </div>
-  <!-- **************Up Form********************* -->
-
-
-  <div class="row">
+<!-- $$$$$$$$$$$$$$$$$$$$$ -->
+<div class="row">
     <div class="col-md-7">
     <div class="form-group">
     <label for="exampleFormControlSelect1">Select Medicine</label>
@@ -68,10 +67,14 @@
  </div>
     <button type="submit" value="add" class="btn btn-success">Add+</button>
  </div>
-</form>
+ </div>
 
-  <!-- ################################ -->
 
+  </form>
+  </div>
+
+  <!-- **************Up Form********************* -->
+  
 <div class="container">
 <div class="card">
 
@@ -109,16 +112,21 @@
 
    
 
+   <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general/{{$treatdata->id}}/savemed" >Save</a>
 
 
 
 <!-- 
 **************ADD Medicine********************** -->
-<form method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/general/save ">
-@csrf
 
 
- </div>
+
+ 
+ 
+
+
+  
+
 
 
 </div>

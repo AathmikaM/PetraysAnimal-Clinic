@@ -8,6 +8,10 @@ use App\PetOwner;
 use App\Treatment;
 use App\AddStock;
 use App\TemporyMed;
+use App\IssuedMedicine;
+use DB;
+
+
 
 class generalTreatment extends Controller
 {
@@ -96,8 +100,8 @@ class generalTreatment extends Controller
     }
 
 
-    public function save(Request $request,$id,$pid,$tid){
-
+    public function savet(Request $request,$id,$pid,$tid){
+        
         $temp= new TemporyMed;
         $id=$request->input('medicine');
         $med=AddStock::find($id);   
@@ -109,23 +113,32 @@ class generalTreatment extends Controller
         $temp->price=$quantity*$price;
         $temp->save();
 
-         
+        $total=$quantity*$price;
+
+
+        static $totalcost;
+        $totalcost=$totalcost+$total;
+        
+
         $gettemp=TemporyMed::all();
+
+        
 
         $description=Treatment::find($tid);
         $description->title=$request->input('title');
         $description->description=$request->input('description');
+        $description->total_cost=$totalcost;
         $description->save();
 
-       $treatdata=Treatment::find($treatid);     
+        $treatdata=Treatment::find($tid); 
+        return back()->with(array('gettemp'=>$gettemp, 'treatdata'=>$treatdata));
 
-        return back()->with('gettemp',$gettemp);
 
       
 
     }
 
-    public function savet(Request $request,$id,$pid,$tid){
+    public function save(Request $request,$id,$pid,$tid){
 
 
         $treatment=find($tid);
@@ -135,6 +148,28 @@ class generalTreatment extends Controller
         $passid=$treatment->id;
          
         return back()->with('treatdata',$treatdata);
+    }
+
+
+    public function savemed($id,$pid,$tid){
+        $meds=TemporyMed::all();
+
+        foreach($meds as $med){
+
+        $issued_medicine=new IssuedMedicine();
+        $issued_medicine->treatments_id=$tid;
+        $issued_medicine->type=$med->type;
+        $issued_medicine->quantity=$med->quantity;
+        $issued_medicine->price=$med->price;
+        $issued_medicine->save();
+
+        
+     }
+   
+     DB::table('tempory_meds')->delete();
+
+     return back();
+
     }
 
     /**
@@ -177,6 +212,7 @@ class generalTreatment extends Controller
         $temp->save();
 
         $gettemp=TemporyMed::all();
+
 
         
         return back()->with(array('treatdata'=>$treatdata, 'treatdata'=>$treatdata));
