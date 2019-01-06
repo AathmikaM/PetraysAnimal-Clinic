@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\PetOwner;
-use App\Pet;
-class petList extends Controller
+
+class periodicTreatment extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class petList extends Controller
      */
     public function index()
     {
-        //
+        return view('pet.periodic');
     }
 
     /**
@@ -35,7 +34,21 @@ class petList extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'start_date'        => 'required',
+            'end_date'    => 'required'
+            
+        ]); 
+
+
+            $start_date=\Carbon\Carbon::parse($request->input('start_date'));
+            $end_date=\Carbon\Carbon::parse($request->input('end_date'));
+            $diferent= $start_date->diffInDays($end_date, false);
+            
+       
+
+        $addstock -> save();
+        return redirect()->route('addstock.index')->with('success','Stock Updated Successfully');
     }
 
     /**
@@ -46,9 +59,7 @@ class petList extends Controller
      */
     public function show($id)
     {
-       $petowner=PetOwner::find($id);
-       $p=$petowner->pets;
-       return view('petlist.index',['petowner'=>$petowner,'pets'=>$petowner->pets]);
+        //
     }
 
     /**

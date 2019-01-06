@@ -13,4 +13,5 @@ class Treatment extends Model
     public function issuedmedicine(){
         return $this->hasMany('App\IssuedMedicine');
     }
+    protected $fillable = ['pet_id','title','description'];
 }

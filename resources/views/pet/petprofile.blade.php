@@ -54,7 +54,7 @@
     <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general" >Add-General-Treatments</a>
     </div>
     <div class="col-6">
-    <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general/view" >View-General-Treatments</a>
+    <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/view" >View-General-Treatments</a>
     </div>
     </div>
   </div>
