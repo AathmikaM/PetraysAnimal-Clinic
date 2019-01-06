@@ -149,7 +149,7 @@ class treatments extends Controller
     {
         $row=TemporyMed::find($tid);   
         $row->delete();
-        return back();
+        
     }
 
     public function realtreatment(Request $request,$id,$pid){

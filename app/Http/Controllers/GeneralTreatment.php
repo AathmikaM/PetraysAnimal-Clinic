@@ -69,7 +69,7 @@ class generalTreatment extends Controller
     public function show($id,$pid)
     {
         $treatment=new Treatment;
-        $treatment->pets_id=$pid;
+        $treatment->pet_id=$pid; //pets_id
         $treatment->save();
         $treatid=$treatment->id;
         $treatdata=Treatment::find($treatid);      
@@ -79,7 +79,7 @@ class generalTreatment extends Controller
         $temps=TemporyMed::all();
         return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines,'temps'=>$temps,'treatdata'=>$treatdata]);
     }
-
+//Afte adding medicine
     public function show1($id,$pid)
     {
 
@@ -158,23 +158,23 @@ class generalTreatment extends Controller
     public function save(Request $request,$id,$pid,$tid){
 
 
-        $treatment=find($tid);
-        $treatment->title=$request->input('title');
-        $treatment->description=$request->input('description');
-        $treatment->save();
-        $passid=$treatment->id;
+        // $treatment=find($tid);
+        // $treatment->title=$request->input('title');
+        // $treatment->description=$request->input('description');
+        // $treatment->save();
+        // $passid=$treatment->id;
          
-        return back()->with('treatdata',$treatdata);
+        // return back()->with('treatdata',$treatdata);
     }
 
-//save the report
+//save the report 
     public function savemed($id,$pid,$tid){
         $meds=TemporyMed::all();
 
         foreach($meds as $med){
 
         $issued_medicine=new IssuedMedicine();
-        $issued_medicine->treatments_id=$tid;
+        $issued_medicine->treatment_id=$tid;
         $issued_medicine->type=$med->type;
         $issued_medicine->quantity=$med->quantity;
         $issued_medicine->price=$med->price;
@@ -210,6 +210,8 @@ class generalTreatment extends Controller
         //
     }
 
+
+   
     /**
      * Remove the specified resource from storage.
      *
@@ -267,5 +269,13 @@ class generalTreatment extends Controller
 
     }
 
+    public function viewtreatment($id,$pid){
+        $petowner=PetOwner::find($id);
+        $pet=Pet::find($pid);
+        $treatments=$pet->treatments;
+        return view('pet.viewtreatment',['petowner'=>$petowner,'treatments'=>$treatments]);
+
+
+    }
 
 }

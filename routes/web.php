@@ -164,8 +164,7 @@ Route::put('/pets/{id}/{pid}/save','postToPets@store');
 //General treatment add new
 Route::get('/pets/{id}/{pid}/general','generalTreatment@show');
 
-//Periodic treatment
-Route::post('/pets/{id}/{pid}/periodic','postToPets@store');
+
 
 //medicine name suggessions in add stock
 //  Route::get('/addstock','AutoCompleteController@index');
@@ -187,3 +186,8 @@ Route::put('/pets/{id}/{pid}/general/savet/{tid}','generalTreatment@savet');
 Route::get('/pets/{id}/{pid}/general/{tid}/savemed','generalTreatment@savemed');
 
 
+//view treatment
+Route::get('/pets/{id}/{pid}/view','generalTreatment@viewtreatment');
+
+
+Route::resource('/pets/{id}/{pid}/periodic', 'periodicTreatment');
