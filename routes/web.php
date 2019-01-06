@@ -194,5 +194,9 @@ Route::get('/pets/{id}/{pid}/general/{tid}/savemed','generalTreatment@savemed');
 //view treatment
 Route::get('/pets/{id}/{pid}/view','generalTreatment@viewtreatment');
 
-
+//periodic shedule controller
 Route::resource('/pets/{id}/{pid}/periodic', 'periodicTreatment');
+
+
+//Client list loading controller
+Route::get('/petowners1', 'postToPetOwnersList@index1');

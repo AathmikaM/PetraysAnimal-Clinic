@@ -19,6 +19,12 @@ class postToPetOwnersList extends Controller
         return view('petownerslist.index')->with('petowners',$petowners);
     }
 
+    public function index1()
+    {
+        $petowners=PetOwner::all();
+        return view('petownerslist.index1')->with('petowners',$petowners);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
