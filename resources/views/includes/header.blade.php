@@ -162,7 +162,7 @@
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-list m-r-10" aria-hidden="true"></i><strong>Analyse</strong></a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a class="dropdown-item" href="/incomeAnalysis"><strong>Income</strong></a>
+                        <a class="dropdown-item" href="/totalIncome"><strong>Income</strong></a>
                     </li>
                     <li>
                         <a class="dropdown-item" href="/clientbase"><strong>ClientBase</strong></a>

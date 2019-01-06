@@ -51,6 +51,8 @@ class petList extends Controller
        return view('petlist.index',['petowner'=>$petowner,'pets'=>$petowner->pets]);
     }
 
+   
+
     /**
      * Show the form for editing the specified resource.
      *
