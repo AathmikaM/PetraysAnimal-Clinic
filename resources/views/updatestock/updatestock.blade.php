@@ -57,42 +57,43 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="name"><strong>Medicine Name</strong></label>
                                             <div class="col-md-6">
-                                            <input type="text" name="name" class="form-control" value="{{$addstock->name}}"  />
+                                            <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" class="form-control" value="{{$addstock->name}}" value="{{ old('name') }}" required autofocus />
                                             </div>
                                         </div>
                                         
+                                        
                                         <div class="form-group">
-                                            <label class="control-label col-sm-2" for="name"><strong>Module</strong></label>
+                                        <label class="control-label col-sm-2" for="name"><strong>Quantity</strong></label>
                                             <div class="col-md-6">
-                                            <input type="text" name="module" class="form-control" value="{{$addstock->module}}" />
+                                            <input type="text" name="quantity" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" class="form-control" value="{{$addstock->quantity}}" value="{{ old('quantity') }}" required autofocus />
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                        <label class="control-label col-sm-2" for="name"><strong>Quantity</strong></label>
+                                            <label class="control-label col-sm-2" for="name"><strong>Module</strong></label>
                                             <div class="col-md-6">
-                                            <input type="text" name="quantity" class="form-control" value="{{$addstock->quantity}}" placeholder="Enter Quantity " />
+                                            <input type="text" name="module" class="form-control{{ $errors->has('module') ? ' is-invalid' : '' }}"  class="form-control" value="{{$addstock->module}}" value="{{ old('module') }}" required autofocus />
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                         <label class="control-label col-sm-2" for="name"><strong>Unit Price</strong></label>
                                             <div class="col-md-6">
-                                            <input type="text" name="unit_price" class="form-control" value="{{$addstock->unit_price}}" placeholder="Enter Unit Prize " />
+                                            <input type="text" name="unit_price" class="form-control{{ $errors->has('unit_price') ? ' is-invalid' : '' }}" class="form-control" value="{{$addstock->unit_price}}" placeholder="Enter Unit Prize " value="{{ old('unit_price') }}" required autofocus/>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                                 <label class="control-label col-sm-2" for="name"><strong>Selling_unit_price<strong></label>
                                                     <div class="col-md-6">
-                                                    <input type="text" name="selling_unit_price" class="form-control" value="{{$addstock->selling_unit_price}}" placeholder="Enter Selling_Unit_Prize " />
+                                                    <input type="text" name="selling_unit_price" class="form-control{{ $errors->has('selling_unit_price') ? ' is-invalid' : '' }}" class="form-control" value="{{$addstock->selling_unit_price}}" placeholder="Enter Selling_Unit_Prize " value="{{ old('selling_unit_price') }}" required autofocus/>
                                                     </div>
                                         </div>
 
                                         <div class="form-group">
                                         <label class="control-label col-sm-2" for="name"><strong>Expiry Date</strong></label>
                                             <div class="col-md-6">
-                                            <input type="date" name="expire_date" class="form-control" value="{{$addstock->expire_date}}" placeholder="Enter Expire Date " />
+                                            <input type="date" name="expire_date" class="form-control{{ $errors->has('expire_date') ? ' is-invalid' : '' }}" class="form-control" value="{{$addstock->expire_date}}" placeholder="Enter Expire Date "  value="{{ old('expire_date') }}" required autofocus />
                                             </div>
                                         </div>
                                         
@@ -110,7 +111,7 @@
                                         <div class="form-group">
                                         <label class="control-label col-sm-2" for="name"><strong>Relevent Species</strong></label>
                                             <div class="col-md-6">
-                                            <input type="text" name="relevent_species" class="form-control" value=" {{$addstock->relevent_species }}" placeholder="Enter Relevent Species " />
+                                            <input type="text" name="relevent_species" class="form-control{{ $errors->has('relevent_species') ? ' is-invalid' : '' }}" class="form-control" value=" {{$addstock->relevent_species }}" placeholder="Enter Relevent Species " value="{{ old('relevent_species') }}" required autofocus />
                                             </div>
                                         </div>
 
