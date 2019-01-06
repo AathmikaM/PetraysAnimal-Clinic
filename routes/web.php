@@ -44,7 +44,12 @@ Route::group(['middleware' => ['auth']], function()
     Route::get('/client_profile', function () {
         return view('client_profile');
     });
+    
 
+    Route::get('/charts', function () {
+        return view('charts.charts');
+    });
+    
 
     Route::get('/', 'indexController@index');
 	Route::get('/index', 'indexController@index');
