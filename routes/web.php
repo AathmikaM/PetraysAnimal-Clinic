@@ -131,8 +131,11 @@ Route::resource('viewstock', 'viewstockController');
 
 // Route::get('charts', 'ChartController@index')->name('chart');
 Route::resource('clientBasecharts', 'ChartController');
-Route::get('/clientbase', 'ChartController@index');
+Route::get('/clientbase', 'ChartController@clientbase');
 
+
+Route::resource('incomecharts', 'ChartController');
+Route::get('/totalIncome', 'ChartController@income');
 
 
 
