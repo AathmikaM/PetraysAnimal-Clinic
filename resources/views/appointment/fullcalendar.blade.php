@@ -4,7 +4,7 @@
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
 
-    <h3>&nbsp;&nbsp;Calendar</h3>
+    <h3 class="text-center"><strong>Calendar</strong></h3>
     {{--@foreach($tasks as $task)
         {{$task}}
     @endforeach--}}

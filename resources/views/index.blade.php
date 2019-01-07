@@ -308,7 +308,11 @@
                 @section('content')
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+<div class="container">
+<div class="row">
 
+<div class="col-md-6">
+    
     <h3>&nbsp;&nbsp;Calendar</h3>
     {{--@foreach($tasks as $task)
         {{$task}}
@@ -332,6 +336,40 @@
             })
         });
     </script> 
+    </div>
+    <div class="col-md-6">
+     <div class=" mb-4">
+        <div class ="">
+             <h1 class="text-center" class="breadcrumb-item active"></h1>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class ="card-header">
+             <h1 class="text-center" class="breadcrumb-item active">Achivements </h1>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class ="card-header">
+             <h1 class="text-center" class="breadcrumb-item active">Revenue Of Month:Rs.{{$totalcost}} </h1>
+             <div class="progress">
+  <div class="progress-bar bg-success" role="progressbar" style="width:25% " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class ="card-header">
+             <h1 class="text-center" class="breadcrumb-item active">Total Number Of Clients:{{$count}} </h1>
+             <div class="progress">
+  <div class="progress-bar bg-danger" role="progressbar" style="width:10% " aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
 @endsection
 
 

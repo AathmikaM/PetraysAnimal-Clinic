@@ -8,7 +8,6 @@
 
 
  
- 
     
  <form id="main" method="post" action="/pets/{{$petowner->id}}/{{$pet->id}}/save" novalidate>
     @method('PUT')
@@ -47,10 +46,13 @@
   </div>
   </form>
   
+  
+  
   <div class="row">
     <div class="col-6">
     <div class="row">
       <div class="col-6">
+      
     <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general" >Add-General-Treatments</a>
     </div>
     <div class="col-6">
@@ -59,7 +61,7 @@
     </div>
   </div>
     <div class="col-6">
-    <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/periodic" >Periodic-Treatments</a>
+    <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/periodic" >Periodic-Schedule</a>
     </div>
   </div>
 

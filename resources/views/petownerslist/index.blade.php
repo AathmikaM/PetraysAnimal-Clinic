@@ -74,74 +74,35 @@
 </div>
 </div>
     
-
+<div class="container">
    
 @if(count($petowners)>0)
+    @foreach($petowners as $petowner)    
+<div class="card mb-8">
+<div class ="card-header">
+<div class="col-md-6">
 
-
-
-<div class="row">
-<div class="col-lg-12">
-@foreach($petowners as $petowner)    
-
-<div class="col-lg-6">
-    <div class="panel-primary">
-        <div class="panel-heading">
-            <a href="/pets/{{$petowner->id}}"><h5>{{$petowner->name}}</h5> </a>  
-        </div>
-        <div class="panel-body">
-            {{$petowner->mob_no}}
-        </div>
-
+<div class="col-md-5">     
+<h1 class="text-center" class="breadcrumb-item active"><a href="/pets/{{$petowner->id}}"><h5>{{$petowner->name}}</h5> </a> </h1>        
 </div>
 
+<div class="col-md-3">
+<h2>  {{$petowner->mob_no}}</h2>
+</div>
+             
 
     </div>
-
+    </div>
+    </div>
+    
    
 @endforeach
+
 </div>
 </div>
 
 @endif
-
+</div>
 
 @endsection
 
-<script>
-        $(document).ready(function(){
-    
-                $('#relevent_species').tokenfield({
-                    autocomplete:{
-                        source:['Cat','Dog','Cow','Pigs','Snakes',],
-                        delay:100
-                    },
-                    showAutocompleteOnFocus: true
-                });
-        });
-    
-</script>
-
-  <script>
-    $(document).ready(function(){
-
-                $('#name').keyup(function(){
-                    var query = $(this).val();
-                    if(query != '')
-                    {
-                        var _token = $('input[name= "_token"]').val();
-                        $.ajax({
-                            url:"{{route('addstock.fetch')}}"
-                            method:"POST",
-                            data:{query:query, _token:_token},
-                            success:function(data)
-                            {
-                                $('#medicineList').fadeIn();
-                                $('#medicineList').html(data);
-                            }
-                        })
-                    }
-                });
-    });
-
-</script>  

@@ -1787,6 +1787,88 @@
             "time": "2018-07-02T15:55:56+00:00"
         },
         {
+            "name": "paragonie/sodium_compat",
+            "version": "v1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/sodium_compat.git",
+                "reference": "57bb5ef079d3724148da3d5c99e30695ab17afda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/57bb5ef079d3724148da3d5c99e30695ab17afda",
+                "reference": "57bb5ef079d3724148da3d5c99e30695ab17afda",
+                "shasum": ""
+            },
+            "require": {
+                "paragonie/random_compat": ">=1",
+                "php": "^5.2.4|^5.3|^5.4|^5.5|^5.6|^7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^3|^4|^5"
+            },
+            "suggest": {
+                "ext-libsodium": "PHP < 7.0: Better performance, password hashing (Argon2i), secure memory management (memzero), and better security.",
+                "ext-sodium": "PHP >= 7.0: Better performance, password hashing (Argon2i), secure memory management (memzero), and better security."
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com"
+                },
+                {
+                    "name": "Frank Denis",
+                    "email": "jedisct1@pureftpd.org"
+                }
+            ],
+            "description": "Pure PHP implementation of libsodium; uses the PHP extension if it exists",
+            "keywords": [
+                "Authentication",
+                "BLAKE2b",
+                "ChaCha20",
+                "ChaCha20-Poly1305",
+                "Chapoly",
+                "Curve25519",
+                "Ed25519",
+                "EdDSA",
+                "Edwards-curve Digital Signature Algorithm",
+                "Elliptic Curve Diffie-Hellman",
+                "Poly1305",
+                "Pure-PHP cryptography",
+                "RFC 7748",
+                "RFC 8032",
+                "Salpoly",
+                "Salsa20",
+                "X25519",
+                "XChaCha20-Poly1305",
+                "XSalsa20-Poly1305",
+                "Xchacha20",
+                "Xsalsa20",
+                "aead",
+                "cryptography",
+                "ecdh",
+                "elliptic curve",
+                "elliptic curve cryptography",
+                "encryption",
+                "libsodium",
+                "php",
+                "public-key cryptography",
+                "secret-key cryptography",
+                "side-channel resistant"
+            ],
+            "time": "2019-01-03T21:00:55+00:00"
+        },
+        {
             "name": "php-http/guzzle6-adapter",
             "version": "v1.1.1",
             "source": {
@@ -2219,6 +2301,60 @@
                 "shell"
             ],
             "time": "2018-10-13T15:16:03+00:00"
+        },
+        {
+            "name": "pusher/pusher-php-server",
+            "version": "v3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pusher/pusher-http-php.git",
+                "reference": "5eb4ea29db6d61484a64ae6b0c249aa9d1c84943"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/5eb4ea29db6d61484a64ae6b0c249aa9d1c84943",
+                "reference": "5eb4ea29db6d61484a64ae6b0c249aa9d1c84943",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "paragonie/sodium_compat": "^1.6",
+                "php": "^5.4 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pusher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Library for interacting with the Pusher REST API",
+            "keywords": [
+                "events",
+                "messaging",
+                "php-pusher-server",
+                "publish",
+                "push",
+                "pusher",
+                "real time",
+                "real-time",
+                "realtime",
+                "rest",
+                "trigger"
+            ],
+            "time": "2019-01-03T11:08:11+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -3781,6 +3917,63 @@
             "time": "2018-07-12T10:23:15+00:00"
         },
         {
+            "name": "genealabs/laravel-caffeine",
+            "version": "0.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GeneaLabs/laravel-caffeine.git",
+                "reference": "2d728885825e57f37a518be1c0471340ca37f593"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GeneaLabs/laravel-caffeine/zipball/2d728885825e57f37a518be1c0471340ca37f593",
+                "reference": "2d728885825e57f37a518be1c0471340ca37f593",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/routing": "5.3 - 5.7",
+                "illuminate/support": "5.3 - 5.7",
+                "jenssegers/model": "*",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "*",
+                "mockery/mockery": "*",
+                "orchestra/testbench": "3.7.x-dev",
+                "orchestra/testbench-browser-kit": "3.7.x-dev",
+                "orchestra/testbench-dusk": "3.7.x-dev@dev",
+                "php-coveralls/php-coveralls": "*",
+                "phpmd/phpmd": "*",
+                "phpunit/phpunit": "*",
+                "sebastian/phpcpd": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "GeneaLabs\\LaravelCaffeine\\Providers\\Service"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeneaLabs\\LaravelCaffeine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bronner",
+                    "email": "hello@genealabs.com"
+                }
+            ],
+            "description": "Keeping Your Laravel Forms Awake",
+            "time": "2018-09-12T00:01:17+00:00"
+        },
+        {
             "name": "hamcrest/hamcrest-php",
             "version": "v2.0.0",
             "source": {
@@ -3827,6 +4020,54 @@
                 "test"
             ],
             "time": "2016-01-20T08:20:44+00:00"
+        },
+        {
+            "name": "jenssegers/model",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/model.git",
+                "reference": "eedaeedc1977bb78f69dbb1c5893d0c994958790"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/model/zipball/eedaeedc1977bb78f69dbb1c5893d0c994958790",
+                "reference": "eedaeedc1977bb78f69dbb1c5893d0c994958790",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^5.0",
+                "illuminate/support": "^4.0|^5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0",
+                "satooshi/php-coveralls": "^0.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jenssegers\\Model\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "https://jenssegers.com"
+                }
+            ],
+            "description": "An Laravel eloquent-like model class, for Laravel and other frameworks",
+            "homepage": "https://github.com/jenssegers/model",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "model"
+            ],
+            "time": "2018-07-21T14:41:19+00:00"
         },
         {
             "name": "mockery/mockery",
