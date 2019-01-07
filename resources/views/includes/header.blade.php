@@ -167,9 +167,10 @@
                     <li>
                         <a class="dropdown-item" href="/clientbase"><strong>ClientBase</strong></a>
                     </li>
-                    <li>
+                    
+                    <!-- <li>
                         <a class="dropdown-item" href="/diseases"><strong>Diseases</strong></a>
-                    </li>
+                    </li> -->
                 </ul>
 
 <!--                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

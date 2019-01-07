@@ -15,8 +15,8 @@
 @section('content')
 
 <div class="container">
-	From :<input type="date" name="startDate">
-	To :<input type="date" name="endDate">
+	<!-- From :<input type="date" name="startDate" id="startDate">
+	To :<input type="date" name="endDate" id="endDate"> -->
     <div class="panel panel-primary">
             <!-- <div class="panel-heading">CLIENT BASE</div> -->
         <div class="panel-body">
@@ -27,8 +27,6 @@
 
 {!! Charts::scripts() !!}
 {!! $chart1->script() !!}
-
-
 
 
 @endsection

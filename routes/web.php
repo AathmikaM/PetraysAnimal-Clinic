@@ -139,6 +139,8 @@ Route::get('/totalIncome', 'ChartController@income');
 
 
 
+
+
 Route::get('/viewstock', 'viewstockController@index');
 Route::get('/insertdata', 'inserdataController@index');
 Route::get('/Client/{id}', 'AppointmentController@accept');
