@@ -134,6 +134,7 @@ Route::get('/petowners1', 'postToPetOwnersList@index1');
 
 
 
+
 //MyClients->Add new petowner
 Route::resource('/petowners', 'postToPetOwnersList');
 Route::post('/petowners/addnewowner', 'postToPetOwnersList@addnewowner');
@@ -153,3 +154,12 @@ Route::get('/totalIncome', 'ChartController@income');
 
 
 
+
+//get pdf
+
+Route::get('/pets/{id}/{pid}/general/savet/{tid}/pdf', 'pdfcreate@pdfcr');
+
+Route::get('/pdf', function () {
+    return view('pdf.pdf');
+});
+ 
