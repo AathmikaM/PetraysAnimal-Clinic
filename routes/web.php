@@ -205,3 +205,11 @@ Route::resource('/pets/{id}/{pid}/periodic', 'periodicTreatment');
 
 //Client list loading controller
 Route::get('/petowners1', 'postToPetOwnersList@index1');
+
+//get pdf
+
+Route::get('/pets/{id}/{pid}/general/savet/{tid}/pdf', 'pdfcreate@pdfcr');
+
+Route::get('/pdf', function () {
+    return view('pdf.pdf');
+});

@@ -230,8 +230,8 @@ class generalTreatment extends Controller
      $medicines=AddStock::all();
      $temps=TemporyMed::all();
      $treatdata=Treatment::find($treatid);
-     $treatdata->total_price=$totalcost;
-     $treatdada->save();
+     $treatdata->total_cost=$totalcost;
+     $treatdata->save();
 
     //  $gettemp=TemporyMed::all();
 //'gettemp'=>$gettemp,
