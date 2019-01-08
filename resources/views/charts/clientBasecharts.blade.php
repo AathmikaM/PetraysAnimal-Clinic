@@ -17,6 +17,7 @@
 <div class="container">
     <div class="panel panel-primary">
             <!-- <div class="panel-heading">CLIENT BASE</div> -->
+            Enter the year :<input type="year" name="year" id="year">
         <div class="panel-body">
             {!! $chart->html() !!}  
         </div>
