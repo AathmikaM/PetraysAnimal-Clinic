@@ -66,6 +66,7 @@ class generalTreatment extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //Make new Treatment when enternig to form
     public function show($id,$pid)
     {
         $treatment=new Treatment;
@@ -79,7 +80,7 @@ class generalTreatment extends Controller
         $temps=TemporyMed::all();
         return view('pet.generaltreatments',['pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines,'temps'=>$temps,'treatdata'=>$treatdata]);
     }
-//Afte adding medicine
+//After adding medicine 
     public function show1($id,$pid)
     {
 
@@ -228,7 +229,10 @@ class generalTreatment extends Controller
      $pet=Pet::find($pid);
      $medicines=AddStock::all();
      $temps=TemporyMed::all();
-     $treatdata=Treatment::find($treatid); 
+     $treatdata=Treatment::find($treatid);
+     $treatdata->total_price=$totalcost;
+     $treatdada->save();
+
     //  $gettemp=TemporyMed::all();
 //'gettemp'=>$gettemp,
      return view('pet.add')->with(array( 'treatdata'=>$treatdata,'pet'=>$pet,'petowner'=>$petowner,'medicines'=>$medicines,'temps'=>$temps,'totalcost'=>$totalcost));
