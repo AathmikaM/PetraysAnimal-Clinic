@@ -10,6 +10,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="index">
                 <b>
+                    <!-- logo image -->
                     <img src="{{ URL::asset('assets/images/logo1.png') }}" alt="homepage" class="dark-logo" width="200" />
                 </b>
                 <span>
