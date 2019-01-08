@@ -11,8 +11,6 @@
 |
 */
 
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -28,92 +26,34 @@ Route::group(['middleware' => ['auth']], function()
         return view('auth.login');
     });
 
-    Route::get('/profile', function () {
-        return view('profile');
-    });
-
 
     Route::get('/index', function () {
         return view('index');
     });
 
-    Route::get('/welcome', function () {
-        return view('welcome');
-    });
-
-    Route::get('/client_profile', function () {
-        return view('client_profile');
-    });
     
-
-    Route::get('/charts', function () {
-        return view('charts.charts');
-    });
-    
-
+    //Dashboard
     Route::get('/', 'indexController@index');
 	Route::get('/index', 'indexController@index');
-    // Route::get('Appointments', 'AppointmentController@index');
 
+
+    //Appointments
     Route::get('Appointments', 'AppointmentController@index');
 
     Route::get('Appointments/{id}', 'AppointmentController@accept');
     Route::get('Appointments/cancel/{id}', 'AppointmentController@cancel');
 
     Route::get('calendar', 'AppointmentController@calendar');
-    /*Route::get('/calendar', function () {
-        return view('appointment.fullcalendar');
-    });*/
-
+    
 
     Route::get('/appointments', function () {
         return view('appointments');
     });
 
-    // Route::get('/Candidate_call', function () {
-    //     return view('Candidate_call');
-    // });
-
-    // Route::get('/Candidate_history', function () {
-    //     return view('Candidate_history');
-    // });
-
-    // Route::get('/Candidate_other', function () {
-    //     return view('Candidate_other');
-    // });
-
-    // Route::get('/Candidate_Reference', function () {
-    //     return view('Candidate_Reference');
-    // });
-
-    // Route::get('/Client_call', function () {
-    //     return view('Client_call');
-    // });
-
-    // Route::get('/Client_contacts', function () {
-    //     return view('Client_contacts');
-    // });
-
-    // Route::get('/settings', function () {
-    //     return view('settings');
-    // });
-
-    // Route::get('/Candidate_List', function () {
-    //     return view('Candidate_List');
-    // });
-
-    // Route::get('/Client_List', function () {
-    //     return view('Client_List');
-    // });
-
-
-    // Route::get('/cal', function () {
-    //     return view('cal');
-    // });
 
    
 
-});
+ });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -129,29 +69,18 @@ Route::resource('addstock', 'addstockController');
 Route::resource('viewstock', 'viewstockController');
 
 
-// Route::get('charts', 'ChartController@index')->name('chart');
-Route::resource('clientBasecharts', 'ChartController');
-Route::get('/clientbase', 'ChartController@clientbase');
-
-
-Route::resource('incomecharts', 'ChartController');
-Route::get('/totalIncome', 'ChartController@income');
-
-
-
-
 
 Route::get('/viewstock', 'viewstockController@index');
 Route::get('/insertdata', 'inserdataController@index');
+
 Route::get('/Client/{id}', 'AppointmentController@accept');
 Route::get('/Client/cancel/{id}', 'AppointmentController@cancel');
 
 
-Route::post('/petowners/addnewowner', 'postToPetOwnersList@addnewowner');
+
 Route::post('/addstock/fetch', 'addstockController@fetch')->name('addstock.fetch');
 
-//Client list loading controller
-Route::resource('/petowners', 'postToPetOwnersList');
+
 
 
 //Pet list loading controller
@@ -162,8 +91,6 @@ Route::post('/pets/addnewpet', 'postToPets@addnewpet');
 
 Route::get('/pets/{id}/{pid}', 'postToPets@show');
 // Route::get('/client/{id}/{pid}/general', 'PostToPets@create1');
-
-
 
 Route::put('/pets/{id}/{pid}/save','postToPets@store');
 
@@ -195,13 +122,34 @@ Route::put('/pets/{id}/{pid}/general/savet/{tid}','generalTreatment@savet');
 //Save med
 Route::get('/pets/{id}/{pid}/general/{tid}/savemed','generalTreatment@savemed');
 
-
 //view treatment
 Route::get('/pets/{id}/{pid}/view','generalTreatment@viewtreatment');
 
 //periodic shedule controller
 Route::resource('/pets/{id}/{pid}/periodic', 'periodicTreatment');
 
-
 //Client list loading controller
 Route::get('/petowners1', 'postToPetOwnersList@index1');
+
+
+
+
+//MyClients->Add new petowner
+Route::resource('/petowners', 'postToPetOwnersList');
+Route::post('/petowners/addnewowner', 'postToPetOwnersList@addnewowner');
+
+//MyClients->pet owners->add new pet
+Route::resource('/pets', 'petList');
+Route::post('/pets/addnewpet', 'postToPets@addnewpet');
+
+//Analysis->clientbase
+Route::resource('clientBasecharts', 'ChartController');
+Route::get('/clientbase', 'ChartController@clientbase');
+
+//Analysis->income
+Route::resource('incomecharts', 'ChartController');
+Route::get('/totalIncome', 'ChartController@income');
+
+
+
+

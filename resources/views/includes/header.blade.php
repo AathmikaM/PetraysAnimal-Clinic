@@ -13,32 +13,17 @@
                     <!-- logo image -->
                     <img src="{{ URL::asset('assets/images/logo1.png') }}" alt="homepage" class="dark-logo" width="200" />
                 </b>
-                <span>
-                        </span>
+                <!-- <span>
+                        </span> -->
             </a>
         </div>
         <div class="navbar-collapse">
             <ul class="navbar-nav mr-auto mt-md-0 ">
-                <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
-                <!-- <li class="nav-item hidden-sm-down">
-                    <div class="dropdown-menu mailbox animated bounceInDown"></div>
-
-                    <form class="app-search p-l-20">
-                        <input type="text" class="form-control" placeholder="Search for..."> <a class="srh-btn"><i class="ti-search"></i></a>
-                    </form>
-
-                    <form class="app-search p-l-20">
-                        <input type="text" name="search" id="search" class="form-control" placeholder="Search for..."> <a class="srh-btn"><i class="ti-search"></i></a>
-                    </form>
-                </li> -->
+                <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>   
             </ul>
-            <!--<ul class="navbar-nav my-lg-0">
-                     <li class="nav-item dropdown">
-                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="http://mycs.net.au/wp-content/uploads/2016/03/person-icon-flat.png" alt="user" class="profile-pic m-r-5" />Nigg</a>
-                     </li>
-                 </ul> -->
+            
+            <!-- notification button-->
             <ul class="navbar-nav my-lg-0">
-
                 <li class="drop" id="notify">
                     <a class="pad-non">
                         @if (count(Auth()->user()->notifications)==0)
@@ -101,6 +86,10 @@
                         @endforeach
                     </ul>
                 </li>
+                <!-- notification end -->
+
+
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="http://mycs.net.au/wp-content/uploads/2016/03/person-icon-flat.png" alt="user" class="profile-pic">&nbsp;{{ Auth::user()->name }}</a>
                     <div class="dropdown-menu dropdown-menu-right animated flipInY">
@@ -136,12 +125,12 @@
         </div>
     </nav>
 </header>
-<!-- ============================================================== -->
+
 <!-- End Topbar header -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
+
+
 <!-- Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
+
 <aside class="left-sidebar">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
@@ -157,72 +146,42 @@
                     <a href="/petowners" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i><strong>MyClients</strong></a>
                 </li>
 
-
                 <li class="nav-item dropdown">
-
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-list m-r-10" aria-hidden="true"></i><strong>Analyse</strong></a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a class="dropdown-item" href="/totalIncome"><strong>Income</strong></a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="/clientbase"><strong>ClientBase</strong></a>
-                    </li>
-                    
-                    <!-- <li>
-                        <a class="dropdown-item" href="/diseases"><strong>Diseases</strong></a>
-                    </li> -->
-                </ul>
-
-<!--                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Analyse</span></a>
-                    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                        <a class="dropdown-item" href="/incomeAnalysis">Income</a>
-                        <a class="dropdown-item" href="/Analyse/clientbase">Clientbase</a>
-                        <a class="dropdown-item" href="/updatestock">Diseases</a>
-                        <div class="dropdown-divider"></div>
-                    </div>
-                    </a> -->
-
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-list m-r-10" aria-hidden="true"></i><strong>Analyse</strong></a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a class="dropdown-item" href="/totalIncome"><strong>Income</strong></a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/clientbase"><strong>ClientBase</strong></a>
+                        </li>
+                    </ul>
                 </li>
-
 
                 <li>
                     <a href="Appointments" class="waves-effect"><i class="fa fa-calendar m-r-10" aria-hidden="true"></i><strong>Appointments</strong></a>
                 </li>
 
-
                 <li class="nav-item dropdown">
- 
-            
-                <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-shopping-cart m-r-10" aria-hidden="true"></i><strong>Stock Management</strong></a>
-
-                <ul class="collapse list-unstyled" id="pageSubmenu1">
-                    <li>
-                        <a class="dropdown-item" href="/addstock"><strong>Add Stock</strong></a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="/viewstock"><strong>View Stock</strong></a>
-                    </li>
-                    
-                </ul>
+                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-shopping-cart m-r-10" aria-hidden="true"></i><strong>Stock Management</strong></a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu1">
+                        <li>
+                            <a class="dropdown-item" href="/addstock"><strong>Add Stock</strong></a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/viewstock"><strong>View Stock</strong></a>
+                        </li>    
+                    </ul>
                 </li>
-
-
-
-
             </ul>
-
-
         </nav>
         <!-- End Sidebar navigation -->
     </div>
     <!-- End Sidebar scroll-->
 </aside>
-<!-- ============================================================== -->
+
 <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
+
 
 <style>
 
