@@ -200,16 +200,85 @@ Route::get('/pets/{id}/{pid}/general/{tid}/savemed','generalTreatment@savemed');
 Route::get('/pets/{id}/{pid}/view','generalTreatment@viewtreatment');
 
 //periodic shedule controller
+<<<<<<< HEAD
 Route::get('/pets/{id}/{pid}/periodic', 'periodic@index');
+=======
+Route::resource('/pets/{id}/{pid}/periodic', 'periodicTreatment');
+
+//Client list loading controller
+Route::get('/petowners1', 'postToPetOwnersList@index1');
+
+
+//send email controller
+Route::get('/index', 'SendEmailController@index');
+Route::post('/index/send', 'SendEmailController@send');
+>>>>>>> f42b49948e85d3e89ea62e38df9c5ad569eb926a
 
 //periodic shedule store controller
 Route::post('/pets/{id}/{pid}/periodic/store', 'periodic@store');
 
 
+<<<<<<< HEAD
 //Client list loading controller
 Route::get('/petowners1', 'postToPetOwnersList@index1');
+=======
+//MyClients->Add new petowner
+Route::resource('/petowners', 'postToPetOwnersList');
+Route::post('/petowners/addnewowner', 'postToPetOwnersList@addnewowner');
+
+//MyClients->pet owners->add new pet
+Route::resource('/pets', 'petList');
+Route::post('/pets/addnewpet', 'postToPets@addnewpet');
+
+//Analysis->clientbase
+Route::resource('clientBasecharts', 'ChartController');
+Route::get('/clientbase', 'ChartController@clientbase');
+
+//Analysis->income
+//Route::resource('charts.incomeCharts');
+//Route::get('/totalIncome', 'ChartController@income');
+
+
+//Analysis->income
+Route::get('/totalIncome', function () {
+        return view('charts.incomeCharts',['totalIncome'=>array(0,0,0,0,0,0,0,0,0,0,0,0)]);
+    });
+
+// route to get data for the graph
+Route::post('getData',[
+    'uses' => 'ChartController@income',
+    'as' => 'getData'
+]);
+
+
+//Analysis->clientBase
+Route::get('/clientbase', function () {
+        return view('charts.clientBasecharts',['totalclients'=>array(0,0,0,0,0,0,0,0,0,0,0,0)]);
+});
+
+// route to get data for the graph
+Route::post('getData1',[
+    'uses' => 'ChartController@clientbase',
+    'as' => 'getData1'
+]);
+
+
+
+>>>>>>> f42b49948e85d3e89ea62e38df9c5ad569eb926a
 
 //get pdf
 
 Route::get('/pets/{id}/{pid}/general/savet/{tid}/pdf', 'pdfcreate@pdfcr');
 
+<<<<<<< HEAD
+=======
+Route::get('/pdf', function () {
+    return view('pdf.pdf');
+});
+ 
+// route to get data for the graph
+Route::post('getData',[
+    'uses' => 'ChartController@income',
+    'as' => 'getData'
+]);
+>>>>>>> f42b49948e85d3e89ea62e38df9c5ad569eb926a

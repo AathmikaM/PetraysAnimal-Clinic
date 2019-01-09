@@ -36,6 +36,7 @@ class addstockController extends Controller
      */
     public function store(Request $request)
     {
+        // return($request);
         $this->validate($request,[
             'name'        => 'required',
             'quantity'    => 'required',
@@ -43,6 +44,7 @@ class addstockController extends Controller
             'expire_date' => 'required',
             'selling_unit_price' => 'required'
         ]); 
+        //create a object
         $addstock = new Addstock([
             'name'        => $request->get('name'),
             'quantity'    => $request->get('quantity'),
@@ -53,7 +55,7 @@ class addstockController extends Controller
             'module' => $request->get('module'),
             'selling_unit_price' => $request->get('selling_unit_price') 
         ]);
-
+            //save to the database
         $addstock -> save();
         return redirect()->route('addstock.index')->with('success','Stock Added Successfully');
     }
