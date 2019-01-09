@@ -14,33 +14,34 @@
 @endsection
 
 @section('content')
-
+<div style="padding-top: 20px; margin-left: 20px;">
 <form method="post" action="{{ route('getData')}}">
 	Year:<input type="number" name="year">
 	<button type="submit">submit</button>
 	{{ csrf_field()}}
 </form>
+</div>
 <div class="content">
-    <div style="position: relative; height:10%; width:100%; border: solid 5px">
+    <div style="margin-top :20px; margin-left: 40px ; position: relative; height:8%; width:80%; border: solid 3px">
         <canvas id="abce"></canvas>
     </div>
-    <div class="footer">
+    <!-- <div class="footer">
         <hr>
         <div class="stats">
             <i class="ti-reload"></i> Updated 3 minutes ago
         </div>
-    </div>
+    </div> -->
 </div>
 
 <script type="text/javascript">
 var transactionPerMonth = document.getElementById("abce"); // canvas id
 var data = <?php echo json_encode($totalIncome);?>;
 var transactionPerMonthChart = new Chart(transactionPerMonth, { // generate graph
-    type: 'bar',
+    type: 'line',
     data: {
         labels: ["January", "February", "March", "April", "May", "June","July","August","September","October","November","December"],
         datasets: [{
-            label: 'Total amount in USD',
+            label: 'Total amount',
             data: data,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

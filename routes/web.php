@@ -151,12 +151,30 @@ Route::get('/clientbase', 'ChartController@clientbase');
 //Route::resource('charts.incomeCharts');
 //Route::get('/totalIncome', 'ChartController@income');
 
+
+//Analysis->income
 Route::get('/totalIncome', function () {
         return view('charts.incomeCharts',['totalIncome'=>array(0,0,0,0,0,0,0,0,0,0,0,0)]);
     });
+
+// route to get data for the graph
+Route::post('getData',[
+    'uses' => 'ChartController@income',
+    'as' => 'getData'
+]);
+
+
+//Analysis->clientBase
 Route::get('/clientbase', function () {
-        return view('charts.clientBasecharts');
+        return view('charts.clientBasecharts',['totalclients'=>array(0,0,0,0,0,0,0,0,0,0,0,0)]);
 });
+
+// route to get data for the graph
+Route::post('getData1',[
+    'uses' => 'ChartController@clientbase',
+    'as' => 'getData1'
+]);
+
 
 
 
@@ -169,7 +187,6 @@ Route::get('/pdf', function () {
 });
  
 // route to get data for the graph
-
 Route::post('getData',[
     'uses' => 'ChartController@income',
     'as' => 'getData'

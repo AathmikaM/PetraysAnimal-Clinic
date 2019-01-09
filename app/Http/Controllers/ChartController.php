@@ -11,15 +11,40 @@ class ChartController extends Controller
 {
     public function clientbase(request $request)
     {
-        // $year=$request->input('year');
-        // $petowner = DB::table('pet_owners')->where("DATE_FORMAT(created_at,'%Y')",date('$year'))->get(); 
-        // $chart = Charts::database($petowner,'bar','highcharts')
-        //             ->title("MY CLIENTS")
-        //             ->elementLabel("CLIENTS")
-        //             ->dimensions(1000,500)
-        //             ->responsive(false)
-        //             ->groupByMonth(date('Y'),true);
-        //  return view('charts.clientBasecharts',compact('chart'));
+        $client = DB::table('pet_owners')->whereYear('created_at',$request->year)->get();
+
+        $totalClient = array(0,0,0,0,0,0,0,0,0,0,0,0);
+
+        for($i=0;$i<count($client);$i++){
+            $tmp = Carbon::parse($client[$i]->created_at)->format('m');
+                if($tmp=="01"){
+                    $totalClient[0] += 1;
+                }else if($tmp=="02"){
+                    $totalClient[1] += 1;
+                }else if($tmp=="03"){
+                    $totalClient[2] += 1;
+                }else if($tmp=="04"){
+                    $totalClient[3] += 1;
+                }else if($tmp=="05"){
+                    $totalClient[4] += 1;
+                }else if($tmp=="06"){
+                    $totalClient[5] += 1;
+                }else if($tmp=="07"){
+                    $totalClient[6] += 1;
+                }else if($tmp=="08"){
+                    $totalClient[7] += 1;
+                }else if($tmp=="09"){
+                    $totalClient[8] += 1;
+                }else if($tmp=="10"){
+                    $totalClient[9] += 1;
+                }else if($tmp=="11"){
+                    $totalClient[10] += 1;
+                }else if($tmp=="12"){
+                    $totalClient[11] += 1;
+                }
+        }
+
+        return view('charts.clientBasecharts',["totalclients" => $totalClient]);
     }
 
     public function income(request $request)
