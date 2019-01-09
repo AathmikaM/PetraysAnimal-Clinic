@@ -27,6 +27,7 @@
     				</address>
     			</div>
     		</div>
+            <br>
     		<div class="row">
     			<div class="col-xs-6">
     				<address>
@@ -57,7 +58,6 @@
     						<thead>
                                 <tr>
         							<td><strong>Item</strong></td>
-                                    <td class="text-center"><strong></strong></td>
         							<td class="text-center"><strong>Price</strong></td>
         							<td class="text-center"><strong>Quantity</strong></td>
         							<td class="text-right"><strong>Totals</strong></td>
@@ -68,7 +68,6 @@
                                     @foreach($temps as $temp)
     							<tr>
     								<td>{{$temp->type}}</td>
-                                    <td class="text-center"></td>
     								<td class="text-center">{{$temp->selling_unit_price}}</td>
     								<td class="text-center">{{$temp->quantity}}</td>
     								<td class="text-right">{{$temp->price}}</td>

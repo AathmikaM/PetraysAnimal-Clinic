@@ -370,6 +370,22 @@
     </div>
     </div>
     </div>
+
+
+    <!-- <style type="text/CSS">
+    .outer{
+        height:20px;
+        width:500px;
+        boder:solid 1px #000;
+
+    }
+    .inner{
+        height:25px;
+        width:500px;
+        border-right:solid 1px #000;
+    } -->
+
+
 @endsection
 
 
