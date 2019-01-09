@@ -15,11 +15,10 @@ class CreatePeriodicTreatmentsTable extends Migration
     {
         Schema::create('periodic_treatments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pets_id');
-            $table->integer('pet_owners_id');
+            $table->integer('pet_id');
             $table->date('start_date');
-            $table->date('end_date'); //varchar(15)
-            $table->float('difference');
+            $table->date('end_date'); 
+            $table->string('description');
             $table->timestamps();
         });
     }

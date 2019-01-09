@@ -26,6 +26,7 @@ class AddTotalCostToTreatments extends Migration
     public function down()
     {
         Schema::table('treatments', function (Blueprint $table) {
+            
             //
         });
     }

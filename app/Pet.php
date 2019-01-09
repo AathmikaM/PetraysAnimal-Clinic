@@ -15,6 +15,10 @@ class Pet extends Model
         return $this->hasMany('App\Treatment');
     }
 
+    public function periodictreatments(){
+        return $this->hasMany('App\PeriodicTreatment');
+    }
+
      protected $fillable = ['name','age','weight','species','colour','special_note', 'pet_owner_id'];
 
 }
