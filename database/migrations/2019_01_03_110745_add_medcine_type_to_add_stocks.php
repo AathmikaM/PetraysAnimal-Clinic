@@ -14,7 +14,7 @@ class AddMedcineTypeToAddStocks extends Migration
     public function up()
     {
         Schema::table('add_stocks', function (Blueprint $table) {
-            //
+            $table->string('medcine_type'); //varchar (50)
         });
     }
 
@@ -26,7 +26,7 @@ class AddMedcineTypeToAddStocks extends Migration
     public function down()
     {
         Schema::table('add_stocks', function (Blueprint $table) {
-            $table->string('medcine_type'); //varchar (50)
+            $table->dropColumn('medcine_type'); //varchar (50)
         });
     }
 }

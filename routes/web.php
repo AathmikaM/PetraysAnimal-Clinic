@@ -132,6 +132,9 @@ Route::resource('/pets/{id}/{pid}/periodic', 'periodicTreatment');
 Route::get('/petowners1', 'postToPetOwnersList@index1');
 
 
+//send email controller
+Route::get('/index', 'SendEmailController@index');
+Route::post('/index/send', 'SendEmailController@send');
 
 
 
