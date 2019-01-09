@@ -24,52 +24,15 @@
         <input id="mobile" type="number" class="form-control" align="right" name="mobile"  required autofocus>
     </div>
 
-<!-- modal add New petowner -->
-    <div class="modal fade" id="modalPetowner" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header text-center">
-            <h3 class="modal-title w-100 font-weight-bold">Add Pet Owner</h3>
-          </div>
-              <form method="post" action="/petowners/addnewowner/">
-              @csrf
-                <div class="modal-body mx-3">
-                  <div class="md-form mb-5">
-                    <input type="text" id="name" name="name" class="form-control validate" placeholder="Your Name">
-                  </div>
-
-                  <div class="md-form mb-4">
-                    <input type="text" id="address" name="address" class="form-control validate" placeholder="Your Address">
-                  </div>
-
-                  <div class="md-form mb-4">
-                    <input type="number" id="mob_no" name="mob_no" class="form-control validate" placeholder="Your Mobile No">
-                  </div>
-
-                  <div class="md-form mb-4">
-                    <input type="email" id="email" name="email" class="form-control validate" placeholder="Your Email">
-                  </div>
-                </div>
-
-                  <div class="modal-footer d-flex justify-content-center">
-                    <button type="submit" class="btn btn-default">Add</button>
-                  </div>
-              </form>
-        </div>
-      </div>
-    </div>
-
-      <div class="text-center">
-        <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalPetowner">Add New Pet Owner</a>
-      </div>
-</div>
-<!-- modal close -->
-
+  <!-- <form class="example" action="/action_page.php">
+    <input type="text" placeholder="Type Mobile Number.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form> -->
 
 
 <!-- display pet owners and their phone number -->  
-<div class="container">  
+<div class="container" style="padding-top: 40px;">  
+
 @if(count($petowners)>0)
     @foreach($petowners as $petowner)    
   <div class="card mb-8">
@@ -82,8 +45,17 @@
 
         <div class="col-md-3">
           <h2>  {{$petowner->mob_no}}</h2>
-        </div>      
+        </div>
 
+        <div style="padding-left: 250px;">
+        <a href="{{action('postToPetOwnersList@edit',$petowner->id)}}" class="btn btn-warning">Edit</a>
+        <form method="post" class="delete_form" action="{{action('postToPetOwnersList@destroy',$petowner->id)}}">
+                      {{csrf_field()}}
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form> 
+        </div> 
+        
       </div>
 
     </div>
@@ -92,6 +64,7 @@
 </div>
 </div>
 @endif
+
 </div>
 
 @endsection

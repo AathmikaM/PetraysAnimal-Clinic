@@ -1,17 +1,12 @@
- @extends('layouts.layouts')
-
+@extends('layouts.layouts')
 
 @section('title', 'Client List')
-
-
 
 @section('style')
 
 <link href="https://cdn.datatables.net/1.10.19/css/dataTabl es.bootstrap.min.css" id="theme" rel="stylesheet">
 
 @endsection
-
-
 
 @section('content')
 
@@ -77,11 +72,8 @@
                   </form>
                 </td>
               </tr>
-
-          
-          @endforeach
-          
-         
+               
+          @endforeach     
 
       </table>
     </div>

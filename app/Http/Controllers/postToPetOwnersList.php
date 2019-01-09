@@ -24,7 +24,6 @@ class postToPetOwnersList extends Controller
         $petowners=PetOwner::all();
         return view('petownerslist.index1')->with('petowners',$petowners);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -32,33 +31,10 @@ class postToPetOwnersList extends Controller
      */
     public function create()
     {
-        
-        // $this->validate($request,[
-        //     'name'          => 'required',
-        //     'address'       => 'required',
-        //     'mob_no'        => 'required',
-        //     'home_visit_id' => 'required',
-        //     'email'         => 'required',
-        //     'visitdate'     => 'required'
-        // ]); 
-        // $addstock = new PetOwner([
-        //     'name'          => $request->get('name'),
-        //     'address'       => $request->get('quantity'),
-        //     'mob_no'        => $request->get('unit_price'),
-        //     'home_visit_id' => $request->get('expire_date'),
-        //     'email'         => $request->get('relevent_species'),
-        //     'visitdate'     => $request->get('medcine_type') 
-        // ]);
-
-        // $addstock -> save();
-        // return redirect()->route('petowners')->with('success','Data Added');
-
-
+    
     }
 
-
     public function addnewowner(Request $request){
-      //  dd($request->name)
 
         $this->validate($request,[
             'name'          => 'required',
@@ -77,7 +53,6 @@ class postToPetOwnersList extends Controller
         $petowners -> save();
         return redirect()->route('petowners')->with('success','Data Added');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -88,7 +63,6 @@ class postToPetOwnersList extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -99,7 +73,6 @@ class postToPetOwnersList extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -108,9 +81,10 @@ class postToPetOwnersList extends Controller
      */
     public function edit($id)
     {
-        //
+        $petowners = PetOwner::find($id);
+        //return view('petownerslist.index ',compact('petowners','id')); 
+        return view('petownerslist.index ')->with('petowners',$petowners)->with('id',$id);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -120,9 +94,24 @@ class postToPetOwnersList extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $this->  validate($request,[
+            'name'        => 'required',
+            'address'    => 'required',
+            'mob_no'    => 'required',
+            'email' => 'required',
+        ]); 
 
+        $petowners = PetOwner::find($id);
+        $petowners->name = $request->get('name');
+        $petowners->address = $request->get('address');
+        $petowners->mob_no = $request->get('mob_no');
+        $petowners->email = $request->get('email');
+
+        $petowners -> save();
+        return redirect('/petowners')->with('success','Data Updated');
+
+
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -131,6 +120,8 @@ class postToPetOwnersList extends Controller
      */
     public function destroy($id)
     {
-        //
+        $petowners = PetOwner::find($id);
+        $petowners->delete();
+        return redirect('/petowners')->with('success',' Successfully  Deleted');
     }
 }

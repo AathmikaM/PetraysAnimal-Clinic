@@ -142,9 +142,22 @@
                     <a href="/index" class="waves-effect"><i class="fa fa-bars m-r-10" aria-hidden="true"></i><strong>Dashboard</strong></a>
                 </li>
 
-                <li>
-                    <a href="/petowners" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i><strong>MyClients</strong></a>
+                <!-- <li>
+                    <a href="/petowners" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i><strong>Clients</strong></a>
+                </li> -->
+
+                <li class="nav-item dropdown">
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user m-r-10" aria-hidden="true"></i><strong>Clients</strong></a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a class="dropdown-item" href="/petowners"><strong>My Clients</strong></a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/AddPetowner"><strong>Add Client</strong></a>
+                        </li>
+                    </ul>
                 </li>
+
 
                 <li class="nav-item dropdown">
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-list m-r-10" aria-hidden="true"></i><strong>Analyse</strong></a>
@@ -157,6 +170,7 @@
                         </li>
                     </ul>
                 </li>
+
 
                 <li>
                     <a href="Appointments" class="waves-effect"><i class="fa fa-calendar m-r-10" aria-hidden="true"></i><strong>Appointments</strong></a>
