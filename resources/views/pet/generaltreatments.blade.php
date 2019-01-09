@@ -23,12 +23,22 @@
     
   <div class="form-group">
     <label for="title">Title Of The Treatment</label>
-    <input type="text" class="form-control" name="title"  value="{{$treatdata->title}}" placeholder="Enter Title Of Treatment">
+    <input type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title"  value="{{$treatdata->title}}" placeholder="Enter Title Of Treatment" required autofocus>
+    @if ($errors->has('title'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('title') }}</strong>
+                        </span>
+                    @endif
   </div>
 
   <div class="form-group">
     <label for="description">Description</label>
-    <textarea class="form-control" name="description" rows="5">{{$treatdata->description}}</textarea>
+    <textarea class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="5" required autofocus>{{$treatdata->description}}</textarea>
+    @if ($errors->has('description'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('description') }}</strong>
+                        </span>
+                    @endif
   </div>
 <!-- $$$$$$$$$$$$$$$$$$$$$ -->
 <div class="row">
@@ -59,7 +69,12 @@
  <div class="col-md-3">
  
  <label for="title">Quantity</label>
-    <input type="text" class="form-control" value="" id="title" aria-describedby="title" name="quantity" placeholder="Quantity">
+    <input type="text" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" value="" id="title" aria-describedby="title" name="quantity" placeholder="Quantity" required autofocus>
+    @if ($errors->has('quantity'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('quantity') }}</strong>
+                        </span>
+                    @endif
  </div>
  <div class="col-md-2">
   <div class="col-md-2">
@@ -111,7 +126,7 @@
     </div>
    </div> 
 
-   <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general/savemed" >Save</a>
+   <!-- <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general/savemed" >Save</a> -->
 
 
 
