@@ -21,9 +21,10 @@ class indexController extends Controller
         $tasks = Appointment::where('status','accepted')->get();
         $count = PetOwner::count('id');
          $precentr=25;
+         $petowners=PetOwner::all();
          //($totalcost/50000)*100;
 
-        return view('index', compact('tasks','totalcost','count','precentr'));
+        return view('index', compact('tasks','totalcost','count','precentr','petowners'));
     }
 
 

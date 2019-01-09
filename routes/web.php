@@ -203,3 +203,8 @@ Route::resource('/pets/{id}/{pid}/periodic', 'periodicTreatment');
 
 //Client list loading controller
 Route::get('/petowners1', 'postToPetOwnersList@index1');
+
+
+//send email controller
+Route::get('/index', 'SendEmailController@index');
+Route::post('/index/send', 'SendEmailController@send');
