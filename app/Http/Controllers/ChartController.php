@@ -7,8 +7,6 @@ use App\Treatment;
 use Charts;
 use DB;
 
-
-
 class ChartController extends Controller
 {
     public function clientbase()
@@ -27,7 +25,7 @@ class ChartController extends Controller
     public function income()
     {
         
-        $income = Treatment::where(DB::raw("sum(total_cost)"),date('Y'))->get(); 
+        $income = Treatment::where(DB::raw("DATE_FORMAT(created_at,'%Y')"),date('Y'))->get(); 
         $chart1 = Charts::database($income,'bar','highcharts')
                     ->title("TOTAL INCOME")
                     ->elementLabel("INCOME")
