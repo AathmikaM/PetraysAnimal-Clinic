@@ -1,17 +1,16 @@
 @extends('layouts.layouts')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 35d21b189afdbd16aeb6c389e3b081cc7e8d3624
 
 @section('title', 'Stock Management')
-
-
 
 @section('style')
   
 <link href="https://cdn.datatables.net/1.10.19/css/dataTabl es.bootstrap.min.css" id="theme" rel="stylesheet">
 
 @endsection
-
-
 
 @section('content')
 
@@ -80,6 +79,87 @@
                   
                   @endforeach
                   
+<<<<<<< HEAD
+=======
+               
+                <td>{{$add->unit_price}}</td>
+                <td>{{$add->selling_unit_price}}</td>
+                <td>{{$add->expire_date}}</td>
+			       	  <td>{{$add->medcine_type}}</td>
+                <td>{{$add->relevent_species}}</td>
+                <td><a href="{{action('addstockController@edit',$add['id'])}}" class="btn btn-warning">Edit</td>
+                <td>
+                  <form method="post" class="delete_form" action="{{action('addstockController@destroy',$add['id'])}}">
+                      {{csrf_field()}}
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
+                </td>
+              </tr>
+               
+          @endforeach     
+
+      </table>
+    </div>
+  </div> 
+
+    
+    <!-- DataTables Example -->
+  {{-- <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Stock Table</div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Quantity</td>
+              <td>Brand</td>
+              <td>Price</td>
+              <td>Expire Date</td>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>  
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>  
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>  
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>  
+            </tr>
+
+>>>>>>> 35d21b189afdbd16aeb6c389e3b081cc7e8d3624
             
 
             </table>

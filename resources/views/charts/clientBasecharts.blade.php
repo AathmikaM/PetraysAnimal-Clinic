@@ -8,28 +8,14 @@
 
 
 <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" id="theme" rel="stylesheet">
+<link href="https://cdnjs.com/libraries/Chart.js">
 
 @endsection
 
 
 @section('content')
 
-<div class="container">
-    <div class="panel panel-primary">
-            <!-- <div class="panel-heading">CLIENT BASE</div> -->
-            Enter the year :<input type="year" name="year" id="year">
-        <div class="panel-body">
-            {!! $chart->html() !!}  
-        </div>
-    </div>
-</div>
-
-{!! Charts::scripts() !!}
-{!! $chart->script() !!}
-
-
-
-
+	
 @endsection
 
 

@@ -57,7 +57,7 @@ class addstockController extends Controller
         ]);
             //save to the database
         $addstock -> save();
-        return redirect()->route('addstock.index')->with('success','Stock Updated Successfully');
+        return redirect()->route('addstock.index')->with('success','Stock Added Successfully');
     }
 
     /**

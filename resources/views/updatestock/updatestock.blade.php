@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 @extends('layouts.layouts') @section('title', 'Stock Management') @section('style')
+=======
+@extends('layouts.layouts')
+
+@section('title', 'Client List')
+
+@section('style')
+>>>>>>> 35d21b189afdbd16aeb6c389e3b081cc7e8d3624
 
 
 <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" id="theme" rel="stylesheet">
