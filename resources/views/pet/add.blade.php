@@ -1,9 +1,7 @@
 @extends('layout')
 
 
-
-
- @section('content')
+@section('content')
 
  <div class="container">
  <div class="card mb-4">
@@ -127,8 +125,24 @@
    </div>
    </div>
    </div>
+   <div class="row">
+            <div class="col-md-4">
+              
+            </div>
+            <div class="col-md-4">
+      
+              </div>
+            <div class="col-md-2">
+            <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general/{{$treatdata->id}}/savemed" >Save</a>
 
-   <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general/{{$treatdata->id}}/savemed" >Save</a>
+            </div>
+            <div class="col-md-2 text-left">
+            <a class="btn btn-primary btn-lg btn-block"  href="/pets/{{$petowner->id}}/{{$pet->id}}/general/savet/{{$treatdata->id}}/pdf" >Print</a>
+
+            </div>
+            
+    </div>
+
 
 
 

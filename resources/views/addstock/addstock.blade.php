@@ -51,12 +51,12 @@
                             <label for="quantity" class="col-md-4 col-form-label text-md-left"><strong>Quantity</strong></label>
                             <div class="col-md-8">
                                 <input id="quantity" placeholder="Enter Quantity" type="double" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}"
-                                    name="quantity" value="{{ old('quantity') }}" required autofocus>                                @if
-                                ($errors->has('quantity'))
+                                    name="quantity" value="{{ old('quantity') }}" required autofocus>                                
+                                
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('quantity') }}</strong>
                                 </span>
-                                @endif
+                            
                             </div>
                         </div>
 
@@ -64,12 +64,12 @@
                             <label for="module" class="col-md-4 col-form-label text-md-left"><strong>Modules</strong></label>
                             <div class="col-md-8">
                                 <input id="module" name="module" placeholder="Enter Type Of Module" type="text" class="form-control{{ $errors->has('module') ? ' is-invalid' : '' }}"
-                                    name="module" value="{{ old('module') }}" required autofocus>                                @if
-                                ($errors->has('module'))
+                                    name="module" value="{{ old('module') }}" required autofocus>                                
+                                
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('module') }}</strong>
                                 </span>
-                                @endif
+                            
                             </div>
                         </div>
 
@@ -80,12 +80,12 @@
                         <label for="unit_price" class="col-md-4 col-form-label text-md-left"><strong>Buying_Unit_price</strong></label>
                         <div class="col-md-10">
                             <input id="unit_price" placeholder="Enter Buying_Unit_Price" type="text" class="form-control{{ $errors->has('unit_price') ? ' is-invalid' : '' }}"
-                                name="unit_price" value="{{ old('unit_price') }}" required autofocus>                            @if
-                            ($errors->has('unit_price'))
+                                name="unit_price" value="{{ old('unit_price') }}" required autofocus>                            
+                           
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('unit_price') }}</strong>
                             </span>
-                            @endif
+                            
                         </div>
                     </div>
 
@@ -95,12 +95,12 @@
                         <label for="selling_unit_price" class="col-md-4 col-form-label text-md-left"><strong>Selling_unit_price</strong></label>
                         <div class="col-md-10">
                             <input id="selling_unit_price" placeholder="Enter Selling_Unit_Price" type="text" class="form-control{{ $errors->has('selling_unit_price') ? ' is-invalid' : '' }}"
-                                name="selling_unit_price" value="{{ old('selling_unit_price') }}" required autofocus>                            @if
-                            ($errors->has('selling_unit_price'))
+                                name="selling_unit_price" value="{{ old('selling_unit_price') }}" required autofocus>                            
+                            
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('selling_unit_price') }}</strong>
                             </span>
-                            @endif
+                        
                         </div>
                     </div>
 
@@ -109,12 +109,12 @@
                         <label for="expire_date" class="col-md-4 col-form-label text-md-left"><strong>Expire Date</strong></label>
                         <div class="col-md-10">
                             <input id="expire_date" placeholder="Enter Expire Date" type="date" class="form-control{{ $errors->has('expire_date') ? ' is-invalid' : '' }}"
-                                name="expire_date" value="{{ old('expire_date') }}" required autofocus>                            @if
-                            ($errors->has('expire_date'))
+                                name="expire_date" value="{{ old('expire_date') }}" required autofocus>                            
+                            
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('expire_date') }}</strong>
                             </span>
-                            @endif
+                            
                         </div>
                     </div>
 
@@ -136,12 +136,11 @@
                         <label for="expire_date" class="col-md-4 col-form-label text-md-left" rows="4"><strong>Relevent Species</strong></label>
                         <div class="col-md-10">
                             <input id="relevent_species" placeholder="Enter Relevent Species" type="text" class="form-control{{ $errors->has('relevent_species') ? ' is-invalid' : '' }}"
-                                name="relevent_species" value="{{ old('relevent_species') }}" required autofocus>                            @if
-                            ($errors->has('relevent_species'))
+                                name="relevent_species" value="{{ old('relevent_species') }}" required autofocus>                            
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('relevent_species') }}</strong>
                             </span>
-                            @endif
+                            
                         </div>
                     </div>
 

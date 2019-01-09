@@ -7,21 +7,12 @@ use App\Treatment;
 use Charts;
 use DB;
 
-
-
 class ChartController extends Controller
 {
     public function clientbase()
     {
         
-        // $petowner = DB::table('pet_owners')
-        // ->select(DB::raw('count(visitdate)')
-        // ->where("DATE_FORMAT(visitdate,'%Y')",date('Y'))
-        // ->get();
-
-
-
-        $petowner = PetOwner::where(DB::raw("DATE_FORMAT(visitdate,'%Y')"),date('Y'))->get(); 
+        $petowner = PetOwner::where(DB::raw("DATE_FORMAT(created_at,'%Y')"),date('Y'))->get(); 
         $chart = Charts::database($petowner,'bar','highcharts')
                     ->title("MY CLIENTS")
                     ->elementLabel("CLIENTS")
@@ -33,7 +24,8 @@ class ChartController extends Controller
 
     public function income()
     {
-        $income = Treatment::where(DB::raw("DATE_FORMAT(total_cost,'%Y')"),date('Y'))->get(); 
+        
+        $income = Treatment::where(DB::raw("DATE_FORMAT(created_at,'%Y')"),date('Y'))->get(); 
         $chart1 = Charts::database($income,'bar','highcharts')
                     ->title("TOTAL INCOME")
                     ->elementLabel("INCOME")
@@ -41,9 +33,6 @@ class ChartController extends Controller
                     ->responsive(false)
                     ->groupByMonth(date('Y'),true);
         return view('charts.incomeCharts',compact('chart1'));
-    }
-
-
-    
+    }   
     
 }
